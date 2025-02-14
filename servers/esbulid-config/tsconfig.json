@@ -1,0 +1,8 @@
+{
+  "extends": "@syz/microservices-typescript-config/node.json",
+  "include": [
+    "./"
+  ],
+  "compilerOptions": {
+  }
+}

@@ -9,7 +9,7 @@
   "description": "microservices monorepo", // 项目描述
   "author": {
     "name": "pokemao", // 作者名称
-    "email": "15222646988@didiglobal.com", // 作者邮箱
+    "email": "15222646988@163.com", // 作者邮箱
     "url": "https://syz.com" // 作者个人网站
   },
   "contributors": [
@@ -50,12 +50,10 @@
 ## `packages`包中的子包`typescript-config`
 ```json
 {
-  "name": "@didi/fusion-mpx-typescript-config",
   "version": "0.0.0",
   "private": true,
   "author": {
     "name": "shaoyuzhe",
-    "email": "shaoyuzhe@didiglobal.com"
   },
   "contributors": [],
   "license": "MIT"
