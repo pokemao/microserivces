@@ -72,6 +72,12 @@ importers:
       '@babel/plugin-proposal-class-properties':
         specifier: 7.14.5
         version: artifactory.intra.xiaojukeji.com/@babel/plugin-proposal-class-properties@7.14.5(@babel/core@7.26.8)
+      '@syz/microservices-eslint-config':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../packages/typescript-config
       '@tarojs/cli':
         specifier: 4.0.9
         version: artifactory.intra.xiaojukeji.com/@tarojs/cli@4.0.9
@@ -123,6 +129,26 @@ importers:
       vite:
         specifier: ^4.2.0
         version: artifactory.intra.xiaojukeji.com/vite@4.2.0(less@4.1.3)(terser@5.16.8)
+
+  packages/eslint-config:
+    devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.1.0
+        version: artifactory.intra.xiaojukeji.com/@typescript-eslint/eslint-plugin@7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/parser':
+        specifier: ^7.1.0
+        version: artifactory.intra.xiaojukeji.com/@typescript-eslint/parser@7.1.0(eslint@8.57.1)(typescript@5.7.3)
+      eslint-config-turbo:
+        specifier: ^2.0.0
+        version: artifactory.intra.xiaojukeji.com/eslint-config-turbo@2.0.0(eslint@8.57.1)
+      eslint-plugin-only-warn:
+        specifier: ^1.1.0
+        version: artifactory.intra.xiaojukeji.com/eslint-plugin-only-warn@1.1.0
+      typescript:
+        specifier: ^5.3.3
+        version: artifactory.intra.xiaojukeji.com/typescript@5.7.3
+
+  packages/typescript-config: {}
 
 packages:
 
@@ -1988,6 +2014,19 @@ packages:
       eslint-visitor-keys: artifactory.intra.xiaojukeji.com/eslint-visitor-keys@3.4.3
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@eslint-community/eslint-utils@4.4.1(eslint@8.57.1):
+    resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@eslint-community/eslint-utils/-/eslint-utils-4.4.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40eslint-community%2Feslint-utils%2F-%2Feslint-utils-4.4.1.tgz}
+    id: artifactory.intra.xiaojukeji.com/@eslint-community/eslint-utils/4.4.1
+    name: '@eslint-community/eslint-utils'
+    version: 4.4.1
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
+    dependencies:
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      eslint-visitor-keys: artifactory.intra.xiaojukeji.com/eslint-visitor-keys@3.4.3
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@eslint-community/regexpp@4.12.1:
     resolution: {integrity: sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@eslint-community/regexpp/-/regexpp-4.12.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40eslint-community%2Fregexpp%2F-%2Fregexpp-4.12.1.tgz}
     name: '@eslint-community/regexpp'
@@ -2021,6 +2060,13 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@eslint/js@8.57.1:
+    resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@eslint/js/-/js-8.57.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40eslint%2Fjs%2F-%2Fjs-8.57.1.tgz}
+    name: '@eslint/js'
+    version: 8.57.1
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@hapi/hoek@9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@hapi/hoek/-/hoek-9.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40hapi%2Fhoek%2F-%2Fhoek-9.3.0.tgz}
     name: '@hapi/hoek'
@@ -2037,6 +2083,20 @@ packages:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@humanwhocodes/config-array/-/config-array-0.11.14.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40humanwhocodes%2Fconfig-array%2F-%2Fconfig-array-0.11.14.tgz}
     name: '@humanwhocodes/config-array'
     version: 0.11.14
+    engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
+    dependencies:
+      '@humanwhocodes/object-schema': artifactory.intra.xiaojukeji.com/@humanwhocodes/object-schema@2.0.3
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      minimatch: artifactory.intra.xiaojukeji.com/minimatch@3.1.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@humanwhocodes/config-array@0.13.0:
+    resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@humanwhocodes/config-array/-/config-array-0.13.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40humanwhocodes%2Fconfig-array%2F-%2Fconfig-array-0.13.0.tgz}
+    name: '@humanwhocodes/config-array'
+    version: 0.13.0
     engines: {node: '>=10.10.0'}
     deprecated: Use @eslint/config-array instead
     dependencies:
@@ -3600,6 +3660,38 @@ packages:
       - supports-color
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/eslint-plugin@7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.1)(typescript@5.7.3):
+    resolution: {integrity: sha512-j6vT/kCulhG5wBmGtstKeiVr1rdXE4nk+DT1k6trYkwlrvW9eOF5ZbgKnd/YR6PcM4uTEXa0h6Fcvf6X7Dxl0w==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Feslint-plugin%2F-%2Feslint-plugin-7.1.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/@typescript-eslint/eslint-plugin/7.1.0
+    name: '@typescript-eslint/eslint-plugin'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      '@typescript-eslint/parser': ^7.0.0
+      eslint: ^8.56.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@eslint-community/regexpp': artifactory.intra.xiaojukeji.com/@eslint-community/regexpp@4.12.1
+      '@typescript-eslint/parser': artifactory.intra.xiaojukeji.com/@typescript-eslint/parser@7.1.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/scope-manager': artifactory.intra.xiaojukeji.com/@typescript-eslint/scope-manager@7.1.0
+      '@typescript-eslint/type-utils': artifactory.intra.xiaojukeji.com/@typescript-eslint/type-utils@7.1.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/utils': artifactory.intra.xiaojukeji.com/@typescript-eslint/utils@7.1.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/visitor-keys': artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@7.1.0
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      graphemer: artifactory.intra.xiaojukeji.com/graphemer@1.4.0
+      ignore: artifactory.intra.xiaojukeji.com/ignore@5.3.2
+      natural-compare: artifactory.intra.xiaojukeji.com/natural-compare@1.4.0
+      semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
+      ts-api-utils: artifactory.intra.xiaojukeji.com/ts-api-utils@1.4.3(typescript@5.7.3)
+      typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@typescript-eslint/parser@6.2.0(eslint@8.41.0)(typescript@5.7.3):
     resolution: {integrity: sha512-igVYOqtiK/UsvKAmmloQAruAdUHihsOCvplJpplPZ+3h4aDkC/UKZZNKgB6h93ayuYLuEymU3h8nF1xMRbh37g==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/parser/-/parser-6.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fparser%2F-%2Fparser-6.2.0.tgz}
     id: artifactory.intra.xiaojukeji.com/@typescript-eslint/parser/6.2.0
@@ -3624,6 +3716,30 @@ packages:
       - supports-color
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/parser@7.1.0(eslint@8.57.1)(typescript@5.7.3):
+    resolution: {integrity: sha512-V1EknKUubZ1gWFjiOZhDSNToOjs63/9O0puCgGS8aDOgpZY326fzFu15QAUjwaXzRZjf/qdsdBrckYdv9YxB8w==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/parser/-/parser-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fparser%2F-%2Fparser-7.1.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/@typescript-eslint/parser/7.1.0
+    name: '@typescript-eslint/parser'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      eslint: ^8.56.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': artifactory.intra.xiaojukeji.com/@typescript-eslint/scope-manager@7.1.0
+      '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0
+      '@typescript-eslint/typescript-estree': artifactory.intra.xiaojukeji.com/@typescript-eslint/typescript-estree@7.1.0(typescript@5.7.3)
+      '@typescript-eslint/visitor-keys': artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@7.1.0
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@typescript-eslint/scope-manager@6.2.0:
     resolution: {integrity: sha512-1ZMNVgm5nnHURU8ZSJ3snsHzpFeNK84rdZjluEVBGNu7jDymfqceB3kdIZ6A4xCfEFFhRIB6rF8q/JIqJd2R0Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/scope-manager/-/scope-manager-6.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fscope-manager%2F-%2Fscope-manager-6.2.0.tgz}
     name: '@typescript-eslint/scope-manager'
@@ -3632,6 +3748,16 @@ packages:
     dependencies:
       '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@6.2.0
       '@typescript-eslint/visitor-keys': artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@6.2.0
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/scope-manager@7.1.0:
+    resolution: {integrity: sha512-6TmN4OJiohHfoOdGZ3huuLhpiUgOGTpgXNUPJgeZOZR3DnIpdSgtt83RS35OYNNXxM4TScVlpVKC9jyQSETR1A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/scope-manager/-/scope-manager-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fscope-manager%2F-%2Fscope-manager-7.1.0.tgz}
+    name: '@typescript-eslint/scope-manager'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dependencies:
+      '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0
+      '@typescript-eslint/visitor-keys': artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@7.1.0
     dev: true
 
   artifactory.intra.xiaojukeji.com/@typescript-eslint/type-utils@6.2.0(eslint@8.41.0)(typescript@5.7.3):
@@ -3657,10 +3783,40 @@ packages:
       - supports-color
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/type-utils@7.1.0(eslint@8.57.1)(typescript@5.7.3):
+    resolution: {integrity: sha512-UZIhv8G+5b5skkcuhgvxYWHjk7FW7/JP5lPASMEUoliAPwIH/rxoUSQPia2cuOj9AmDZmwUl1usKm85t5VUMew==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/type-utils/-/type-utils-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftype-utils%2F-%2Ftype-utils-7.1.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/@typescript-eslint/type-utils/7.1.0
+    name: '@typescript-eslint/type-utils'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      eslint: ^8.56.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/typescript-estree': artifactory.intra.xiaojukeji.com/@typescript-eslint/typescript-estree@7.1.0(typescript@5.7.3)
+      '@typescript-eslint/utils': artifactory.intra.xiaojukeji.com/@typescript-eslint/utils@7.1.0(eslint@8.57.1)(typescript@5.7.3)
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      ts-api-utils: artifactory.intra.xiaojukeji.com/ts-api-utils@1.4.3(typescript@5.7.3)
+      typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@typescript-eslint/types@6.2.0:
     resolution: {integrity: sha512-1nRRaDlp/XYJQLvkQJG5F3uBTno5SHPT7XVcJ5n1/k2WfNI28nJsvLakxwZRNY5spuatEKO7d5nZWsQpkqXwBA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/types/-/types-6.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypes%2F-%2Ftypes-6.2.0.tgz}
     name: '@typescript-eslint/types'
     version: 6.2.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0:
+    resolution: {integrity: sha512-qTWjWieJ1tRJkxgZYXx6WUYtWlBc48YRxgY2JN1aGeVpkhmnopq+SUC8UEVGNXIvWH7XyuTjwALfG6bFEgCkQA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/types/-/types-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypes%2F-%2Ftypes-7.1.0.tgz}
+    name: '@typescript-eslint/types'
+    version: 7.1.0
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: true
 
@@ -3681,6 +3837,31 @@ packages:
       debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
       globby: artifactory.intra.xiaojukeji.com/globby@11.1.0
       is-glob: artifactory.intra.xiaojukeji.com/is-glob@4.0.3
+      semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
+      ts-api-utils: artifactory.intra.xiaojukeji.com/ts-api-utils@1.4.3(typescript@5.7.3)
+      typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/typescript-estree@7.1.0(typescript@5.7.3):
+    resolution: {integrity: sha512-k7MyrbD6E463CBbSpcOnwa8oXRdHzH1WiVzOipK3L5KSML92ZKgUBrTlehdi7PEIMT8k0bQixHUGXggPAlKnOQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/typescript-estree/-/typescript-estree-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypescript-estree%2F-%2Ftypescript-estree-7.1.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/@typescript-eslint/typescript-estree/7.1.0
+    name: '@typescript-eslint/typescript-estree'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0
+      '@typescript-eslint/visitor-keys': artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@7.1.0
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      globby: artifactory.intra.xiaojukeji.com/globby@11.1.0
+      is-glob: artifactory.intra.xiaojukeji.com/is-glob@4.0.3
+      minimatch: artifactory.intra.xiaojukeji.com/minimatch@9.0.3
       semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
       ts-api-utils: artifactory.intra.xiaojukeji.com/ts-api-utils@1.4.3(typescript@5.7.3)
       typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
@@ -3710,6 +3891,28 @@ packages:
       - typescript
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/utils@7.1.0(eslint@8.57.1)(typescript@5.7.3):
+    resolution: {integrity: sha512-WUFba6PZC5OCGEmbweGpnNJytJiLG7ZvDBJJoUcX4qZYf1mGZ97mO2Mps6O2efxJcJdRNpqweCistDbZMwIVHw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/utils/-/utils-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Futils%2F-%2Futils-7.1.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/@typescript-eslint/utils/7.1.0
+    name: '@typescript-eslint/utils'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      eslint: ^8.56.0
+    dependencies:
+      '@eslint-community/eslint-utils': artifactory.intra.xiaojukeji.com/@eslint-community/eslint-utils@4.4.1(eslint@8.57.1)
+      '@types/json-schema': artifactory.intra.xiaojukeji.com/@types/json-schema@7.0.15
+      '@types/semver': artifactory.intra.xiaojukeji.com/@types/semver@7.5.8
+      '@typescript-eslint/scope-manager': artifactory.intra.xiaojukeji.com/@typescript-eslint/scope-manager@7.1.0
+      '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0
+      '@typescript-eslint/typescript-estree': artifactory.intra.xiaojukeji.com/@typescript-eslint/typescript-estree@7.1.0(typescript@5.7.3)
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@6.2.0:
     resolution: {integrity: sha512-QbaYUQVKKo9bgCzpjz45llCfwakyoxHetIy8CAvYCtd16Zu1KrpzNHofwF8kGkpPOxZB2o6kz+0nqH8ZkIzuoQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/visitor-keys/-/visitor-keys-6.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fvisitor-keys%2F-%2Fvisitor-keys-6.2.0.tgz}
     name: '@typescript-eslint/visitor-keys'
@@ -3718,6 +3921,22 @@ packages:
     dependencies:
       '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@6.2.0
       eslint-visitor-keys: artifactory.intra.xiaojukeji.com/eslint-visitor-keys@3.4.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@typescript-eslint/visitor-keys@7.1.0:
+    resolution: {integrity: sha512-FhUqNWluiGNzlvnDZiXad4mZRhtghdoKW6e98GoEOYSu5cND+E39rG5KwJMUzeENwm1ztYBRqof8wMLP+wNPIA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@typescript-eslint/visitor-keys/-/visitor-keys-7.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fvisitor-keys%2F-%2Fvisitor-keys-7.1.0.tgz}
+    name: '@typescript-eslint/visitor-keys'
+    version: 7.1.0
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dependencies:
+      '@typescript-eslint/types': artifactory.intra.xiaojukeji.com/@typescript-eslint/types@7.1.0
+      eslint-visitor-keys: artifactory.intra.xiaojukeji.com/eslint-visitor-keys@3.4.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@ungap/structured-clone@1.3.0:
+    resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@ungap/structured-clone/-/structured-clone-1.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40ungap%2Fstructured-clone%2F-%2Fstructured-clone-1.3.0.tgz}
+    name: '@ungap/structured-clone'
+    version: 1.3.0
     dev: true
 
   artifactory.intra.xiaojukeji.com/@vitejs/plugin-legacy@4.1.1(terser@5.16.8)(vite@4.2.0):
@@ -5519,6 +5738,13 @@ packages:
     dependencies:
       dotenv: artifactory.intra.xiaojukeji.com/dotenv@16.4.7
 
+  artifactory.intra.xiaojukeji.com/dotenv@16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/dotenv/-/dotenv-16.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fdotenv%2F-%2Fdotenv-16.0.3.tgz}
+    name: dotenv
+    version: 16.0.3
+    engines: {node: '>=12'}
+    dev: true
+
   artifactory.intra.xiaojukeji.com/dotenv@16.4.7:
     resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/dotenv/-/dotenv-16.4.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fdotenv%2F-%2Fdotenv-16.4.7.tgz}
     name: dotenv
@@ -5887,6 +6113,18 @@ packages:
       - typescript
     dev: true
 
+  artifactory.intra.xiaojukeji.com/eslint-config-turbo@2.0.0(eslint@8.57.1):
+    resolution: {integrity: sha512-EtdL8t3iuj6JFHq8nESXwnu0U7K/ug7dkxTsYNctuR6udOudjLMZz3A0P131Bz5ZFmPoFmkdHjlRYwocGgLbOw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/eslint-config-turbo/-/eslint-config-turbo-2.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-config-turbo%2F-%2Feslint-config-turbo-2.0.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/eslint-config-turbo/2.0.0
+    name: eslint-config-turbo
+    version: 2.0.0
+    peerDependencies:
+      eslint: '>6.6.0'
+    dependencies:
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
+      eslint-plugin-turbo: artifactory.intra.xiaojukeji.com/eslint-plugin-turbo@2.0.0(eslint@8.57.1)
+    dev: true
+
   artifactory.intra.xiaojukeji.com/eslint-import-resolver-node@0.3.9:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-import-resolver-node%2F-%2Feslint-import-resolver-node-0.3.9.tgz}
     name: eslint-import-resolver-node
@@ -5969,6 +6207,25 @@ packages:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/eslint-plugin-only-warn@1.1.0:
+    resolution: {integrity: sha512-2tktqUAT+Q3hCAU0iSf4xAN1k9zOpjK5WO8104mB0rT/dGhOa09582HN5HlbxNbPRZ0THV7nLGvzugcNOSjzfA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/eslint-plugin-only-warn/-/eslint-plugin-only-warn-1.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-plugin-only-warn%2F-%2Feslint-plugin-only-warn-1.1.0.tgz}
+    name: eslint-plugin-only-warn
+    version: 1.1.0
+    engines: {node: '>=6'}
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/eslint-plugin-turbo@2.0.0(eslint@8.57.1):
+    resolution: {integrity: sha512-31tZqfGbjBn6BzXVsmW50c2m8NDra6mOS2us/qHxUwN4YrHI/uYSpyItAw4qdVrxk7RmilvmnJ5WXFwtnfuLqw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/eslint-plugin-turbo/-/eslint-plugin-turbo-2.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-plugin-turbo%2F-%2Feslint-plugin-turbo-2.0.0.tgz}
+    id: artifactory.intra.xiaojukeji.com/eslint-plugin-turbo/2.0.0
+    name: eslint-plugin-turbo
+    version: 2.0.0
+    peerDependencies:
+      eslint: '>6.6.0'
+    dependencies:
+      dotenv: artifactory.intra.xiaojukeji.com/dotenv@16.0.3
+      eslint: artifactory.intra.xiaojukeji.com/eslint@8.57.1
     dev: true
 
   artifactory.intra.xiaojukeji.com/eslint-plugin-vue@8.0.0(eslint@8.41.0):
@@ -6081,6 +6338,56 @@ packages:
       optionator: artifactory.intra.xiaojukeji.com/optionator@0.9.4
       strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi@6.0.1
       strip-json-comments: artifactory.intra.xiaojukeji.com/strip-json-comments@3.1.1
+      text-table: artifactory.intra.xiaojukeji.com/text-table@0.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/eslint@8.57.1:
+    resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/eslint/-/eslint-8.57.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2F-%2Feslint-8.57.1.tgz}
+    name: eslint
+    version: 8.57.1
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+    hasBin: true
+    dependencies:
+      '@eslint-community/eslint-utils': artifactory.intra.xiaojukeji.com/@eslint-community/eslint-utils@4.4.1(eslint@8.57.1)
+      '@eslint-community/regexpp': artifactory.intra.xiaojukeji.com/@eslint-community/regexpp@4.12.1
+      '@eslint/eslintrc': artifactory.intra.xiaojukeji.com/@eslint/eslintrc@2.1.4
+      '@eslint/js': artifactory.intra.xiaojukeji.com/@eslint/js@8.57.1
+      '@humanwhocodes/config-array': artifactory.intra.xiaojukeji.com/@humanwhocodes/config-array@0.13.0
+      '@humanwhocodes/module-importer': artifactory.intra.xiaojukeji.com/@humanwhocodes/module-importer@1.0.1
+      '@nodelib/fs.walk': artifactory.intra.xiaojukeji.com/@nodelib/fs.walk@1.2.8
+      '@ungap/structured-clone': artifactory.intra.xiaojukeji.com/@ungap/structured-clone@1.3.0
+      ajv: artifactory.intra.xiaojukeji.com/ajv@6.12.6
+      chalk: artifactory.intra.xiaojukeji.com/chalk@4.1.2
+      cross-spawn: artifactory.intra.xiaojukeji.com/cross-spawn@7.0.6
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0
+      doctrine: artifactory.intra.xiaojukeji.com/doctrine@3.0.0
+      escape-string-regexp: artifactory.intra.xiaojukeji.com/escape-string-regexp@4.0.0
+      eslint-scope: artifactory.intra.xiaojukeji.com/eslint-scope@7.2.2
+      eslint-visitor-keys: artifactory.intra.xiaojukeji.com/eslint-visitor-keys@3.4.3
+      espree: artifactory.intra.xiaojukeji.com/espree@9.6.1
+      esquery: artifactory.intra.xiaojukeji.com/esquery@1.6.0
+      esutils: artifactory.intra.xiaojukeji.com/esutils@2.0.3
+      fast-deep-equal: artifactory.intra.xiaojukeji.com/fast-deep-equal@3.1.3
+      file-entry-cache: artifactory.intra.xiaojukeji.com/file-entry-cache@6.0.1
+      find-up: artifactory.intra.xiaojukeji.com/find-up@5.0.0
+      glob-parent: artifactory.intra.xiaojukeji.com/glob-parent@6.0.2
+      globals: artifactory.intra.xiaojukeji.com/globals@13.24.0
+      graphemer: artifactory.intra.xiaojukeji.com/graphemer@1.4.0
+      ignore: artifactory.intra.xiaojukeji.com/ignore@5.3.2
+      imurmurhash: artifactory.intra.xiaojukeji.com/imurmurhash@0.1.4
+      is-glob: artifactory.intra.xiaojukeji.com/is-glob@4.0.3
+      is-path-inside: artifactory.intra.xiaojukeji.com/is-path-inside@3.0.3
+      js-yaml: artifactory.intra.xiaojukeji.com/js-yaml@4.1.0
+      json-stable-stringify-without-jsonify: artifactory.intra.xiaojukeji.com/json-stable-stringify-without-jsonify@1.0.1
+      levn: artifactory.intra.xiaojukeji.com/levn@0.4.1
+      lodash.merge: artifactory.intra.xiaojukeji.com/lodash.merge@4.6.2
+      minimatch: artifactory.intra.xiaojukeji.com/minimatch@3.1.2
+      natural-compare: artifactory.intra.xiaojukeji.com/natural-compare@1.4.0
+      optionator: artifactory.intra.xiaojukeji.com/optionator@0.9.4
+      strip-ansi: artifactory.intra.xiaojukeji.com/strip-ansi@6.0.1
       text-table: artifactory.intra.xiaojukeji.com/text-table@0.2.0
     transitivePeerDependencies:
       - supports-color
@@ -8109,6 +8416,15 @@ packages:
     version: 3.1.2
     dependencies:
       brace-expansion: artifactory.intra.xiaojukeji.com/brace-expansion@1.1.11
+
+  artifactory.intra.xiaojukeji.com/minimatch@9.0.3:
+    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/minimatch/-/minimatch-9.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fminimatch%2F-%2Fminimatch-9.0.3.tgz}
+    name: minimatch
+    version: 9.0.3
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: artifactory.intra.xiaojukeji.com/brace-expansion@2.0.1
+    dev: true
 
   artifactory.intra.xiaojukeji.com/minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/minimatch/-/minimatch-9.0.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fminimatch%2F-%2Fminimatch-9.0.5.tgz}

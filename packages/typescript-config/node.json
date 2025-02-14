@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "moduleSuffixes": [""],                    
+    "allowImportingTsExtensions": true,     
+    "emitDeclarationOnly": false,   
+    "noEmit": true,                            
+    "noEmitOnError": true,                     
+    "forceConsistentCasingInFileNames": true,
+  }
+}

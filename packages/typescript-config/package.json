@@ -1,0 +1,11 @@
+{
+  "name": "@syz/microservices-typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "shaoyuzhe",
+    "email": "shaoyuzhe@didiglobal.com"
+  },
+  "contributors": [],
+  "license": "MIT"
+}
