@@ -1,29 +1,15 @@
 {
-  "version": "2.0.10",
-  "keywords": [
-    "weixin",
-    "bridge"
-  ],
+  "name": "@syz/microservices-esbuild-config",
+  "private":true,
+  "version": "0.0.0",
   "author": {
     "name": "shaoyuzhe"
   },
   "contributors": [],
-  "main": "./dist/cjs/index.cjs",
-  "module": "./dist/esm/index.mjs",
-  "types": "./dist/types/index.d.ts",
-  "typings": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs"
-    }
-  },
   "scripts": {
-    "cleardist": "rm -rf ./dist",
     "types": "tsc --declarationMap false",
-    "build": "./config/esbuild.config.ts --mode=production && pnpm types",
-    "serve": "./config/esbuild.config.ts --mode=development & tsc --watch",
+    "build": "./config/esbuild.config.ts --mode=production",
+    "serve": "./config/esbuild.config.ts --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -36,23 +22,7 @@
   "type": "module",
   "sideEffects": false,
   "devDependencies": {
-    "@swc/helpers": "^0.5.13",
-    "@types/node": "^22.5.0",
-    "@types/qs": "^6.9.15",
-    "@types/sha1": "^1.1.5",
-    "@types/yargs": "^17.0.33",
-    "esbuild": "^0.23.1",
-    "esbuild-plugin-es5": "^2.1.1",
-    "eslint": "^8.57.0",
-    "tsx": "^4.18.0",
-    "yargs": "^17.7.2"
   },
   "dependencies": {
-    "@mpxjs/webview-bridge": "^2.9.58",
-    "axios": "^1.7.7",
-    "dayjs": "^1.11.13",
-    "fuse.js": "^7.0.0",
-    "qs": "^6.13.0",
-    "sha1": "^1.1.1"
   }
 }
