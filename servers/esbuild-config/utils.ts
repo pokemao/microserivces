@@ -28,3 +28,8 @@ export const clearBundle = (path: string) => {
     process.exit(1);
   }
 };
+
+export interface buildPath {
+  inPath: string;
+  outPath: string;
+}

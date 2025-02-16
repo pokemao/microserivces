@@ -1,12 +1,13 @@
 {
-  "name": "@syz/microservices-servers",
-  "private":true,
+  "name": "@syz/microservices-servers-posts",
+  "private": false,
   "version": "0.0.0",
   "keywords": [
     "microservices"
   ],
   "author": {
-    "name": "shaoyuzhe"
+    "name": "shaoyuzhe",
+    "email": "1522646988@163.com"
   },
   "contributors": [],
   "main": "./dist/cjs/index.cjs",
@@ -21,11 +22,9 @@
     }
   },
   "scripts": {
-    "cleardist": "rm -rf ./dist",
     "types": "tsc --declarationMap false",
-    "build": "./config/esbuild.config.ts --mode=production && pnpm types",
-    "serve": "./config/esbuild.config.ts --mode=development & tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm types",
+    "serve": "tsc --watch"
   },
   "files": [
     "dist"
@@ -37,23 +36,9 @@
   "type": "module",
   "sideEffects": false,
   "devDependencies": {
-    "@swc/helpers": "^0.5.13",
-    "@types/node": "^22.5.0",
-    "@types/qs": "^6.9.15",
-    "@types/sha1": "^1.1.5",
-    "@types/yargs": "^17.0.33",
-    "esbuild": "^0.23.1",
-    "esbuild-plugin-es5": "^2.1.1",
     "eslint": "^8.57.0",
-    "tsx": "^4.18.0",
-    "yargs": "^17.7.2"
+    "@syz/microservices-typescript-config": "workspace:^"
   },
   "dependencies": {
-    "@mpxjs/webview-bridge": "^2.9.58",
-    "axios": "^1.7.7",
-    "dayjs": "^1.11.13",
-    "fuse.js": "^7.0.0",
-    "qs": "^6.13.0",
-    "sha1": "^1.1.1"
   }
 }

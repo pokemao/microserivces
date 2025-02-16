@@ -10,14 +10,23 @@
   "contributors": [],
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "serve": "turbo serve",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "license": "MIT",
   "devDependencies": {
+    "@tarojs/cli": "^4.0.9",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.5.0",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {

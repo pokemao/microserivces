@@ -2,5 +2,11 @@
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "tasks": {
+    "serve": {
+      "cache": false
+    },
+    "build": {
+      "cache": false
+    }
   }
 }
