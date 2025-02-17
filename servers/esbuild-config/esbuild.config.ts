@@ -21,8 +21,21 @@ for (const dir of fs.readdirSync("../")) {
   if (!stat.isDirectory()) {
     continue;
   }
+  // 现在fileOrDirPath肯定就是文件夹了
+  // 检查文件夹下是否有src文件夹
+  const inPath = path.resolve(fileOrDirPath, "./src/");
+  const exits = fs.existsSync(inPath);
+  if (!exits) continue;
+
+  // 判断inPath是否是个文件夹，文件夹下是否有index.ts文件
+  const inPathStat = fs.statSync(inPath);
+  if (!inPathStat.isDirectory()) continue;
+  const indexPath = path.resolve(inPath, "./index.ts");
+  const indexExits = fs.existsSync(indexPath);
+  if (!indexExits) continue;
+
   paths.push({
-    inPath: path.resolve(fileOrDirPath, "./src"),
+    inPath: indexPath,
     outPath: path.resolve(fileOrDirPath, "./dist"),
   });
 }

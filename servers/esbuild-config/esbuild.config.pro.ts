@@ -21,7 +21,7 @@ export const createProConfig = (
     define: {
       "process.env.NODE_ENV": "'production'",
     },
-    plugins: [es5Plugin()],
+    // plugins: [es5Plugin()],
     target: ["node12"],
     platform: "node",
   };
@@ -39,7 +39,6 @@ export const createProConfig = (
     outExtension: {
       ".js": ".cjs",
     },
-    plugins: [es5Plugin()],
   };
   return {
     proConfigESM: Object.assign({}, baseConfig, proConfig, proConfigESM),

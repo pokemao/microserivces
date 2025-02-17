@@ -10,7 +10,7 @@ export const createDevConfig = (argPath: buildPath): esbuild.BuildOptions => {
   // 模式：/servers/**/src/
   const { outPath } = argPath;
   const devConfig: esbuild.BuildOptions = {
-    outdir: path.resolve(outPath, "./cjs"),
+    outdir: path.resolve(outPath, "./cjs/"),
     sourcemap: "both",
     format: "cjs",
     define: {
@@ -19,7 +19,7 @@ export const createDevConfig = (argPath: buildPath): esbuild.BuildOptions => {
     outExtension: {
       ".js": ".cjs",
     },
-    plugins: [es5Plugin()],
+    // plugins: [es5Plugin()],
     target: ["node12"],
     platform: "node",
   };
