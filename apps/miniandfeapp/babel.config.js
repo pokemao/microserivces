@@ -1,11 +1,12 @@
 // babel-preset-taro 更多选项和默认值：
-// https://github.com/NervJS/taro/blob/next/packages/babel-preset-taro/README.md
+// https://docs.taro.zone/docs/next/babel-config
 module.exports = {
   presets: [
     ['taro', {
-      framework: 'vue3',
+      framework: 'react',
       ts: true,
-      compiler: 'vite',
+      compiler: 'webpack5',
+      useBuiltIns: process.env.TARO_ENV === 'h5' ? 'usage' : false
     }]
   ]
 }

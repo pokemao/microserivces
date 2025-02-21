@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
   "projectname": "miniandfeapp",
-  "description": "microservices miniprogramme frontend",
+  "description": "no",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

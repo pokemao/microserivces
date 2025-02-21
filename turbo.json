@@ -4,7 +4,9 @@
   "tasks": {
     "serve": {
       "dependsOn": [],
-      "cache": false
+      "cache": false,
+      "inputs": [".env.development"],
+      "env": ["MICRO_APP_REQUEST_URL", "MICRO_APP_POST_PORT", "MICRO_APP_COMMENT_PORT"]
     },
     "build": {
       "cache": false

@@ -1,0 +1,23 @@
+{
+  "name": "@syz/microservices-servers-common",
+  "private": true,
+  "version": "0.0.0",
+  "keywords": [
+    "microservices"
+  ],
+  "author": {
+    "name": "shaoyuzhe",
+    "email": "1522646988@163.com"
+  },
+  "contributors": [],
+  "scripts": {
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@syz/microservices-typescript-config": "workspace:^"
+  }
+}

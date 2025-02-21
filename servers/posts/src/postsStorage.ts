@@ -1,7 +1,4 @@
-type post = {
-  id: string;
-  title: string;
-}
+import { post } from '../../common/src/index.ts'
 
 export default class PostsStorage {
   private posts: Record<string, post> = {};
@@ -11,5 +8,4 @@ export default class PostsStorage {
   public getPosts(): typeof this.posts {
     return this.posts;
   }
-
 }

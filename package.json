@@ -9,8 +9,8 @@
   },
   "contributors": [],
   "scripts": {
-    "build": "turbo build",
-    "serve": "turbo serve",
+    "build": "dotenv -c production turbo build",
+    "serve": "dotenv -c development -- turbo run serve",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
@@ -28,6 +28,8 @@
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
     "express": "^4.21.2"
   },
   "packageManager": "pnpm@9.1.0",
