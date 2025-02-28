@@ -6,6 +6,8 @@ import { resolve } from "path";
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<"webpack5">(async (merge) => {
+  console.log(process.env);
+
   const baseConfig: UserConfigExport<"webpack5"> = {
     projectName: "miniandfeapp",
     date: "2025-2-19",
@@ -17,7 +19,8 @@ export default defineConfig<"webpack5">(async (merge) => {
       // 使用JSON.stringify是为了当process.env.MICRO_APP_POST_PORT为undefined时，注入子项目代码中的MICRO_APP_POST_PORT值为''
       MICRO_APP_POST_PORT: JSON.stringify(process.env.MICRO_APP_POST_PORT),
       MICRO_APP_COMMENT_PORT: JSON.stringify(process.env.MICRO_APP_COMMENT_PORT),
-      MICRO_APP_REQUEST_URL: JSON.stringify(process.env.MICRO_APP_REQUEST_URL),
+      MICRO_APP_POST_URL: JSON.stringify(process.env.MICRO_APP_POST_URL),
+      MICRO_APP_COMMENT_URL: JSON.stringify(process.env.MICRO_APP_COMMENT_URL),
     },
     designWidth(input) {
       let index = -1;

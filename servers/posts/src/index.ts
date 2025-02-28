@@ -1,11 +1,13 @@
 import {randomBytes} from "crypto";
 import express from "express";
 import bodyPaser from "body-parser"
+import cors from "cors"
 import PostsStorage from "./postsStorage.ts";
 import 'dotenv/config';
 
 const app = express();
 app.use(bodyPaser.json())
+app.use(cors())
 
 const postsHandler = new PostsStorage();
 
@@ -21,7 +23,7 @@ app.post("/posts", (req, res) => {
     title
   }
   postsHandler.addPost(post)
-  res.status(201).json(post);
+  res.status(500).json(post);
 });
 
 app.listen(process.env.MICRO_APP_POST_PORT, () => {

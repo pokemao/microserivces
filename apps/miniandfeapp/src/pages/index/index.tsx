@@ -3,7 +3,7 @@ import { useLoad } from '@tarojs/taro'
 import { Button } from '@nutui/nutui-react-taro'
 import styles from './index.module.less'
 import PostCreate from './PostCreate'
-import PostCard from './PostCard'
+import PostCard from './PostList/PostCard'
 
 export default function Index () {
   useLoad(() => {

@@ -1,11 +1,13 @@
 import {randomBytes} from "crypto";
 import express from "express";
 import bodyPaser from "body-parser"
-import "dotenv/config";
+import cors from "cors"
 import commentsStorage from "./commentsStorage.ts";
+import "dotenv/config";
 
 const app = express();
 app.use(bodyPaser.json())
+app.use(cors())
 
 const commentsHandler = new commentsStorage();
 
