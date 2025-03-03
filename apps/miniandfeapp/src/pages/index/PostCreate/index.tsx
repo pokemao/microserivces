@@ -14,15 +14,22 @@ export default function PostCreate () {
   const [title, setTitle] = useState('')
   const createPostDebounced = useDebounce(postApi.createPost)
   const submit = useCallback(async () => {
-      const [err, data] = await to(createPostDebounced({title}))
-      if (err) {
-        return Taro.showToast({
-          title: '请求失败',
-          icon: 'none'
-        })
-      }
-      console.log('data', data);
-      setTitle('')
+    const tmp = title?.trim()
+    if (!tmp) {
+      return Taro.showToast({
+        title: '请输入title',
+        icon: 'none'
+      })
+    }
+    const [err, data] = await to(createPostDebounced({tmp}))
+    if (err) {
+      return Taro.showToast({
+        title: '请求失败',
+        icon: 'none'
+      })
+    }
+    console.log('data', data);
+    setTitle('')
   }, [createPostDebounced, title])
   return (
     <View className={styles.wrap}>

@@ -43,7 +43,7 @@ export function debounce<F extends (...args: unknown[]) => PromiseLike<AxiosResp
       if (currentPromise) {
         return currentPromise.then(resolve, reject);
       }
-      // 到这里说明不存在currentPromise，那么上一次的计时器就没有用了
+      // 到这里说明不存在currentPromise，那么上一次的计时器就没有用了，清除掉定时器，但是应该是在第一次请求返回的时候就清除，这里是一个冗余的设计
       if (timeout) {
         clearTimeout(timeout);
       }

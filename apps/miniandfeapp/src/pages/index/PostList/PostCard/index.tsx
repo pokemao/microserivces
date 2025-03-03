@@ -25,7 +25,14 @@ export default function PostCard (props: postCardParams) {
   const [comment, setComment] = useState('')
   const createCommentDebounced = useDebounce(commentApi.createComment, [commentApi.createComment])
   const createComment = useCallback(async () => {
-    const [err, data] = await to(createCommentDebounced(post.id, {content: comment}))
+    const tmp = comment?.trim()
+    if (!tmp) {
+      return Taro.showToast({
+        title: '请输入comment',
+        icon: 'none'
+      })
+    }
+    const [err, data] = await to(createCommentDebounced(post.id, {content: tmp}))
     if (err) {
       return Taro.showToast({
         title: '请求失败',
