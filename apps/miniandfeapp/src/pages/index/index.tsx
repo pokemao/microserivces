@@ -4,6 +4,7 @@ import { Button } from '@nutui/nutui-react-taro'
 import styles from './index.module.less'
 import PostCreate from './PostCreate'
 import PostCard from './PostList/PostCard'
+import PostList from './PostList'
 
 export default function Index () {
   useLoad(() => {
@@ -25,7 +26,7 @@ export default function Index () {
       </PageMeta>
       <View className={styles.wrap}>
         <PostCreate />
-        <PostCard />
+        <PostList />
       </View>
     </>
   )

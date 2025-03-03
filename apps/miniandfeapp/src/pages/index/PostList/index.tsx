@@ -1,49 +1,48 @@
-import { useLoad } from '@tarojs/taro'
+import Taro, { useLoad } from '@tarojs/taro'
 import { Button, Input } from '@nutui/nutui-react-taro'
 import styles from './index.module.less'
 import { View } from '@tarojs/components'
 import { postApi } from '@/api'
-import { useState } from 'react'
-import { to } from '@/utils'
+import { useCallback, useEffect, useState } from 'react'
+import { debounce, to } from '@/utils'
+import { useDebounce } from '@/hook'
+import PostCard from './PostCard'
+
+export type post = {
+  id: string,
+  title: string,
+}
+export type postMap = Record<string, post>
 
 export default function PostList () {
   useLoad(() => {
     console.log('Page loaded.')
   })
-  const [val, setVal] = useState('')
-  const submit = async () => {
-    const [err, data] = await to(postApi.getPosts())
+  const getPostsDebounced = useDebounce(postApi.getPosts, [postApi.getPosts])
+  const [postMap, setPostMap] = useState<postMap>({})
+  const getPostMapFromNetwork = useCallback(async () => {
+    const [err, data] = await to(getPostsDebounced())
     if (err) {
-      console.log(err)
+      console.log('err', err);
+      return Taro.showToast({
+        title: '请求失败',
+        icon: 'none'
+      })
     }
-  }
+    console.log('data', data);
+    setPostMap(data as unknown as postMap)
+  }, [getPostsDebounced])
+  useEffect(() => {
+    getPostMapFromNetwork()
+  }, [getPostMapFromNetwork])
 
   return (
     <View className={styles.wrap}>
-      <View className={styles.title}>Create Post</View>
-      <View className={styles['operation-area']}>
-        <View>
-          <View>1 comments</View>
-          <View className={styles['comment-list']}>
-            <View className={styles['comment-item']}>
-              <View className={styles.icon}></View>
-              <View className={styles.content}>1111</View>
-            </View>
-          </View>
-          <View>Comment</View>
-        </View>
-        <Input
-          style={{
-            '--nutui-input-background-color': '#fff',
-            '--nutui-input-border-radius': '10rpx',
-            '--nutui-input-padding': '10rpx 25rpx'
-          }}
-          value={val}
-          onChange={val => setVal(val)}
-          placeholder='请输入comment'
-        />
-        <Button type='info' onClick={() => submit()}>提交</Button>
-      </View>
+      {
+        Reflect.ownKeys(postMap).map(key => {
+          return <PostCard key={key as string} post={postMap[key as string]} />
+        })
+      }
     </View>
   )
 }

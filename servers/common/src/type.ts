@@ -5,6 +5,6 @@ export type post = {
 }
 export type commentId = string;
 export type comment = {
- id: string;
+ id: commentId;
  content: string;
 }

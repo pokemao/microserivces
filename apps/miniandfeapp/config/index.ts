@@ -6,8 +6,6 @@ import { resolve } from "path";
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<"webpack5">(async (merge) => {
-  console.log(process.env);
-
   const baseConfig: UserConfigExport<"webpack5"> = {
     projectName: "miniandfeapp",
     date: "2025-2-19",

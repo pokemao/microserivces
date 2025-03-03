@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import {Method as axiosMethod} from "axios"
+import {Method as axiosMethod, AxiosResponse} from "axios"
 
 type adapterParams = {
   baseURL: string;
@@ -29,7 +29,7 @@ const adapterParamsFun = (config: adapterParams): {
   headers: any;
   timeout: number;
 } => {
-  const {baseURL, url, data: beforeData, method: axiosTypeMethod, headers, timeout} = config;
+  const {baseURL, url, data: beforeData = '{}', method: axiosTypeMethod, headers, timeout} = config;
   const method = axiosTypeMethod.toUpperCase() as taroRequestMethod;
 
   const {params = {}, body = {}} = JSON.parse(beforeData) as {
@@ -63,15 +63,6 @@ const buildUrl = (baseURL: string, url: string, params: Record<string, unknown>)
   return base + '/' + path + '?' + new URLSearchParams(search).toString()
 }
 
-export interface AxiosResponse<T = any> {
-  data: T;
-  status: number;
-  statusText: string;
-  headers: any;
-  config: adapterParams;
-  request?: any;
-}
-
 // axios中没有导出config这个参数的类型
 export default function taroAdapter(config: adapterParams): Promise<AxiosResponse> {
   const { baseURL, url: path, params, data, method, headers, timeout } = adapterParamsFun(config)
@@ -91,7 +82,7 @@ export default function taroAdapter(config: adapterParams): Promise<AxiosRespons
           statusText: res.errMsg,
           headers: res.header, // 响应头
           config: Object.assign({}, config, {cookies: res.cookies}),
-          request: null
+          request: {}
         };
 
         if(res.statusCode >= 200 && res.statusCode < 300) {
@@ -112,7 +103,7 @@ export default function taroAdapter(config: adapterParams): Promise<AxiosRespons
           statusText: res.errMsg,
           headers: {}, // 响应头
           config: config,
-          request: null
+          request: {}
         };
 
         reject(response)

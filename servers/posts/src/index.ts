@@ -23,7 +23,7 @@ app.post("/posts", (req, res) => {
     title
   }
   postsHandler.addPost(post)
-  res.status(500).json(post);
+  res.status(201).json(post);
 });
 
 app.listen(process.env.MICRO_APP_POST_PORT, () => {
