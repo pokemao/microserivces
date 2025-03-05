@@ -52,6 +52,12 @@ importers:
         specifier: 5.7.3
         version: artifactory.intra.xiaojukeji.com/typescript@5.7.3
 
+  apps/h5:
+    dependencies:
+      express:
+        specifier: ^4.21.2
+        version: artifactory.intra.xiaojukeji.com/express@4.21.2
+
   apps/miniandfeapp:
     dependencies:
       '@babel/runtime':
@@ -244,7 +250,25 @@ importers:
         specifier: ^17.7.2
         version: artifactory.intra.xiaojukeji.com/yargs@17.7.2
 
+  servers/event-bus:
+    devDependencies:
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../config/typescript-config
+
+  servers/https-example:
+    devDependencies:
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../config/typescript-config
+
   servers/posts:
+    devDependencies:
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../config/typescript-config
+
+  servers/query:
     devDependencies:
       '@syz/microservices-typescript-config':
         specifier: workspace:^

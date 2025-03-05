@@ -8,3 +8,8 @@ export type comment = {
  id: commentId;
  content: string;
 }
+export type query = {
+ id: postId;
+ title: string;
+ comments: comment[];
+}

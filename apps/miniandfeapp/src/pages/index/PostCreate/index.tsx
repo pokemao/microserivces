@@ -21,7 +21,7 @@ export default function PostCreate () {
         icon: 'none'
       })
     }
-    const [err, data] = await to(createPostDebounced({tmp}))
+    const [err, data] = await to(createPostDebounced({title: tmp}))
     if (err) {
       return Taro.showToast({
         title: '请求失败',

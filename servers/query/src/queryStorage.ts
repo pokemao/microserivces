@@ -1,7 +1,7 @@
-import { post, postId } from '../../common/src/index.ts'
+import { postId, query } from '../../common/src/index.ts'
 
 export default class PostsStorage {
-  private posts: Record<postId, post> = {};
+  private posts: Record<postId, query> = {};
   public addPost(post: post): void {
     this.posts[post.id] = post;
   }

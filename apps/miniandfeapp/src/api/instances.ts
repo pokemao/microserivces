@@ -8,12 +8,12 @@ class Instances {
   constructor() {
     this.instances = [
       this.postInstance = axios.create({
-        baseURL: process.env.MICRO_APP_POST_URL + (process.env.MICRO_APP_POST_PORT! ? ':' + process.env.MICRO_APP_POST_PORT : ''),
+        baseURL: process.env.MICRO_APP_POSTS_URL + (process.env.MICRO_APP_POSTS_PORT! ? ':' + process.env.MICRO_APP_POSTS_PORT : ''),
         timeout: 5000,
         adapter: taroAdapter,
       }),
       this.commentInstance = axios.create({
-        baseURL: process.env.MICRO_APP_COMMENT_URL + (process.env.MICRO_APP_COMMENT_PORT!? ':' + process.env.MICRO_APP_COMMENT_PORT : ''),
+        baseURL: process.env.MICRO_APP_COMMENTS_URL + (process.env.MICRO_APP_COMMENTS_PORT!? ':' + process.env.MICRO_APP_COMMENTS_PORT : ''),
         timeout: 5000,
         adapter: taroAdapter,
       }),
