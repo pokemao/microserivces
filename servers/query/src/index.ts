@@ -26,6 +26,10 @@ app.post("/events", (req, res) => {
     data as commentCreateEventData;
     query.addComment(data.postId, data.comment);
   }
+  if (type === 'CommentUpdated') {
+    data as commentCreateEventData;
+    query.updateComment(data.postId, data.comment);
+  }
   res.json({});
 })
 

@@ -25,6 +25,7 @@ export type query = {
   comments: {
     id: string,
     content: string,
+    status: 'pending' | 'approved' | 'rejected'
   }[]
 }
 export type queryMap = Record<string, query>
@@ -53,7 +54,7 @@ export default function PostList () {
   // }, [getPostMapFromNetwork])
 
   const getQueryPostsDebounced = useDebounce(queryApi.getQuery, [queryApi.getQuery])
-  const [query, setQuery] = useState<query>({})
+  const [query, setQuery] = useState<queryMap>({})
   const getQueryFromNetwork = useCallback(async () => {
     const [err, data] = await to(getQueryPostsDebounced())
     if (err) {
@@ -64,7 +65,7 @@ export default function PostList () {
       })
     }
     syzlog('data', data);
-    setQuery(data as unknown as query)
+    setQuery(data as unknown as queryMap)
   }, [getQueryPostsDebounced])
   useEffect(() => {
     getQueryFromNetwork()

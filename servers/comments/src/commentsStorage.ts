@@ -1,4 +1,4 @@
-import { comment, postId } from "../../common/src/index.ts";
+import { comment, commentStatus, postId } from "../../common/src/index.ts";
 
 export default class CommentsStorage {
   private comments: Record<postId, comment[]> = {};
@@ -10,5 +10,17 @@ export default class CommentsStorage {
   }
   public getCommentsByPostId(postId: postId): comment[] {
     return this.comments[postId] || [];
+  }
+  public changeCommentStatus(postId: postId, commentId: string, status: commentStatus): comment | never {
+    const comments = this.comments[postId];
+    if (!comments) {
+      throw new Error("Post not found");
+    }
+    const comment = comments.find((comment) => comment.id === commentId);
+    if (!comment) {
+      throw new Error("Comment not found");
+    }
+    comment.status = status;
+    return comment;
   }
 }

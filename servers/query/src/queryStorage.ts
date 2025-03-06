@@ -17,4 +17,18 @@ export default class queryStorage {
   public getAllQuery(): typeof this.query {
     return this.query;
   }
+  public updateComment(postId: postId, comment: comment): void | never {
+    if (!this.query[postId]) {
+      throw new Error('Post not found');
+    }
+    const comments = this.query[postId].comments;
+    if (!comments) {
+      throw new Error('Comments not found');
+    }
+    const commentIndex = comments.findIndex((comment) => comment.id === comment.id);
+    if (commentIndex === -1) {
+      throw new Error('Comment not found');
+    }
+    comments[commentIndex] = comment;
+  }
 }

@@ -5,7 +5,7 @@ import cors from "cors"
 import commentsStorage from "./commentsStorage.ts";
 import "dotenv/config";
 import axios from "axios";
-import { commentCreateEventData } from "../../common/src/type.ts";
+import { commentCreateEventData, commentStatus } from "../../common/src/type.ts";
 
 const app = express();
 app.use(bodyPaser.json())
@@ -24,7 +24,8 @@ app.post("/posts/:id/comments", (req, res) => {
   const { id: postId } = req.params; // 获取postId
   const comment = {
     id,
-    content
+    content,
+    status: commentStatus.pending,
   }
   commentsHandler.addComment(postId, comment);
 
@@ -33,7 +34,7 @@ app.post("/posts/:id/comments", (req, res) => {
     type: 'CommentCreated',
     data: {
       postId,
-      comment
+      comment,
     } as commentCreateEventData
   })
 
@@ -42,7 +43,19 @@ app.post("/posts/:id/comments", (req, res) => {
 
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
-  const events = req.body;
+  const {type, data} = req.body;
+  if (type === 'CommentModerated') {
+    const {postId, comment: {id, status}} = data as commentCreateEventData;
+    const comment = commentsHandler.changeCommentStatus(postId, id, status);
+    const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
+    axios.post(eventBusUrl, {
+      type: 'CommentUpdated',
+      data: {
+        postId,
+        comment,
+      } as commentCreateEventData
+    })
+  }
   res.json({});
 })
 

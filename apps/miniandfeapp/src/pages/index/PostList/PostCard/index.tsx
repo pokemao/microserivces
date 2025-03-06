@@ -97,7 +97,12 @@ export default function PostCard (props: postCardParams) {
             return (<View className={styles['comment-list']} key={item.id}>
               <View className={styles['comment-item']}>
                 <View className={styles.icon}></View>
-                <View className={styles.content}>{item.content}</View>
+                {
+                  item.status === 'approved' ?
+                  <View className={styles.content}>{item.content}</View>
+                  :
+                  <View className={styles.status}>{item.status}</View>
+                }
               </View>
             </View>)
             })
