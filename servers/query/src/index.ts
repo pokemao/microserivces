@@ -3,18 +3,29 @@ import express from "express";
 import bodyPaser from "body-parser"
 import cors from "cors"
 import 'dotenv/config';
+import queryStorage from "./queryStorage.ts";
+import { commentCreateEventData, post, postCreateEventData } from "../../common/src/type.ts";
+
+const query = new queryStorage();
 
 const app = express();
 app.use(bodyPaser.json())
 app.use(cors())
 
-app.get("/posts", (req, res) => {
-  res.json({});
+app.get("/query", (req, res) => {
+  res.json(query.getAllQuery());
 });
 
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
-  const events = req.body;
+  const {type, data} = req.body;
+  if (type === 'PostCreated') {
+    query.addPost(data as postCreateEventData);
+  }
+  if (type === 'CommentCreated') {
+    data as commentCreateEventData;
+    query.addComment(data.postId, data.comment);
+  }
   res.json({});
 })
 

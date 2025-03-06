@@ -5,6 +5,7 @@ import cors from "cors"
 import PostsStorage from "./postsStorage.ts";
 import 'dotenv/config';
 import axios from "axios";
+import { post, postCreateEventData } from "../../common/src/type.ts";
 
 const app = express();
 app.use(bodyPaser.json())
@@ -33,11 +34,12 @@ app.post("/posts", (req, res) => {
   const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
   axios.post(eventBusUrl, {
     type: 'PostCreated',
-    data: post
+    data: post as postCreateEventData
   })
   res.status(201).json(post);
 });
 
+// 收到events之后应该做什么
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
   const events = req.body;

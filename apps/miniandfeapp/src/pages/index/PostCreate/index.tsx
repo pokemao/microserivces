@@ -1,15 +1,19 @@
 import { View } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
 import { Input, Button } from '@nutui/nutui-react-taro'
-import styles from './index.module.less'
+import { debug } from '@/utils/index'
+// import debug from 'debug'
 import { useCallback, useState } from 'react'
 import { postApi } from '@/api'
 import { to } from '@/utils'
 import { useDebounce } from '@/hook'
+import styles from './index.module.less'
+
+const syzlog = debug('microservices:apps:miniandfeapp:src:pages:index:PostCreate:index.tsx')
 
 export default function PostCreate () {
   useLoad(() => {
-    console.log('Page loaded.')
+    syzlog('Page loaded.')
   })
   const [title, setTitle] = useState('')
   const createPostDebounced = useDebounce(postApi.createPost)
@@ -28,7 +32,7 @@ export default function PostCreate () {
         icon: 'none'
       })
     }
-    console.log('data', data);
+    syzlog('data', data);
     setTitle('')
   }, [createPostDebounced, title])
   return (

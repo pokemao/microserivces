@@ -19,6 +19,8 @@ export default defineConfig<"webpack5">(async (merge) => {
       MICRO_APP_COMMENTS_PORT: JSON.stringify(process.env.MICRO_APP_COMMENTS_PORT),
       MICRO_APP_POSTS_URL: JSON.stringify(process.env.MICRO_APP_POSTS_URL),
       MICRO_APP_COMMENTS_URL: JSON.stringify(process.env.MICRO_APP_COMMENTS_URL),
+      MICRO_APP_QUERY_URL: JSON.stringify(process.env.MICRO_APP_QUERY_URL),
+      MICRO_APP_QUERY_PORT: JSON.stringify(process.env.MICRO_APP_QUERY_PORT),
     },
     designWidth(input) {
       let index = -1;

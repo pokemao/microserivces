@@ -1,11 +1,20 @@
-import { postId, query } from '../../common/src/index.ts'
+import { comment, post, postId, query } from '../../common/src/index.ts'
 
-export default class PostsStorage {
-  private posts: Record<postId, query> = {};
+export default class queryStorage {
+  private query: Record<postId, query> = {};
   public addPost(post: post): void {
-    this.posts[post.id] = post;
+    this.query[post.id] = {
+      ...post,
+      comments: [],
+    };
   }
-  public getPosts(): typeof this.posts {
-    return this.posts;
+  public addComment(postId: postId, comment: comment): void | never {
+    if (!this.query[postId]) {
+      throw new Error('Post not found');
+    }
+    this.query[postId].comments?.push(comment);
+  }
+  public getAllQuery(): typeof this.query {
+    return this.query;
   }
 }

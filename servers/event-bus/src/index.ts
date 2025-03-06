@@ -17,7 +17,7 @@ app.use(cors())
 
 // 同步读出都有哪些服务需要通知
 // 获取现在文件夹下有哪些文件夹
-const blackTable = ["esbuild-config", "common", "event-bus"];
+const blackTable = ["esbuild-config", "common", "event-bus", "https-example"];
 const filename: string[] = [];
 console.log(process.cwd());
 // 这个地方为什么是"../"呢？
@@ -39,6 +39,9 @@ for (const dir of fs.readdirSync("../")) {
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
   const events = req.body;
+  // for (const name of filename) {
+  //   console.log(name, process.env[`MICRO_APP_${name}_URL`]! + ':' + process.env[`MICRO_APP_${name}_PORT`]! + '/events');
+  // }
   // 遍历filename，发送post请求
   for (const name of filename) {
     axios.post(process.env[`MICRO_APP_${name}_URL`]! + ':' + process.env[`MICRO_APP_${name}_PORT`]! + '/events', {...events})

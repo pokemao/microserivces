@@ -36,6 +36,9 @@ importers:
       '@types/cors':
         specifier: ^2.8.17
         version: artifactory.intra.xiaojukeji.com/@types/cors@2.8.17
+      '@types/debug':
+        specifier: ^4.1.12
+        version: artifactory.intra.xiaojukeji.com/@types/debug@4.1.12
       '@types/express':
         specifier: ^5.0.0
         version: artifactory.intra.xiaojukeji.com/@types/express@5.0.0
@@ -89,7 +92,7 @@ importers:
         version: artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-h5@4.0.9(@tarojs/taro@4.0.9)(@types/react@18.0.0)(postcss@8.4.38)(react@18.0.0)(solid-js@1.9.4)(webpack@5.91.0)
       '@tarojs/plugin-platform-harmony-hybrid':
         specifier: 4.0.9
-        version: artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-harmony-hybrid@4.0.9(@babel/core@7.26.8)(@tarojs/taro@4.0.9)(@types/react@18.0.0)(postcss@8.4.38)(react@18.0.0)(solid-js@1.9.4)(webpack@5.91.0)
+        version: artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-harmony-hybrid@4.0.9(@babel/core@7.26.8)(@tarojs/taro@4.0.9)(@types/react@18.0.0)(debug@4.4.0)(postcss@8.4.38)(react@18.0.0)(solid-js@1.9.4)(webpack@5.91.0)
       '@tarojs/plugin-platform-jd':
         specifier: 4.0.9
         version: artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-jd@4.0.9(@tarojs/service@4.0.9)(@tarojs/shared@4.0.9)
@@ -117,6 +120,9 @@ importers:
       '@tarojs/taro':
         specifier: 4.0.9
         version: artifactory.intra.xiaojukeji.com/@tarojs/taro@4.0.9(@tarojs/components@4.0.9)(@tarojs/helper@4.0.9)(@tarojs/shared@4.0.9)(@types/react@18.0.0)(postcss@8.4.38)(webpack@5.91.0)
+      ms:
+        specifier: ^2.1.3
+        version: artifactory.intra.xiaojukeji.com/ms@2.1.3
       react:
         specifier: ^18.0.0
         version: artifactory.intra.xiaojukeji.com/react@18.0.0
@@ -138,13 +144,13 @@ importers:
         version: artifactory.intra.xiaojukeji.com/@pmmmwh/react-refresh-webpack-plugin@0.5.5(react-refresh@0.14.0)(webpack@5.91.0)
       '@tarojs/cli':
         specifier: 4.0.9
-        version: artifactory.intra.xiaojukeji.com/@tarojs/cli@4.0.9
+        version: artifactory.intra.xiaojukeji.com/@tarojs/cli@4.0.9(debug@4.4.0)
       '@tarojs/taro-loader':
         specifier: 4.0.9
         version: artifactory.intra.xiaojukeji.com/@tarojs/taro-loader@4.0.9(webpack@5.91.0)
       '@tarojs/webpack5-runner':
         specifier: 4.0.9
-        version: artifactory.intra.xiaojukeji.com/@tarojs/webpack5-runner@4.0.9(@babel/core@7.26.8)(@swc/core@1.3.96)(@tarojs/runtime@4.0.9)(less@4.2.0)(postcss@8.4.38)(stylus@0.64.0)(typescript@5.7.3)(webpack@5.91.0)
+        version: artifactory.intra.xiaojukeji.com/@tarojs/webpack5-runner@4.0.9(@babel/core@7.26.8)(@swc/core@1.3.96)(@tarojs/runtime@4.0.9)(debug@4.4.0)(less@4.2.0)(postcss@8.4.38)(stylus@0.64.0)(typescript@5.7.3)(webpack@5.91.0)
       '@types/node':
         specifier: ^18
         version: artifactory.intra.xiaojukeji.com/@types/node@18.15.11
@@ -257,10 +263,17 @@ importers:
         version: link:../../config/typescript-config
 
   servers/https-example:
+    dependencies:
+      cookie-parser:
+        specifier: ^1.4.7
+        version: artifactory.intra.xiaojukeji.com/cookie-parser@1.4.7
     devDependencies:
       '@syz/microservices-typescript-config':
         specifier: workspace:^
         version: link:../../config/typescript-config
+      '@types/cookie-parser':
+        specifier: ^1.4.8
+        version: artifactory.intra.xiaojukeji.com/@types/cookie-parser@1.4.8(@types/express@5.0.0)
 
   servers/posts:
     devDependencies:
@@ -3614,6 +3627,36 @@ packages:
       - supports-color
     dev: true
 
+  artifactory.intra.xiaojukeji.com/@tarojs/cli@4.0.9(debug@4.4.0):
+    resolution: {integrity: sha512-AsJmxyNg+xdiJiFEqjwtncUsCZL8dJa/0hhmUO8uhyDKXheg4v6OwAWlwagj0tJhMC0TaVglp6CH8DlTUlfH0A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@tarojs/cli/-/cli-4.0.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40tarojs%2Fcli%2F-%2Fcli-4.0.9.tgz}
+    id: artifactory.intra.xiaojukeji.com/@tarojs/cli/4.0.9
+    name: '@tarojs/cli'
+    version: 4.0.9
+    engines: {node: '>= 18'}
+    hasBin: true
+    dependencies:
+      '@tarojs/binding': artifactory.intra.xiaojukeji.com/@tarojs/binding@4.0.9
+      '@tarojs/helper': artifactory.intra.xiaojukeji.com/@tarojs/helper@4.0.9
+      '@tarojs/plugin-doctor': artifactory.intra.xiaojukeji.com/@tarojs/plugin-doctor@0.0.13
+      '@tarojs/service': artifactory.intra.xiaojukeji.com/@tarojs/service@4.0.9
+      '@tarojs/shared': artifactory.intra.xiaojukeji.com/@tarojs/shared@4.0.9
+      adm-zip: artifactory.intra.xiaojukeji.com/adm-zip@0.5.16
+      axios: artifactory.intra.xiaojukeji.com/axios@1.7.9(debug@4.4.0)
+      cli-highlight: artifactory.intra.xiaojukeji.com/cli-highlight@2.1.11
+      download-git-repo: artifactory.intra.xiaojukeji.com/download-git-repo@3.0.2
+      envinfo: artifactory.intra.xiaojukeji.com/envinfo@7.14.0
+      inquirer: artifactory.intra.xiaojukeji.com/inquirer@8.2.6
+      latest-version: artifactory.intra.xiaojukeji.com/latest-version@5.1.0
+      minimist: artifactory.intra.xiaojukeji.com/minimist@1.2.8
+      ora: artifactory.intra.xiaojukeji.com/ora@5.4.1
+      semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
+      validate-npm-package-name: artifactory.intra.xiaojukeji.com/validate-npm-package-name@5.0.1
+    transitivePeerDependencies:
+      - '@swc/helpers'
+      - debug
+      - supports-color
+    dev: true
+
   artifactory.intra.xiaojukeji.com/@tarojs/components-advanced@4.0.9(@tarojs/helper@4.0.9)(@tarojs/runtime@4.0.9)(@tarojs/shared@4.0.9)(@tarojs/taro@4.0.9)(@types/react@18.0.0)(postcss@8.4.38)(react@18.0.0)(webpack@5.91.0):
     resolution: {integrity: sha512-G/4Z0uKwBIfLVtJWCm61Xu32oaedeem2lycnM/+HHxPyRypV9fATUm+NYRfe8dbJ/67pAkt+ZjCsqv0P6pXtaA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@tarojs/components-advanced/-/components-advanced-4.0.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40tarojs%2Fcomponents-advanced%2F-%2Fcomponents-advanced-4.0.9.tgz}
     id: artifactory.intra.xiaojukeji.com/@tarojs/components-advanced/4.0.9
@@ -3991,7 +4034,7 @@ packages:
       - webpack-dev-server
     dev: false
 
-  artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-harmony-hybrid@4.0.9(@babel/core@7.26.8)(@tarojs/taro@4.0.9)(@types/react@18.0.0)(postcss@8.4.38)(react@18.0.0)(solid-js@1.9.4)(webpack@5.91.0):
+  artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-harmony-hybrid@4.0.9(@babel/core@7.26.8)(@tarojs/taro@4.0.9)(@types/react@18.0.0)(debug@4.4.0)(postcss@8.4.38)(react@18.0.0)(solid-js@1.9.4)(webpack@5.91.0):
     resolution: {integrity: sha512-h7lZ4JNMRnaMnVxpoaWPlxn4/XmCA3boGTwWRMGqnSXJc1MFfaPBkquXG7e6jrtqh17Itqtkjyi018QWJbG8aQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@tarojs/plugin-platform-harmony-hybrid/-/plugin-platform-harmony-hybrid-4.0.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40tarojs%2Fplugin-platform-harmony-hybrid%2F-%2Fplugin-platform-harmony-hybrid-4.0.9.tgz}
     id: artifactory.intra.xiaojukeji.com/@tarojs/plugin-platform-harmony-hybrid/4.0.9
     name: '@tarojs/plugin-platform-harmony-hybrid'
@@ -4007,7 +4050,7 @@ packages:
       '@tarojs/service': artifactory.intra.xiaojukeji.com/@tarojs/service@4.0.9
       '@tarojs/shared': artifactory.intra.xiaojukeji.com/@tarojs/shared@4.0.9
       '@tarojs/taro-h5': artifactory.intra.xiaojukeji.com/@tarojs/taro-h5@4.0.9(@tarojs/components@4.0.9)(@tarojs/taro@4.0.9)
-      axios: artifactory.intra.xiaojukeji.com/axios@1.7.9
+      axios: artifactory.intra.xiaojukeji.com/axios@1.7.9(debug@4.4.0)
       babel-plugin-transform-taroapi: artifactory.intra.xiaojukeji.com/babel-plugin-transform-taroapi@4.0.9(@babel/core@7.26.8)
       base64-js: artifactory.intra.xiaojukeji.com/base64-js@1.5.1
       change-case: artifactory.intra.xiaojukeji.com/change-case@4.1.2
@@ -4298,7 +4341,7 @@ packages:
       - supports-color
     dev: true
 
-  artifactory.intra.xiaojukeji.com/@tarojs/webpack5-runner@4.0.9(@babel/core@7.26.8)(@swc/core@1.3.96)(@tarojs/runtime@4.0.9)(less@4.2.0)(postcss@8.4.38)(stylus@0.64.0)(typescript@5.7.3)(webpack@5.91.0):
+  artifactory.intra.xiaojukeji.com/@tarojs/webpack5-runner@4.0.9(@babel/core@7.26.8)(@swc/core@1.3.96)(@tarojs/runtime@4.0.9)(debug@4.4.0)(less@4.2.0)(postcss@8.4.38)(stylus@0.64.0)(typescript@5.7.3)(webpack@5.91.0):
     resolution: {integrity: sha512-tPi+aJOPibHJ7wYQKYWbOf2YZZwLYkBc6XoGLRDxdGjQyLH9tSsSA60z/mkgmnYAD79nDhuWm2tboZwU5sVc4Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@tarojs/webpack5-runner/-/webpack5-runner-4.0.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40tarojs%2Fwebpack5-runner%2F-%2Fwebpack5-runner-4.0.9.tgz}
     id: artifactory.intra.xiaojukeji.com/@tarojs/webpack5-runner/4.0.9
     name: '@tarojs/webpack5-runner'
@@ -4368,7 +4411,7 @@ packages:
       vm2: artifactory.intra.xiaojukeji.com/vm2@3.9.19
       webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
       webpack-chain: artifactory.intra.xiaojukeji.com/webpack-chain@6.5.1
-      webpack-dev-server: artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(webpack@5.91.0)
+      webpack-dev-server: artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(debug@4.4.0)(webpack@5.91.0)
       webpack-format-messages: artifactory.intra.xiaojukeji.com/webpack-format-messages@3.0.1
       webpack-virtual-modules: artifactory.intra.xiaojukeji.com/webpack-virtual-modules@0.6.2
       webpackbar: artifactory.intra.xiaojukeji.com/webpackbar@5.0.2(webpack@5.91.0)
@@ -4436,6 +4479,17 @@ packages:
     version: 3.4.38
     dependencies:
       '@types/node': artifactory.intra.xiaojukeji.com/@types/node@22.13.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/@types/cookie-parser@1.4.8(@types/express@5.0.0):
+    resolution: {integrity: sha512-l37JqFrOJ9yQfRQkljb41l0xVphc7kg5JTjjr+pLRZ0IyZ49V4BQ8vbF4Ut2C2e+WH4al3xD3ZwYwIUfnbT4NQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/cookie-parser/-/cookie-parser-1.4.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fcookie-parser%2F-%2Fcookie-parser-1.4.8.tgz}
+    id: artifactory.intra.xiaojukeji.com/@types/cookie-parser/1.4.8
+    name: '@types/cookie-parser'
+    version: 1.4.8
+    peerDependencies:
+      '@types/express': '*'
+    dependencies:
+      '@types/express': artifactory.intra.xiaojukeji.com/@types/express@5.0.0
     dev: true
 
   artifactory.intra.xiaojukeji.com/@types/cors@2.8.17:
@@ -5654,6 +5708,18 @@ packages:
     transitivePeerDependencies:
       - debug
 
+  artifactory.intra.xiaojukeji.com/axios@1.7.9(debug@4.4.0):
+    resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/axios/-/axios-1.7.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Faxios%2F-%2Faxios-1.7.9.tgz}
+    id: artifactory.intra.xiaojukeji.com/axios/1.7.9
+    name: axios
+    version: 1.7.9
+    dependencies:
+      follow-redirects: artifactory.intra.xiaojukeji.com/follow-redirects@1.15.9(debug@4.4.0)
+      form-data: artifactory.intra.xiaojukeji.com/form-data@4.0.1
+      proxy-from-env: artifactory.intra.xiaojukeji.com/proxy-from-env@1.1.0
+    transitivePeerDependencies:
+      - debug
+
   artifactory.intra.xiaojukeji.com/babel-loader@8.2.1(@babel/core@7.26.8)(webpack@5.91.0):
     resolution: {integrity: sha512-dMF8sb2KQ8kJl21GUjkW1HWmcsL39GOV5vnzjqrCzEPNY0S0UfMLnumidiwIajDSBmKhYf5iRW+HXaM4cvCKBw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/babel-loader/-/babel-loader-8.2.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fbabel-loader%2F-%2Fbabel-loader-8.2.1.tgz}
     id: artifactory.intra.xiaojukeji.com/babel-loader/8.2.1
@@ -6490,6 +6556,16 @@ packages:
     name: convert-source-map
     version: 2.0.0
 
+  artifactory.intra.xiaojukeji.com/cookie-parser@1.4.7:
+    resolution: {integrity: sha512-nGUvgXnotP3BsjiLX2ypbQnWoGUPIIfHQNZkkC668ntrzGWEZVW70HDEB1qnNGMicPje6EttlIgzo51YSwNQGw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cookie-parser/-/cookie-parser-1.4.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcookie-parser%2F-%2Fcookie-parser-1.4.7.tgz}
+    name: cookie-parser
+    version: 1.4.7
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      cookie: artifactory.intra.xiaojukeji.com/cookie@0.7.2
+      cookie-signature: artifactory.intra.xiaojukeji.com/cookie-signature@1.0.6
+    dev: false
+
   artifactory.intra.xiaojukeji.com/cookie-signature@1.0.6:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cookie-signature/-/cookie-signature-1.0.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcookie-signature%2F-%2Fcookie-signature-1.0.6.tgz}
     name: cookie-signature
@@ -6500,6 +6576,13 @@ packages:
     name: cookie
     version: 0.7.1
     engines: {node: '>= 0.6'}
+
+  artifactory.intra.xiaojukeji.com/cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cookie/-/cookie-0.7.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcookie%2F-%2Fcookie-0.7.2.tgz}
+    name: cookie
+    version: 0.7.2
+    engines: {node: '>= 0.6'}
+    dev: false
 
   artifactory.intra.xiaojukeji.com/copy-anything@2.0.6:
     resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/copy-anything/-/copy-anything-2.0.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcopy-anything%2F-%2Fcopy-anything-2.0.6.tgz}
@@ -8541,6 +8624,20 @@ packages:
       debug:
         optional: true
 
+  artifactory.intra.xiaojukeji.com/follow-redirects@1.15.9(debug@4.4.0):
+    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/follow-redirects/-/follow-redirects-1.15.9.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffollow-redirects%2F-%2Ffollow-redirects-1.15.9.tgz}
+    id: artifactory.intra.xiaojukeji.com/follow-redirects/1.15.9
+    name: follow-redirects
+    version: 1.15.9
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: artifactory.intra.xiaojukeji.com/debug@4.4.0(supports-color@5.5.0)
+
   artifactory.intra.xiaojukeji.com/for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/for-each/-/for-each-0.3.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Ffor-each%2F-%2Ffor-each-0.3.5.tgz}
     name: for-each
@@ -9282,7 +9379,7 @@ packages:
       - supports-color
     dev: true
 
-  artifactory.intra.xiaojukeji.com/http-proxy-middleware@2.0.7(@types/express@4.17.21):
+  artifactory.intra.xiaojukeji.com/http-proxy-middleware@2.0.7(@types/express@4.17.21)(debug@4.4.0):
     resolution: {integrity: sha512-fgVY8AV7qU7z/MmXJ/rxwbrtQH4jBQ9m7kp3llF0liB7glmFeVZFBepQb32T3y8n8k2+AEYuMPCpinYW+/CuRA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/http-proxy-middleware/-/http-proxy-middleware-2.0.7.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhttp-proxy-middleware%2F-%2Fhttp-proxy-middleware-2.0.7.tgz}
     id: artifactory.intra.xiaojukeji.com/http-proxy-middleware/2.0.7
     name: http-proxy-middleware
@@ -9296,7 +9393,7 @@ packages:
     dependencies:
       '@types/express': artifactory.intra.xiaojukeji.com/@types/express@4.17.21
       '@types/http-proxy': artifactory.intra.xiaojukeji.com/@types/http-proxy@1.17.16
-      http-proxy: artifactory.intra.xiaojukeji.com/http-proxy@1.18.1
+      http-proxy: artifactory.intra.xiaojukeji.com/http-proxy@1.18.1(debug@4.4.0)
       is-glob: artifactory.intra.xiaojukeji.com/is-glob@4.0.3
       is-plain-obj: artifactory.intra.xiaojukeji.com/is-plain-obj@3.0.0
       micromatch: artifactory.intra.xiaojukeji.com/micromatch@4.0.8
@@ -9304,14 +9401,15 @@ packages:
       - debug
     dev: true
 
-  artifactory.intra.xiaojukeji.com/http-proxy@1.18.1:
+  artifactory.intra.xiaojukeji.com/http-proxy@1.18.1(debug@4.4.0):
     resolution: {integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/http-proxy/-/http-proxy-1.18.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fhttp-proxy%2F-%2Fhttp-proxy-1.18.1.tgz}
+    id: artifactory.intra.xiaojukeji.com/http-proxy/1.18.1
     name: http-proxy
     version: 1.18.1
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: artifactory.intra.xiaojukeji.com/eventemitter3@4.0.7
-      follow-redirects: artifactory.intra.xiaojukeji.com/follow-redirects@1.15.9
+      follow-redirects: artifactory.intra.xiaojukeji.com/follow-redirects@1.15.9(debug@4.4.0)
       requires-port: artifactory.intra.xiaojukeji.com/requires-port@1.0.0
     transitivePeerDependencies:
       - debug
@@ -14618,7 +14716,7 @@ packages:
       webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
     dev: true
 
-  artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(webpack@5.91.0):
+  artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(debug@4.4.0)(webpack@5.91.0):
     resolution: {integrity: sha512-0XavAZbNJ5sDrCbkpWL8mia0o5WPOd2YGtxrEiZkBK9FjLppIUK2TgxK6qGD2P3hUXTJNNPVibrerKcx5WkR1g==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/webpack-dev-server/-/webpack-dev-server-4.15.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fwebpack-dev-server%2F-%2Fwebpack-dev-server-4.15.2.tgz}
     id: artifactory.intra.xiaojukeji.com/webpack-dev-server/4.15.2
     name: webpack-dev-server
@@ -14651,7 +14749,7 @@ packages:
       express: artifactory.intra.xiaojukeji.com/express@4.21.2
       graceful-fs: artifactory.intra.xiaojukeji.com/graceful-fs@4.2.11
       html-entities: artifactory.intra.xiaojukeji.com/html-entities@2.5.2
-      http-proxy-middleware: artifactory.intra.xiaojukeji.com/http-proxy-middleware@2.0.7(@types/express@4.17.21)
+      http-proxy-middleware: artifactory.intra.xiaojukeji.com/http-proxy-middleware@2.0.7(@types/express@4.17.21)(debug@4.4.0)
       ipaddr.js: artifactory.intra.xiaojukeji.com/ipaddr.js@2.2.0
       launch-editor: artifactory.intra.xiaojukeji.com/launch-editor@2.10.0
       open: artifactory.intra.xiaojukeji.com/open@8.4.2

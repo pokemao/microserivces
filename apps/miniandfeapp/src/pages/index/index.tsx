@@ -1,19 +1,21 @@
 import { View, Text, PageMeta, NavigationBar } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
-import { Button } from '@nutui/nutui-react-taro'
+import { debug } from '@/utils/index'
+// import debug from 'debug'
 import styles from './index.module.less'
 import PostCreate from './PostCreate'
-import PostCard from './PostList/PostCard'
 import PostList from './PostList'
+
+const syzlog = debug('microservices:apps:miniandfeapp:src:pages:index:index.tsx')
 
 export default function Index () {
   useLoad(() => {
-    console.log('Page loaded.')
+    syzlog('Page loaded.')
   })
   const myPageStyle = "color: 'green'"
   const title = '首页2'
   const handleScroll = (e) => {
-    console.log(e)
+    syzlog(e)
   }
 
   return (

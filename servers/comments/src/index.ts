@@ -5,6 +5,7 @@ import cors from "cors"
 import commentsStorage from "./commentsStorage.ts";
 import "dotenv/config";
 import axios from "axios";
+import { commentCreateEventData } from "../../common/src/type.ts";
 
 const app = express();
 app.use(bodyPaser.json())
@@ -31,9 +32,9 @@ app.post("/posts/:id/comments", (req, res) => {
   axios.post(eventBusUrl, {
     type: 'CommentCreated',
     data: {
-      ...comment,
-      postId
-    }
+      postId,
+      comment
+    } as commentCreateEventData
   })
 
   res.status(201).json(commentsHandler.getCommentsByPostId(postId));

@@ -2,8 +2,10 @@ import express from "express"
 import fs from "fs"
 import https from "https"
 import 'dotenv/config';
+import cookieParser from 'cookie-parser'
 
 const app = express();
+app.use(cookieParser());
 
 const key = fs.readFileSync('./crt/private.key');
 const cert = fs.readFileSync('./crt/mydomain.crt');
@@ -24,6 +26,12 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   // res.header('Cross-Origin-Embedder-Policy', 'require-corp');
   // res.header('Cross-Origin-Opener-Policy', 'same-origin');
+  res.cookie('userToken', 'abc123', {
+    maxAge: 3600000, // 过期时间（毫秒，优先级高于expires）
+    httpOnly: true,   // 禁止客户端 JS 访问，防 XSS 攻击
+    secure: true,     // 仅通过 HTTPS 传输
+    sameSite: 'none' // 限制同站点访问
+  });
   next();
 })
 

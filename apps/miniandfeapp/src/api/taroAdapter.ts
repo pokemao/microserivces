@@ -68,6 +68,7 @@ export default function taroAdapter(config: adapterParams): Promise<AxiosRespons
   const { baseURL, url: path, params, data, method, headers, timeout } = adapterParamsFun(config)
   const url  = buildUrl(baseURL, path, params);
 
+  // debugger
   return new Promise((resolve,reject)=>{
     Taro.request({
       url,
