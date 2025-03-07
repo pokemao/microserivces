@@ -12,6 +12,9 @@ export default class CommentsStorage {
     return this.comments[postId] || [];
   }
   public changeCommentStatus(postId: postId, commentId: string, status: commentStatus): comment | never {
+    console.log(postId, commentId, status);
+    console.log(this.comments);
+
     const comments = this.comments[postId];
     if (!comments) {
       throw new Error("Post not found");
