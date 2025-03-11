@@ -5,7 +5,7 @@ import cors from "cors"
 import commentsStorage from "./commentsStorage.ts";
 import "dotenv/config";
 import axios from "axios";
-import { commentCreateEventData, commentStatus } from "../../common/src/type.ts";
+import { commentCreateEventData, commentStatus, eventType } from "../../common/src/type.ts";
 
 const app = express();
 app.use(bodyPaser.json())
@@ -31,12 +31,13 @@ app.post("/posts/:id/comments", (req, res) => {
 
   const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
   axios.post(eventBusUrl, {
+    id: randomBytes(4).toString("hex"),
     type: 'CommentCreated',
     data: {
       postId,
       comment,
     } as commentCreateEventData
-  })
+  } as eventType)
 
   res.status(201).json(commentsHandler.getCommentsByPostId(postId));
 });
@@ -49,6 +50,7 @@ app.post("/events", (req, res) => {
     const comment = commentsHandler.changeCommentStatus(postId, id, status);
     const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
     axios.post(eventBusUrl, {
+      id: randomBytes(4).toString("hex"),
       type: 'CommentUpdated',
       data: {
         postId,

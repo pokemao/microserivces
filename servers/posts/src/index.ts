@@ -33,6 +33,7 @@ app.post("/posts", (req, res) => {
   // 然后关心这个事件的服务都会把这个post同步到自己的数据库中
   const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
   axios.post(eventBusUrl, {
+    id: randomBytes(4).toString("hex"),
     type: 'PostCreated',
     data: post as postCreateEventData
   })

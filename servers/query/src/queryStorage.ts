@@ -1,6 +1,6 @@
 import { comment, post, postId, query } from '../../common/src/index.ts'
 
-export default class queryStorage {
+export default class QueryStorage {
   private query: Record<postId, query> = {};
   public addPost(post: post): void {
     this.query[post.id] = {

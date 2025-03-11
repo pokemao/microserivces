@@ -5,6 +5,9 @@ import cors from "cors"
 import "dotenv/config";
 import axios from "axios";
 import path from "node:path";
+import EventStorage from "./eventStorage.ts";
+
+const eventStorage = new EventStorage();
 
 const app = express();
 app.use(bodyPaser.json())
@@ -36,9 +39,15 @@ for (const dir of fs.readdirSync("../")) {
   filename.push(name);
 }
 
+app.get("/events", (req, res) => {
+  res.json(eventStorage.getEvents());
+});
+
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
   const events = req.body;
+  // 记录下所有的事件
+  eventStorage.addEvent(events);
   // for (const name of filename) {
   //   console.log(name, process.env[`MICRO_APP_${name}_URL`]! + ':' + process.env[`MICRO_APP_${name}_PORT`]! + '/events');
   // }

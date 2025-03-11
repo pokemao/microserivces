@@ -3,10 +3,14 @@ import express from "express";
 import bodyPaser from "body-parser"
 import cors from "cors"
 import 'dotenv/config';
-import queryStorage from "./queryStorage.ts";
-import { commentCreateEventData, post, postCreateEventData } from "../../common/src/type.ts";
+import QueryStorage from "./queryStorage.ts";
+import { handleEvent, syncEvents } from "./utils.ts";
+import axios from "axios";
+import { eventType } from "../../common/src/type.ts";
+import EventStorage from "./eventStorage.ts";
 
-const query = new queryStorage();
+const query = new QueryStorage();
+const handledEvents = new EventStorage()
 
 const app = express();
 app.use(bodyPaser.json())
@@ -18,21 +22,11 @@ app.get("/query", (req, res) => {
 
 app.post("/events", (req, res) => {
   console.log("Received event:", req.body.type);
-  const {type, data} = req.body;
-  if (type === 'PostCreated') {
-    query.addPost(data as postCreateEventData);
-  }
-  if (type === 'CommentCreated') {
-    data as commentCreateEventData;
-    query.addComment(data.postId, data.comment);
-  }
-  if (type === 'CommentUpdated') {
-    data as commentCreateEventData;
-    query.updateComment(data.postId, data.comment);
-  }
+  handleEvent(query, handledEvents, req.body);
   res.json({});
 })
 
 app.listen(process.env.MICRO_APP_QUERY_PORT, () => {
+  syncEvents(query, handledEvents);
   console.log(`Server is running on port ${process.env.MICRO_APP_QUERY_PORT}`);
 })

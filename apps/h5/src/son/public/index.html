@@ -9,13 +9,13 @@
   <h1>Son</h1>
   <button>click</button>
   <script>
-    // document.cookie = 'name=sonnishishei;samesite=none;secure';
+    document.cookie = 'name=woaini;samesite=none;secure;Partitioned';
     const button = document.querySelector('button');
     button.addEventListener('click', async () => {
-      const res = await document.requestStorageAccess();
-      console.log(res);
+      // const res = await document.requestStorageAccess();
+      // console.log(res);
 
-      fetch('https://son.localhost:4444/', {
+      fetch('https://172.24.221.36:4444/', {
         credentials: 'include' // 允许发送 Cookie
       }).then(res => {
         console.log(res)

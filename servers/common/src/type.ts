@@ -24,3 +24,9 @@ export type query = {
  title: string;
  comments: comment[];
 }
+
+export type eventType = {
+ id: string;
+ type: string;
+ data: postCreateEventData | commentCreateEventData;
+}

@@ -21,7 +21,7 @@ https.createServer(options, app).listen(process.env.MICRO_APP_HTTPS_EXAMPLE_PORT
 });
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://son.localhost:9444');
+  res.header('Access-Control-Allow-Origin', 'https://172.24.221.36:9444');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   // res.header('Cross-Origin-Embedder-Policy', 'require-corp');
@@ -30,7 +30,8 @@ app.use((req, res, next) => {
     maxAge: 3600000, // 过期时间（毫秒，优先级高于expires）
     httpOnly: true,   // 禁止客户端 JS 访问，防 XSS 攻击
     secure: true,     // 仅通过 HTTPS 传输
-    sameSite: 'none' // 限制同站点访问
+    sameSite: 'none', // 限制同站点访问
+    partitioned: true // 限制分区访问
   });
   next();
 })
