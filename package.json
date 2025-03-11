@@ -9,9 +9,10 @@
   },
   "contributors": [],
   "scripts": {
-    "build": "dotenv -c production turbo build",
+    "build": "dotenv -c production -- turbo build",
     "serve": "dotenv -c development -- turbo run serve",
     "lint": "turbo lint",
+    "docker-deploy": "dotenv -c production -- turbo run docker-deploy",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "license": "MIT",

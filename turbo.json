@@ -10,6 +10,10 @@
     },
     "build": {
       "cache": false
+    },
+    "docker-deploy": {
+      "cache": false,
+      "dependsOn": ["build"]
     }
   }
 }
