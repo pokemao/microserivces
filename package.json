@@ -9,7 +9,7 @@
   },
   "contributors": [],
   "scripts": {
-    "build": "dotenv -c production -- turbo build",
+    "build": "dotenv -c production -- turbo run build",
     "serve": "dotenv -c development -- turbo run serve",
     "lint": "turbo lint",
     "docker-deploy": "dotenv -c production -- turbo run docker-deploy",
@@ -23,7 +23,9 @@
     "@types/debug": "^4.1.12",
     "@types/express": "^5.0.0",
     "@types/node": "^22.5.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },

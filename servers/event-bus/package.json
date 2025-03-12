@@ -22,6 +22,7 @@
     }
   },
   "scripts": {
+    "cleardist": "rimraf dist",
     "types": "tsc --declarationMap false",
     "build": "pnpm types",
     "dev": "tsc --watch",

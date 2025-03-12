@@ -21,14 +21,14 @@
     "build:harmony-hybrid": "taro build --type harmony-hybrid",
     "dev:weapp": "npm run build:weapp -- --watch --env-prefix MICRO_APP_",
     "dev:swan": "npm run build:swan -- --watch",
-    "dev:alipay": "npm run build:alipay -- --watch",
+    "dev:alipay": "npm run build:alipay -- --watch --env-prefix MICRO_APP_",
     "dev:tt": "npm run build:tt -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "serve": "pnpm dev:weapp"
+    "serve": "pnpm dev:alipay"
   },
   "browserslist": {
     "development": [

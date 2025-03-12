@@ -20,12 +20,12 @@ export default function Index () {
 
   return (
     <>
-      <PageMeta
+      {/* <PageMeta
         pageStyle={myPageStyle}
         onScroll={handleScroll}
       >
         <NavigationBar title={title} />
-      </PageMeta>
+      </PageMeta> */}
       <View className={styles.wrap}>
         <PostCreate />
         <PostList />

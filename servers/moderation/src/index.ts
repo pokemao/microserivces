@@ -1,7 +1,6 @@
 import express from "express";
 import bodyPaser from "body-parser"
 import cors from "cors"
-import "dotenv/config";
 import axios from "axios";
 import { randomBytes } from "crypto";
 import { commentCreateEventData } from "../../common/src/index.ts";

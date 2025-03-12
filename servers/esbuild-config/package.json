@@ -7,7 +7,6 @@
   },
   "contributors": [],
   "scripts": {
-    "types": "tsc --declarationMap false",
     "build": "tsx esbuild.config.ts --mode=production",
     "dev": "tsx esbuild.config.ts --mode=development",
     "serve": "pnpm dev",

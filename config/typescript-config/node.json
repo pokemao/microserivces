@@ -7,11 +7,8 @@
     ],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "moduleSuffixes": [""],                    
-    "allowImportingTsExtensions": true,     
-    "emitDeclarationOnly": false,   
-    "noEmit": true,                            
-    "noEmitOnError": true,                     
+    "moduleSuffixes": [""],
+    "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
   }
 }

@@ -45,9 +45,15 @@ importers:
       '@types/node':
         specifier: ^22.5.0
         version: artifactory.intra.xiaojukeji.com/@types/node@22.13.2
+      cross-env:
+        specifier: ^7.0.3
+        version: artifactory.intra.xiaojukeji.com/cross-env@7.0.3
       nodemon:
         specifier: ^3.1.9
         version: artifactory.intra.xiaojukeji.com/nodemon@3.1.9
+      rimraf:
+        specifier: ^6.0.1
+        version: artifactory.intra.xiaojukeji.com/rimraf@6.0.1
       turbo:
         specifier: ^2.4.2
         version: artifactory.intra.xiaojukeji.com/turbo@2.4.2
@@ -6630,6 +6636,16 @@ packages:
       typescript: artifactory.intra.xiaojukeji.com/typescript@5.7.3
     dev: true
 
+  artifactory.intra.xiaojukeji.com/cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cross-env/-/cross-env-7.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcross-env%2F-%2Fcross-env-7.0.3.tgz}
+    name: cross-env
+    version: 7.0.3
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: artifactory.intra.xiaojukeji.com/cross-spawn@7.0.6
+    dev: true
+
   artifactory.intra.xiaojukeji.com/cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cross-spawn/-/cross-spawn-7.0.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcross-spawn%2F-%2Fcross-spawn-7.0.6.tgz}
     name: cross-spawn
@@ -8879,6 +8895,21 @@ packages:
       path-scurry: artifactory.intra.xiaojukeji.com/path-scurry@1.11.1
     dev: true
 
+  artifactory.intra.xiaojukeji.com/glob@11.0.1:
+    resolution: {integrity: sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/glob/-/glob-11.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fglob%2F-%2Fglob-11.0.1.tgz}
+    name: glob
+    version: 11.0.1
+    engines: {node: 20 || >=22}
+    hasBin: true
+    dependencies:
+      foreground-child: artifactory.intra.xiaojukeji.com/foreground-child@3.3.0
+      jackspeak: artifactory.intra.xiaojukeji.com/jackspeak@4.1.0
+      minimatch: artifactory.intra.xiaojukeji.com/minimatch@10.0.1
+      minipass: artifactory.intra.xiaojukeji.com/minipass@7.1.2
+      package-json-from-dist: artifactory.intra.xiaojukeji.com/package-json-from-dist@1.0.1
+      path-scurry: artifactory.intra.xiaojukeji.com/path-scurry@2.0.0
+    dev: true
+
   artifactory.intra.xiaojukeji.com/glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/glob/-/glob-7.2.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fglob%2F-%2Fglob-7.2.3.tgz}
     name: glob
@@ -10011,6 +10042,15 @@ packages:
       '@pkgjs/parseargs': artifactory.intra.xiaojukeji.com/@pkgjs/parseargs@0.11.0
     dev: true
 
+  artifactory.intra.xiaojukeji.com/jackspeak@4.1.0:
+    resolution: {integrity: sha512-9DDdhb5j6cpeitCbvLO7n7J4IxnbM6hoF6O1g4HQ5TfhvvKN8ywDM7668ZhMHRqVmxqhps/F6syWK2KcPxYlkw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jackspeak/-/jackspeak-4.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjackspeak%2F-%2Fjackspeak-4.1.0.tgz}
+    name: jackspeak
+    version: 4.1.0
+    engines: {node: 20 || >=22}
+    dependencies:
+      '@isaacs/cliui': artifactory.intra.xiaojukeji.com/@isaacs/cliui@8.0.2
+    dev: true
+
   artifactory.intra.xiaojukeji.com/javascript-stringify@2.1.0:
     resolution: {integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/javascript-stringify/-/javascript-stringify-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjavascript-stringify%2F-%2Fjavascript-stringify-2.1.0.tgz}
     name: javascript-stringify
@@ -10654,6 +10694,13 @@ packages:
     version: 10.4.3
     dev: true
 
+  artifactory.intra.xiaojukeji.com/lru-cache@11.0.2:
+    resolution: {integrity: sha512-123qHRfJBmo2jXDbo/a5YOQrJoHF/GNQTLzQ5+IdK5pWpceK17yRc6ozlWd25FxvGKQbIUs91fDFkXmDHTKcyA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lru-cache/-/lru-cache-11.0.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flru-cache%2F-%2Flru-cache-11.0.2.tgz}
+    name: lru-cache
+    version: 11.0.2
+    engines: {node: 20 || >=22}
+    dev: true
+
   artifactory.intra.xiaojukeji.com/lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lru-cache/-/lru-cache-5.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flru-cache%2F-%2Flru-cache-5.1.1.tgz}
     name: lru-cache
@@ -10857,6 +10904,15 @@ packages:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fminimalistic-assert%2F-%2Fminimalistic-assert-1.0.1.tgz}
     name: minimalistic-assert
     version: 1.0.1
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/minimatch@10.0.1:
+    resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/minimatch/-/minimatch-10.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fminimatch%2F-%2Fminimatch-10.0.1.tgz}
+    name: minimatch
+    version: 10.0.1
+    engines: {node: 20 || >=22}
+    dependencies:
+      brace-expansion: artifactory.intra.xiaojukeji.com/brace-expansion@2.0.1
     dev: true
 
   artifactory.intra.xiaojukeji.com/minimatch@3.0.8:
@@ -11588,7 +11644,17 @@ packages:
     engines: {node: '>=16 || 14 >=14.18'}
     dependencies:
       lru-cache: artifactory.intra.xiaojukeji.com/lru-cache@10.4.3
-      minipass: artifactory.intra.xiaojukeji.com/minipass@6.0.2
+      minipass: artifactory.intra.xiaojukeji.com/minipass@7.1.2
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/path-scurry@2.0.0:
+    resolution: {integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-scurry/-/path-scurry-2.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-scurry%2F-%2Fpath-scurry-2.0.0.tgz}
+    name: path-scurry
+    version: 2.0.0
+    engines: {node: 20 || >=22}
+    dependencies:
+      lru-cache: artifactory.intra.xiaojukeji.com/lru-cache@11.0.2
+      minipass: artifactory.intra.xiaojukeji.com/minipass@7.1.2
     dev: true
 
   artifactory.intra.xiaojukeji.com/path-to-regexp@0.1.12:
@@ -12863,6 +12929,17 @@ packages:
     hasBin: true
     dependencies:
       glob: artifactory.intra.xiaojukeji.com/glob@7.2.3
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/rimraf@6.0.1:
+    resolution: {integrity: sha512-9dkvaxAsk/xNXSJzMgFqqMCuFgt2+KsOFek3TMLfo8NCPfWpBmqwyNn5Y+NX56QUYfCtsyhF3ayiboEoUmJk/A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/rimraf/-/rimraf-6.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Frimraf%2F-%2Frimraf-6.0.1.tgz}
+    name: rimraf
+    version: 6.0.1
+    engines: {node: 20 || >=22}
+    hasBin: true
+    dependencies:
+      glob: artifactory.intra.xiaojukeji.com/glob@11.0.1
+      package-json-from-dist: artifactory.intra.xiaojukeji.com/package-json-from-dist@1.0.1
     dev: true
 
   artifactory.intra.xiaojukeji.com/rollup@3.29.5:
