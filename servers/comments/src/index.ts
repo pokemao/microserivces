@@ -15,6 +15,7 @@ import axios from "axios";
 import { commentCreateEventData, commentStatus, eventType } from "../../common/src/type.ts";
 
 // 这个是配合 esbuild 插件使用的，其实没有@microservices/esbuild-plugin-env这个npm包，为了防止ts报错，要在types目录下写@microservices/esbuild-plugin-env.d.ts类型声明文件
+// 我们把types目录下写的@microservices/esbuild-plugin-env.d.ts类型声明文件移动到common中，为了让所有的server都能使用这个类型声明文件
 import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
 let env: Record<string, string> = {}
