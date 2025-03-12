@@ -24,6 +24,7 @@
   "scripts": {
     "cleardist": "rimraf dist",
     "types": "tsc --declarationMap false",
+    "start": "node index.cjs",
     "build": "pnpm types",
     "dev": "tsc --watch",
     "serve": "pnpm dev & nodemon dist/cjs/index.cjs"

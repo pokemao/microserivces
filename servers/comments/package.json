@@ -26,7 +26,7 @@
     "types": "tsc --declarationMap false",
     "start": "node index.cjs",
     "build": "pnpm types",
-    "docker-deploy": "cross-env DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 docker build -t @syz/microservices-servers-comments .",
+    "docker-deploy": "cross-env DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 docker build -t syz/microservices-servers-comments .",
     "dev": "tsc --watch",
     "serve": "pnpm dev & nodemon dist/cjs/index.cjs"
   },

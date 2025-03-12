@@ -24,7 +24,9 @@
   "scripts": {
     "cleardist": "rimraf dist",
     "types": "tsc --declarationMap false",
+    "start": "node index.cjs",
     "build": "pnpm types",
+    "docker-deploy": "cross-env DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 docker build -t syz/microservices-servers-event-bus .",
     "dev": "tsc --watch",
     "serve": "pnpm dev & nodemon dist/cjs/index.cjs"
   },
