@@ -3,6 +3,7 @@ import fs from "fs"
 import https from "https"
 import 'dotenv/config';
 import cookieParser from 'cookie-parser'
+import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
 const app = express();
 app.use(cookieParser());
@@ -16,8 +17,8 @@ const options = {
 };
 
 // Run static server
-https.createServer(options, app).listen(process.env.MICRO_APP_HTTPS_EXAMPLE_PORT, () => {
-    console.log(`Server is running on port ${process.env.MICRO_APP_HTTPS_EXAMPLE_PORT}`);
+https.createServer(options, app).listen(esbuildPluginEnv.MICRO_APP_HTTPS_EXAMPLE_PORT!.slice(1), () => {
+    console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_HTTPS_EXAMPLE_PORT}`);
 });
 
 app.use((req, res, next) => {

@@ -3,7 +3,6 @@ import { es5Plugin } from "esbuild-plugin-es5";
 import path from "path";
 import { createBaseConfig } from "./esbuild.config.base.ts";
 import { buildPath } from "./utils.ts";
-import { envPlugin } from "./envPlugins.ts";
 // import {plugins} from "./plugins.ts";
 
 export const createProConfig = (
@@ -24,9 +23,6 @@ export const createProConfig = (
       "process.env.NODE_ENV": "'production'",
     },
     // plugins: [es5Plugin()],
-    plugins: [
-      envPlugin,
-    ],
     target: ["node12"],
     platform: "node",
   };

@@ -8,6 +8,7 @@ import { handleEvent, syncEvents } from "./utils.ts";
 import axios from "axios";
 import { eventType } from "../../common/src/type.ts";
 import EventStorage from "./eventStorage.ts";
+import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
 const query = new QueryStorage();
 const handledEvents = new EventStorage()
@@ -26,7 +27,7 @@ app.post("/events", (req, res) => {
   res.json({});
 })
 
-app.listen(process.env.MICRO_APP_QUERY_PORT, () => {
+app.listen(esbuildPluginEnv.MICRO_APP_QUERY_PORT!.slice(1), () => {
   syncEvents(query, handledEvents);
-  console.log(`Server is running on port ${process.env.MICRO_APP_QUERY_PORT}`);
+  console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_QUERY_PORT}`);
 })

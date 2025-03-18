@@ -3,7 +3,8 @@
   "include": [
     "./src/**/*",
     "./types/**/*",
-    "../common/types/**/*"
+    "../common/types/**/*",
+    "../common/src/**/*",
   ],
   "compilerOptions": {
     "outDir": "./dist/types",

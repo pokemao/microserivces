@@ -1,8 +1,8 @@
 import { defineConfig, type UserConfigExport } from "@tarojs/cli";
+import { resolve } from "path";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import devConfig from "./dev";
 import prodConfig from "./prod";
-import { resolve } from "path";
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<"webpack5">(async (merge) => {
@@ -15,11 +15,21 @@ export default defineConfig<"webpack5">(async (merge) => {
     // turbo中就算使用npm run build:weapp -- --watch --env-prefix MICRO_APP_，都不能把根目录.env中的环境变量注入到子应用中，所以这里手动注入
     env:{
       // 使用JSON.stringify是为了当process.env.MICRO_APP_POST_PORT为undefined时，注入子项目代码中的MICRO_APP_POST_PORT值为''
+      // MICRO_APP_POSTS_PORT: JSON.stringify(process.env.MICRO_APP_POSTS_PORT),
+      // MICRO_APP_COMMENTS_PORT: JSON.stringify(process.env.MICRO_APP_COMMENTS_PORT),
+      // MICRO_APP_POSTS_URL: JSON.stringify(process.env.MICRO_APP_POSTS_URL),
+      // MICRO_APP_COMMENTS_URL: JSON.stringify(process.env.MICRO_APP_COMMENTS_URL),
+      // MICRO_APP_QUERY_URL: JSON.stringify(process.env.MICRO_APP_QUERY_URL),
+      // MICRO_APP_QUERY_PORT: JSON.stringify(process.env.MICRO_APP_QUERY_PORT),
+
+      MICRO_APP_POSTS_HOST: JSON.stringify(process.env.MICRO_APP_POSTS_HOST),
+      MICRO_APP_COMMENTS_HOST: JSON.stringify(process.env.MICRO_APP_COMMENTS_HOST),
+      MICRO_APP_QUERY_HOST: JSON.stringify(process.env.MICRO_APP_QUERY_HOST),
+      MICRO_APP_POSTS_PROTOCOL: JSON.stringify(process.env.MICRO_APP_POSTS_PROTOCOL),
+      MICRO_APP_COMMENTS_PROTOCOL: JSON.stringify(process.env.MICRO_APP_COMMENTS_PROTOCOL),
+      MICRO_APP_QUERY_PROTOCOL: JSON.stringify(process.env.MICRO_APP_QUERY_PROTOCOL),
       MICRO_APP_POSTS_PORT: JSON.stringify(process.env.MICRO_APP_POSTS_PORT),
       MICRO_APP_COMMENTS_PORT: JSON.stringify(process.env.MICRO_APP_COMMENTS_PORT),
-      MICRO_APP_POSTS_URL: JSON.stringify(process.env.MICRO_APP_POSTS_URL),
-      MICRO_APP_COMMENTS_URL: JSON.stringify(process.env.MICRO_APP_COMMENTS_URL),
-      MICRO_APP_QUERY_URL: JSON.stringify(process.env.MICRO_APP_QUERY_URL),
       MICRO_APP_QUERY_PORT: JSON.stringify(process.env.MICRO_APP_QUERY_PORT),
     },
     designWidth(input) {

@@ -18,19 +18,12 @@ import { commentCreateEventData, commentStatus, eventType } from "../../common/s
 // 我们把types目录下写的@microservices/esbuild-plugin-env.d.ts类型声明文件移动到common中，为了让所有的server都能使用这个类型声明文件
 import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
-let env: Record<string, string> = {}
-
-if(process.env.NODE_ENV === 'production') {
-  env = esbuildPluginEnv;
-}else {
-  env = env;
-}
-
 const app = express();
 app.use(bodyPaser.json())
 app.use(cors())
 
 const commentsHandler = new commentsStorage();
+const eventBusUrl = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events';
 
 app.get("/posts/:id/comments", (req, res) => {
   const { id } = req.params;
@@ -48,7 +41,6 @@ app.post("/posts/:id/comments", (req, res) => {
   }
   commentsHandler.addComment(postId, comment);
 
-  const eventBusUrl = env.MICRO_APP_EVENT_BUS_URL! + ':' + env.MICRO_APP_EVENT_BUS_PORT! + '/events';
   axios.post(eventBusUrl, {
     id: randomBytes(4).toString("hex"),
     type: 'CommentCreated',
@@ -67,7 +59,6 @@ app.post("/events", (req, res) => {
   if (type === 'CommentModerated') {
     const {postId, comment: {id, status}} = data as commentCreateEventData;
     const comment = commentsHandler.changeCommentStatus(postId, id, status);
-    const eventBusUrl = env.MICRO_APP_EVENT_BUS_URL! + ':' + env.MICRO_APP_EVENT_BUS_PORT! + '/events';
     axios.post(eventBusUrl, {
       id: randomBytes(4).toString("hex"),
       type: 'CommentUpdated',
@@ -80,6 +71,6 @@ app.post("/events", (req, res) => {
   res.json({});
 })
 
-app.listen(env.MICRO_APP_COMMENTS_PORT, () => {
-  console.log(`Server is running on port ${env.MICRO_APP_COMMENTS_PORT}`);
+app.listen(esbuildPluginEnv.MICRO_APP_COMMENTS_PORT!.slice(1), () => {
+  console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_COMMENTS_PORT}`);
 })

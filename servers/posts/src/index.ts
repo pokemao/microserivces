@@ -5,7 +5,9 @@ import cors from "cors"
 import PostsStorage from "./postsStorage.ts";
 import 'dotenv/config';
 import axios from "axios";
-import { post, postCreateEventData } from "../../common/src/type.ts";
+import { postCreateEventData } from "../../common/src/type.ts";
+import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
+
 
 const app = express();
 app.use(bodyPaser.json())
@@ -31,7 +33,7 @@ app.post("/posts", (req, res) => {
   // 然后event-bus会把这个post发送给所有的服务
   // 然后所有的服务都会收到这个post
   // 然后关心这个事件的服务都会把这个post同步到自己的数据库中
-  const eventBusUrl = process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events';
+  const eventBusUrl = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events';
   axios.post(eventBusUrl, {
     id: randomBytes(4).toString("hex"),
     type: 'PostCreated',
@@ -47,6 +49,6 @@ app.post("/events", (req, res) => {
   res.json({});
 })
 
-app.listen(process.env.MICRO_APP_POSTS_PORT, () => {
-  console.log(`Server is running on port ${process.env.MICRO_APP_POSTS_PORT}`);
+app.listen(esbuildPluginEnv.MICRO_APP_POSTS_PORT!.slice(1), () => {
+  console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_POSTS_PORT}`);
 })

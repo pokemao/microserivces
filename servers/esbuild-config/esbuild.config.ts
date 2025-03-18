@@ -7,7 +7,7 @@ import yargs from "yargs";
 import { createDevConfig } from "./esbuild.config.dev.ts";
 import { createProConfig } from "./esbuild.config.pro.ts";
 import { asserts, buildPath, getDirname } from "./utils.ts";
-import 'dotenv/config'
+// import 'dotenv/config'
 
 // 获取命令行传入的参数
 const nodeArgv = yargs(process.argv).parse();

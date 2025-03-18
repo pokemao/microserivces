@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import path from "node:path";
 
 import { buildPath } from "./utils.ts";
+import { envPlugin } from "envPlugins.ts";
 
 // 等同于 commonjs 的 require
 const require = createRequire(import.meta.url);
@@ -33,5 +34,6 @@ export const createBaseConfig = (argsPath: buildPath): esbuild.BuildOptions => {
       ".mts",
     ],
     // plugins
+    plugins: [envPlugin]
   };
 };

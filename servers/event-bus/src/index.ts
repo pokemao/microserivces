@@ -5,6 +5,7 @@ import cors from "cors"
 import axios from "axios";
 import path from "node:path";
 import EventStorage from "./eventStorage.ts";
+import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
 const eventStorage = new EventStorage();
 
@@ -48,15 +49,15 @@ app.post("/events", (req, res) => {
   // 记录下所有的事件
   eventStorage.addEvent(events);
   // for (const name of filename) {
-  //   console.log(name, process.env[`MICRO_APP_${name}_URL`]! + ':' + process.env[`MICRO_APP_${name}_PORT`]! + '/events');
+  //   console.log(name, esbuildPluginEnv[`MICRO_APP_${name}_URL`]! + ':' + esbuildPluginEnv[`MICRO_APP_${name}_PORT`]! + '/events');
   // }
   // 遍历filename，发送post请求
   for (const name of filename) {
-    axios.post(process.env[`MICRO_APP_${name}_URL`]! + ':' + process.env[`MICRO_APP_${name}_PORT`]! + '/events', {...events})
+    axios.post(esbuildPluginEnv[`MICRO_APP_${name}_PROTOCOL`]! + esbuildPluginEnv[`MICRO_APP_${name}_HOST`]! + esbuildPluginEnv[`MICRO_APP_${name}_PORT`]! + '/events', {...events})
   }
   res.status(200).json({});
 });
 
-app.listen(process.env.MICRO_APP_EVENT_BUS_PORT, () => {
-  console.log(`Server is running on port ${process.env.MICRO_APP_EVENT_BUS_PORT}`);
+app.listen(esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT!.slice(1), () => {
+  console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT}`);
 })

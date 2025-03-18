@@ -4,6 +4,8 @@ import cors from "cors"
 import axios from "axios";
 import { randomBytes } from "crypto";
 import { commentCreateEventData } from "../../common/src/index.ts";
+import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
+
 
 const app = express();
 app.use(bodyPaser.json())
@@ -42,7 +44,7 @@ app.post("/events", async (req, res) => {
     await new Promise((resolve) => {
       setTimeout(resolve, 5000);
     });
-    axios.post(process.env.MICRO_APP_EVENT_BUS_URL! + ':' + process.env.MICRO_APP_EVENT_BUS_PORT! + '/events', {
+    axios.post(esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events', {
       id: randomBytes(4).toString("hex"),
       type: 'CommentModerated',
       data: {
@@ -59,6 +61,6 @@ app.post("/events", async (req, res) => {
   res.status(200).json({});
 });
 
-app.listen(process.env.MICRO_APP_MODERATION_PORT, () => {
-  console.log(`Server is running on port ${process.env.MICRO_APP_MODERATION_PORT}`);
+app.listen(esbuildPluginEnv.MICRO_APP_MODERATION_PORT!.slice(1), () => {
+  console.log(`Server is running on port ${esbuildPluginEnv.MICRO_APP_MODERATION_PORT}`);
 })
