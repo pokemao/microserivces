@@ -30,6 +30,7 @@
     "docker-push": "tsx ./scripts/docker/ts/pushImage.ts",
     "k8s-genyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
     "k8s-justgenyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
+    "k8s-applyOrRelloutRestart": "tsx ./scripts/k8s/ts/applyOrRelloutRestart.ts",
     "dev": "tsc --watch",
     "serve": "pnpm dev & nodemon dist/cjs/index.cjs"
   },

@@ -75,9 +75,9 @@
       ]
     },
     "docker-build": {
-      "cache": false,
+      "cache": true,
       "dependsOn": ["build"],
-      "inputs": [".env.production"],
+      "inputs": [".env.production", "src/**/*", "scripts/docker/**/*"],
       "env": [
         "MICRO_APP_POSTS_HOST",
         "MICRO_APP_COMMENTS_HOST",
@@ -137,9 +137,9 @@
       ]
     },
     "docker-push": {
-      "cache": false,
+      "cache": true,
       "dependsOn": ["docker-build"],
-      "inputs": [".env.production"],
+      "inputs": [".env.production", "src/**/*", "scripts/docker/**/*"],
       "env": [
         "MICRO_APP_POSTS_HOST",
         "MICRO_APP_COMMENTS_HOST",
@@ -199,9 +199,10 @@
       ]
     },
     "k8s-genyaml": {
-      "cache": false,
+      "cache": true,
       "dependsOn": ["docker-push"],
-      "inputs": [".env.production"],
+      "inputs": [".env.production", "scripts/k8s/**/*"],
+      "outputs": ["k8s-yaml/**/*"],
       "env": [
         "MICRO_APP_POSTS_HOST",
         "MICRO_APP_COMMENTS_HOST",
@@ -261,8 +262,9 @@
       ]
     },
     "k8s-justgenyaml": {
-      "cache": false,
-      "inputs": [".env.production"],
+      "cache": true,
+      "inputs": [".env.production", "scripts/k8s/**/*"],
+      "outputs": ["k8s-yaml/**/*"],
       "env": [
         "MICRO_APP_POSTS_HOST",
         "MICRO_APP_COMMENTS_HOST",
@@ -321,10 +323,11 @@
         "MICRO_APP_HTTPS_EXAMPLE_NODE_PORT_NAME"
       ]
     },
-    "k8s-apply": {
+    "k8s-applyOrRelloutRestart": {
       "cache": false,
       "dependsOn": ["k8s-genyaml"],
-      "inputs": [".env.production"],
+      "inputs": [".env.production", "src/**/*", "scripts/k8s/**/*"],
+      "outputs": ["k8s-yaml/**/*"],
       "env": [
         "MICRO_APP_POSTS_HOST",
         "MICRO_APP_COMMENTS_HOST",

@@ -11,7 +11,8 @@ const child = spawn(dockerBuildCMD, {
 })
 
 process.on('SIGINT', () => {
-  child.kill('SIGINT');
+  if(!child.pid) return;
+  process.kill(child.pid, 'SIGINT');
 })
 
 process.on('exit', (code) => {
