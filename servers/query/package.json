@@ -31,7 +31,7 @@
     "k8s-genyaml#old": "tsx ./scripts/k8s old/ts/index.ts",
     "k8s-genyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
     "k8s-justgenyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
-    "k8s-applyOrRelloutRestart": "tsx ./scripts/k8s/ts/applyOrRelloutRestart.ts",
+    "k8s-applyOrRolloutRestart": "tsx ./scripts/k8s/ts/applyOrRolloutRestart.ts",
     "dev": "tsc --watch",
     "serve": "pnpm dev & nodemon dist/cjs/index.cjs"
   },

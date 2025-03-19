@@ -26,10 +26,10 @@ const rolloutRestartOrApply = async () => {
   const [files, deploymentsConfig] = data
 
   // 寻找是否存在名为posts-deployment的deployment
-  const index = deploymentsConfig.body.items.findIndex((item: any) => item.metadata.name === process.env.MICRO_APP_QUERY_DEPLOYMENT_NAME)
+  const index = deploymentsConfig.body.items.findIndex((item: any) => item.metadata.name === process.env.MICRO_APP_MODERATION_DEPLOYMENT_NAME)
   // 如果存在，删除files中的deployment.yaml文件名并执行rollout restart命令
   if (index !== -1) {
-    const child = spawn(`kubectl rollout restart deployment ${process.env.MICRO_APP_QUERY_DEPLOYMENT_NAME}`, {
+    const child = spawn(`kubectl rollout restart deployment ${process.env.MICRO_APP_MODERATION_DEPLOYMENT_NAME}`, {
       shell: true,
       stdio: 'inherit',
     })

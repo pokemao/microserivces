@@ -323,7 +323,7 @@
         "MICRO_APP_HTTPS_EXAMPLE_NODE_PORT_NAME"
       ]
     },
-    "k8s-applyOrRelloutRestart": {
+    "k8s-applyOrRolloutRestart": {
       "cache": false,
       "dependsOn": ["k8s-genyaml"],
       "inputs": [".env.production", "src/**/*", "scripts/k8s/**/*"],
