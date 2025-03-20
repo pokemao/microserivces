@@ -5,8 +5,6 @@ import cors from "cors"
 import 'dotenv/config';
 import QueryStorage from "./queryStorage.ts";
 import { handleEvent, syncEvents } from "./utils.ts";
-import axios from "axios";
-import { eventType } from "../../common/src/type.ts";
 import EventStorage from "./eventStorage.ts";
 import esbuildPluginEnv from "@microservices/esbuild-plugin-env";
 
