@@ -27,7 +27,7 @@ export const handleEvent = (query: QueryStorage, handledEvents: EventStorage, ev
 export const syncEvents = (query: QueryStorage, handledEvents: EventStorage, timeout: number = 2000) => {
   setTimeout(async () => {
     console.log('第' + ++count + '次尝试同步事件队列');
-    const event_bus_path = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events'
+    const event_bus_path = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_INNER_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events'
     // 获取event服务中所有收到过的事件
     const [err, res] = await to(axios.get(event_bus_path))
     if (err) {

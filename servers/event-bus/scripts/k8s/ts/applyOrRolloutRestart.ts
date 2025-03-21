@@ -49,7 +49,7 @@ const rolloutRestartOrApply = async () => {
   }
   // 对剩下的文件名进行apply操作
   for (const file of files) {
-    const child = spawn(`kubectl apply -f./k8s-yaml/${file}`, {
+    const child = spawn(`kubectl apply -f ./k8s-yaml/${file}`, {
       shell: true,
       stdio: 'inherit',
     })

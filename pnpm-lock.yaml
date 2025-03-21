@@ -48,6 +48,9 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: artifactory.intra.xiaojukeji.com/cross-env@7.0.3
+      esbuild:
+        specifier: ^0.25.1
+        version: artifactory.intra.xiaojukeji.com/esbuild@0.25.1
       js-yaml:
         specifier: ^4.1.0
         version: artifactory.intra.xiaojukeji.com/js-yaml@4.1.0
@@ -157,6 +160,9 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.5.5
         version: artifactory.intra.xiaojukeji.com/@pmmmwh/react-refresh-webpack-plugin@0.5.5(react-refresh@0.14.0)(webpack@5.91.0)
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../config/typescript-config
       '@tarojs/cli':
         specifier: 4.0.9
         version: artifactory.intra.xiaojukeji.com/@tarojs/cli@4.0.9
@@ -210,7 +216,7 @@ importers:
         version: artifactory.intra.xiaojukeji.com/typescript@5.7.3
       webpack:
         specifier: 5.91.0
-        version: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+        version: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
 
   config/eslint-config:
     devDependencies:
@@ -255,12 +261,9 @@ importers:
       '@types/yargs':
         specifier: ^17.0.33
         version: artifactory.intra.xiaojukeji.com/@types/yargs@17.0.33
-      esbuild:
-        specifier: ^0.23.1
-        version: artifactory.intra.xiaojukeji.com/esbuild@0.23.1
       esbuild-plugin-es5:
         specifier: ^2.1.1
-        version: artifactory.intra.xiaojukeji.com/esbuild-plugin-es5@2.1.1(esbuild@0.23.1)
+        version: artifactory.intra.xiaojukeji.com/esbuild-plugin-es5@2.1.1(esbuild@0.25.1)
       eslint:
         specifier: ^8.57.0
         version: artifactory.intra.xiaojukeji.com/eslint@8.57.1
@@ -286,6 +289,12 @@ importers:
       '@types/cookie-parser':
         specifier: ^1.4.8
         version: artifactory.intra.xiaojukeji.com/@types/cookie-parser@1.4.8(@types/express@5.0.0)
+
+  servers/k8s-common:
+    devDependencies:
+      '@syz/microservices-typescript-config':
+        specifier: workspace:^
+        version: link:../../config/typescript-config
 
   servers/moderation:
     devDependencies:
@@ -2040,6 +2049,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/aix-ppc64@0.25.1:
+    resolution: {integrity: sha512-kfYGy8IdzTGy+z0vFGvExZtxkFlA4zAxgKEahG9KE1ScBjpQnFsNOX8KTU5ojNru5ed5CVoJYXFtoxaq5nFbjQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/aix-ppc64/-/aix-ppc64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Faix-ppc64%2F-%2Faix-ppc64-0.25.1.tgz}
+    name: '@esbuild/aix-ppc64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/android-arm64@0.21.5:
     resolution: {integrity: sha512-c0uX9VAUBQ7dTDCjq+wdyGLowMdtR/GoC2U5IYk/7D1H1JYC0qseD7+11iMP2mRLN9RcCMRcjC4YMclCzGwS/A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/android-arm64/-/android-arm64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fandroid-arm64%2F-%2Fandroid-arm64-0.21.5.tgz}
     name: '@esbuild/android-arm64'
@@ -2064,6 +2081,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/android-arm64@0.25.1:
+    resolution: {integrity: sha512-50tM0zCJW5kGqgG7fQ7IHvQOcAn9TKiVRuQ/lN0xR+T2lzEFvAi1ZcS8DiksFcEpf1t/GYOeOfCAgDHFpkiSmA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/android-arm64/-/android-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fandroid-arm64%2F-%2Fandroid-arm64-0.25.1.tgz}
+    name: '@esbuild/android-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/android-arm@0.21.5:
@@ -2092,6 +2117,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/android-arm@0.25.1:
+    resolution: {integrity: sha512-dp+MshLYux6j/JjdqVLnMglQlFu+MuVeNrmT5nk6q07wNhCdSnB7QZj+7G8VMUGh1q+vj2Bq8kRsuyA00I/k+Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/android-arm/-/android-arm-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fandroid-arm%2F-%2Fandroid-arm-0.25.1.tgz}
+    name: '@esbuild/android-arm'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/android-x64@0.21.5:
     resolution: {integrity: sha512-D7aPRUUNHRBwHxzxRvp856rjUHRFW1SdQATKXH2hqA0kAZb1hKmi02OpYRacl0TxIGz/ZmXWlbZgjwWYaCakTA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/android-x64/-/android-x64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fandroid-x64%2F-%2Fandroid-x64-0.21.5.tgz}
     name: '@esbuild/android-x64'
@@ -2116,6 +2149,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/android-x64@0.25.1:
+    resolution: {integrity: sha512-GCj6WfUtNldqUzYkN/ITtlhwQqGWu9S45vUXs7EIYf+7rCiiqH9bCloatO9VhxsL0Pji+PF4Lz2XXCES+Q8hDw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/android-x64/-/android-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fandroid-x64%2F-%2Fandroid-x64-0.25.1.tgz}
+    name: '@esbuild/android-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/darwin-arm64@0.21.5:
@@ -2144,6 +2185,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/darwin-arm64@0.25.1:
+    resolution: {integrity: sha512-5hEZKPf+nQjYoSr/elb62U19/l1mZDdqidGfmFutVUjjUZrOazAtwK+Kr+3y0C/oeJfLlxo9fXb1w7L+P7E4FQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/darwin-arm64/-/darwin-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fdarwin-arm64%2F-%2Fdarwin-arm64-0.25.1.tgz}
+    name: '@esbuild/darwin-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/darwin-x64@0.21.5:
     resolution: {integrity: sha512-se/JjF8NlmKVG4kNIuyWMV/22ZaerB+qaSi5MdrXtd6R08kvs2qCN4C09miupktDitvh8jRFflwGFBQcxZRjbw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/darwin-x64/-/darwin-x64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fdarwin-x64%2F-%2Fdarwin-x64-0.21.5.tgz}
     name: '@esbuild/darwin-x64'
@@ -2168,6 +2217,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/darwin-x64@0.25.1:
+    resolution: {integrity: sha512-hxVnwL2Dqs3fM1IWq8Iezh0cX7ZGdVhbTfnOy5uURtao5OIVCEyj9xIzemDi7sRvKsuSdtCAhMKarxqtlyVyfA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/darwin-x64/-/darwin-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fdarwin-x64%2F-%2Fdarwin-x64-0.25.1.tgz}
+    name: '@esbuild/darwin-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/freebsd-arm64@0.21.5:
@@ -2196,6 +2253,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/freebsd-arm64@0.25.1:
+    resolution: {integrity: sha512-1MrCZs0fZa2g8E+FUo2ipw6jw5qqQiH+tERoS5fAfKnRx6NXH31tXBKI3VpmLijLH6yriMZsxJtaXUyFt/8Y4A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Ffreebsd-arm64%2F-%2Ffreebsd-arm64-0.25.1.tgz}
+    name: '@esbuild/freebsd-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/freebsd-x64@0.21.5:
     resolution: {integrity: sha512-J95kNBj1zkbMXtHVH29bBriQygMXqoVQOQYA+ISs0/2l3T9/kj42ow2mpqerRBxDJnmkUDCaQT/dfNXWX/ZZCQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/freebsd-x64/-/freebsd-x64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Ffreebsd-x64%2F-%2Ffreebsd-x64-0.21.5.tgz}
     name: '@esbuild/freebsd-x64'
@@ -2220,6 +2285,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/freebsd-x64@0.25.1:
+    resolution: {integrity: sha512-0IZWLiTyz7nm0xuIs0q1Y3QWJC52R8aSXxe40VUxm6BB1RNmkODtW6LHvWRrGiICulcX7ZvyH6h5fqdLu4gkww==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/freebsd-x64/-/freebsd-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Ffreebsd-x64%2F-%2Ffreebsd-x64-0.25.1.tgz}
+    name: '@esbuild/freebsd-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/linux-arm64@0.21.5:
@@ -2248,6 +2321,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-arm64@0.25.1:
+    resolution: {integrity: sha512-jaN3dHi0/DDPelk0nLcXRm1q7DNJpjXy7yWaWvbfkPvI+7XNSc/lDOnCLN7gzsyzgu6qSAmgSvP9oXAhP973uQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-arm64/-/linux-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-arm64%2F-%2Flinux-arm64-0.25.1.tgz}
+    name: '@esbuild/linux-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/linux-arm@0.21.5:
     resolution: {integrity: sha512-bPb5AHZtbeNGjCKVZ9UGqGwo8EUu4cLq68E95A53KlxAPRmUyYv2D6F0uUI65XisGOL1hBP5mTronbgo+0bFcA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-arm/-/linux-arm-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-arm%2F-%2Flinux-arm-0.21.5.tgz}
     name: '@esbuild/linux-arm'
@@ -2272,6 +2353,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-arm@0.25.1:
+    resolution: {integrity: sha512-NdKOhS4u7JhDKw9G3cY6sWqFcnLITn6SqivVArbzIaf3cemShqfLGHYMx8Xlm/lBit3/5d7kXvriTUGa5YViuQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-arm/-/linux-arm-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-arm%2F-%2Flinux-arm-0.25.1.tgz}
+    name: '@esbuild/linux-arm'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/linux-ia32@0.21.5:
@@ -2300,6 +2389,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-ia32@0.25.1:
+    resolution: {integrity: sha512-OJykPaF4v8JidKNGz8c/q1lBO44sQNUQtq1KktJXdBLn1hPod5rE/Hko5ugKKZd+D2+o1a9MFGUEIUwO2YfgkQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-ia32/-/linux-ia32-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-ia32%2F-%2Flinux-ia32-0.25.1.tgz}
+    name: '@esbuild/linux-ia32'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/linux-loong64@0.21.5:
     resolution: {integrity: sha512-uHf1BmMG8qEvzdrzAqg2SIG/02+4/DHB6a9Kbya0XDvwDEKCoC8ZRWI5JJvNdUjtciBGFQ5PuBlpEOXQj+JQSg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-loong64/-/linux-loong64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-loong64%2F-%2Flinux-loong64-0.21.5.tgz}
     name: '@esbuild/linux-loong64'
@@ -2324,6 +2421,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-loong64@0.25.1:
+    resolution: {integrity: sha512-nGfornQj4dzcq5Vp835oM/o21UMlXzn79KobKlcs3Wz9smwiifknLy4xDCLUU0BWp7b/houtdrgUz7nOGnfIYg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-loong64/-/linux-loong64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-loong64%2F-%2Flinux-loong64-0.25.1.tgz}
+    name: '@esbuild/linux-loong64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/linux-mips64el@0.21.5:
@@ -2352,6 +2457,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-mips64el@0.25.1:
+    resolution: {integrity: sha512-1osBbPEFYwIE5IVB/0g2X6i1qInZa1aIoj1TdL4AaAb55xIIgbg8Doq6a5BzYWgr+tEcDzYH67XVnTmUzL+nXg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-mips64el/-/linux-mips64el-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-mips64el%2F-%2Flinux-mips64el-0.25.1.tgz}
+    name: '@esbuild/linux-mips64el'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/linux-ppc64@0.21.5:
     resolution: {integrity: sha512-1hHV/Z4OEfMwpLO8rp7CvlhBDnjsC3CttJXIhBi+5Aj5r+MBvy4egg7wCbe//hSsT+RvDAG7s81tAvpL2XAE4w==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-ppc64/-/linux-ppc64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-ppc64%2F-%2Flinux-ppc64-0.21.5.tgz}
     name: '@esbuild/linux-ppc64'
@@ -2376,6 +2489,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-ppc64@0.25.1:
+    resolution: {integrity: sha512-/6VBJOwUf3TdTvJZ82qF3tbLuWsscd7/1w+D9LH0W/SqUgM5/JJD0lrJ1fVIfZsqB6RFmLCe0Xz3fmZc3WtyVg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-ppc64/-/linux-ppc64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-ppc64%2F-%2Flinux-ppc64-0.25.1.tgz}
+    name: '@esbuild/linux-ppc64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/linux-riscv64@0.21.5:
@@ -2404,6 +2525,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-riscv64@0.25.1:
+    resolution: {integrity: sha512-nSut/Mx5gnilhcq2yIMLMe3Wl4FK5wx/o0QuuCLMtmJn+WeWYoEGDN1ipcN72g1WHsnIbxGXd4i/MF0gTcuAjQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-riscv64/-/linux-riscv64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-riscv64%2F-%2Flinux-riscv64-0.25.1.tgz}
+    name: '@esbuild/linux-riscv64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/linux-s390x@0.21.5:
     resolution: {integrity: sha512-zus5sxzqBJD3eXxwvjN1yQkRepANgxE9lgOW2qLnmr8ikMTphkjgXu1HR01K4FJg8h1kEEDAqDcZQtbrRnB41A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-s390x/-/linux-s390x-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-s390x%2F-%2Flinux-s390x-0.21.5.tgz}
     name: '@esbuild/linux-s390x'
@@ -2428,6 +2557,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-s390x@0.25.1:
+    resolution: {integrity: sha512-cEECeLlJNfT8kZHqLarDBQso9a27o2Zd2AQ8USAEoGtejOrCYHNtKP8XQhMDJMtthdF4GBmjR2au3x1udADQQQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-s390x/-/linux-s390x-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-s390x%2F-%2Flinux-s390x-0.25.1.tgz}
+    name: '@esbuild/linux-s390x'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/linux-x64@0.21.5:
@@ -2456,6 +2593,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/linux-x64@0.25.1:
+    resolution: {integrity: sha512-xbfUhu/gnvSEg+EGovRc+kjBAkrvtk38RlerAzQxvMzlB4fXpCFCeUAYzJvrnhFtdeyVCDANSjJvOvGYoeKzFA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/linux-x64/-/linux-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Flinux-x64%2F-%2Flinux-x64-0.25.1.tgz}
+    name: '@esbuild/linux-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/netbsd-arm64@0.25.0:
     resolution: {integrity: sha512-RuG4PSMPFfrkH6UwCAqBzauBWTygTvb1nxWasEJooGSJ/NwRw7b2HOwyRTQIU97Hq37l3npXoZGYMy3b3xYvPw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fnetbsd-arm64%2F-%2Fnetbsd-arm64-0.25.0.tgz}
     name: '@esbuild/netbsd-arm64'
@@ -2463,6 +2608,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/netbsd-arm64@0.25.1:
+    resolution: {integrity: sha512-O96poM2XGhLtpTh+s4+nP7YCCAfb4tJNRVZHfIE7dgmax+yMP2WgMd2OecBuaATHKTHsLWHQeuaxMRnCsH8+5g==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fnetbsd-arm64%2F-%2Fnetbsd-arm64-0.25.1.tgz}
+    name: '@esbuild/netbsd-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/netbsd-x64@0.21.5:
@@ -2491,6 +2644,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/netbsd-x64@0.25.1:
+    resolution: {integrity: sha512-X53z6uXip6KFXBQ+Krbx25XHV/NCbzryM6ehOAeAil7X7oa4XIq+394PWGnwaSQ2WRA0KI6PUO6hTO5zeF5ijA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/netbsd-x64/-/netbsd-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fnetbsd-x64%2F-%2Fnetbsd-x64-0.25.1.tgz}
+    name: '@esbuild/netbsd-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/openbsd-arm64@0.23.1:
     resolution: {integrity: sha512-3x37szhLexNA4bXhLrCC/LImN/YtWis6WXr1VESlfVtVeoFJBRINPJ3f0a/6LV8zpikqoUg4hyXw0sFBt5Cr+Q==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/openbsd-arm64/-/openbsd-arm64-0.23.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fopenbsd-arm64%2F-%2Fopenbsd-arm64-0.23.1.tgz}
     name: '@esbuild/openbsd-arm64'
@@ -2507,6 +2668,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/openbsd-arm64@0.25.1:
+    resolution: {integrity: sha512-Na9T3szbXezdzM/Kfs3GcRQNjHzM6GzFBeU1/6IV/npKP5ORtp9zbQjvkDJ47s6BCgaAZnnnu/cY1x342+MvZg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fopenbsd-arm64%2F-%2Fopenbsd-arm64-0.25.1.tgz}
+    name: '@esbuild/openbsd-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/openbsd-x64@0.21.5:
@@ -2535,6 +2704,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/openbsd-x64@0.25.1:
+    resolution: {integrity: sha512-T3H78X2h1tszfRSf+txbt5aOp/e7TAz3ptVKu9Oyir3IAOFPGV6O9c2naym5TOriy1l0nNf6a4X5UXRZSGX/dw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/openbsd-x64/-/openbsd-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fopenbsd-x64%2F-%2Fopenbsd-x64-0.25.1.tgz}
+    name: '@esbuild/openbsd-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/sunos-x64@0.21.5:
     resolution: {integrity: sha512-6+gjmFpfy0BHU5Tpptkuh8+uw3mnrvgs+dSPQXQOv3ekbordwnzTVEb4qnIvQcYXq6gzkyTnoZ9dZG+D4garKg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/sunos-x64/-/sunos-x64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fsunos-x64%2F-%2Fsunos-x64-0.21.5.tgz}
     name: '@esbuild/sunos-x64'
@@ -2559,6 +2736,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/sunos-x64@0.25.1:
+    resolution: {integrity: sha512-2H3RUvcmULO7dIE5EWJH8eubZAI4xw54H1ilJnRNZdeo8dTADEZ21w6J22XBkXqGJbe0+wnNJtw3UXRoLJnFEg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/sunos-x64/-/sunos-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fsunos-x64%2F-%2Fsunos-x64-0.25.1.tgz}
+    name: '@esbuild/sunos-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@esbuild/win32-arm64@0.21.5:
@@ -2587,6 +2772,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/win32-arm64@0.25.1:
+    resolution: {integrity: sha512-GE7XvrdOzrb+yVKB9KsRMq+7a2U/K5Cf/8grVFRAGJmfADr/e/ODQ134RK2/eeHqYV5eQRFxb1hY7Nr15fv1NQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/win32-arm64/-/win32-arm64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fwin32-arm64%2F-%2Fwin32-arm64-0.25.1.tgz}
+    name: '@esbuild/win32-arm64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/win32-ia32@0.21.5:
     resolution: {integrity: sha512-SWXFF1CL2RVNMaVs+BBClwtfZSvDgtL//G/smwAc5oVK/UPu2Gu9tIaRgFmYFFKrmg3SyAjSrElf0TiJ1v8fYA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/win32-ia32/-/win32-ia32-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fwin32-ia32%2F-%2Fwin32-ia32-0.21.5.tgz}
     name: '@esbuild/win32-ia32'
@@ -2613,6 +2806,14 @@ packages:
     dev: true
     optional: true
 
+  artifactory.intra.xiaojukeji.com/@esbuild/win32-ia32@0.25.1:
+    resolution: {integrity: sha512-uOxSJCIcavSiT6UnBhBzE8wy3n0hOkJsBOzy7HDAuTDE++1DJMRRVCPGisULScHL+a/ZwdXPpXD3IyFKjA7K8A==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/win32-ia32/-/win32-ia32-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fwin32-ia32%2F-%2Fwin32-ia32-0.25.1.tgz}
+    name: '@esbuild/win32-ia32'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
+    optional: true
+
   artifactory.intra.xiaojukeji.com/@esbuild/win32-x64@0.21.5:
     resolution: {integrity: sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fwin32-x64%2F-%2Fwin32-x64-0.21.5.tgz}
     name: '@esbuild/win32-x64'
@@ -2637,6 +2838,14 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
     dev: true
+    optional: true
+
+  artifactory.intra.xiaojukeji.com/@esbuild/win32-x64@0.25.1:
+    resolution: {integrity: sha512-Y1EQdcfwMSeQN/ujR5VayLOJ1BHaK+ssyk0AEzPjC+t1lITgsnccPqFjb6V+LsTp/9Iov4ysfjxLaGJ9RPtkVg==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@esbuild/win32-x64/-/win32-x64-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40esbuild%2Fwin32-x64%2F-%2Fwin32-x64-0.25.1.tgz}
+    name: '@esbuild/win32-x64'
+    version: 0.25.1
+    engines: {node: '>=18'}
+    requiresBuild: true
     optional: true
 
   artifactory.intra.xiaojukeji.com/@eslint-community/eslint-utils@4.4.1(eslint@8.41.0):
@@ -3151,7 +3360,7 @@ packages:
       react-refresh: artifactory.intra.xiaojukeji.com/react-refresh@0.14.0
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@3.3.0
       source-map: artifactory.intra.xiaojukeji.com/source-map@0.7.4
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
 
   artifactory.intra.xiaojukeji.com/@react-spring/animated@9.6.1(react@18.0.0):
     resolution: {integrity: sha512-ls/rJBrAqiAYozjLo5EPPLLOb1LM0lNVQcXODTC1SMtS6DbuBCPaKco5svFUQFMP2dso3O+qcC4k9FsKc0KxMQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@react-spring/animated/-/animated-9.6.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40react-spring%2Fanimated%2F-%2Fanimated-9.6.1.tgz}
@@ -3970,7 +4179,7 @@ packages:
       lodash: artifactory.intra.xiaojukeji.com/lodash@4.17.21
       react: artifactory.intra.xiaojukeji.com/react@18.0.0
       tslib: artifactory.intra.xiaojukeji.com/tslib@2.8.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: false
 
   artifactory.intra.xiaojukeji.com/@tarojs/plugin-html@4.0.9(@tarojs/helper@4.0.9)(@tarojs/runtime@4.0.9)(@tarojs/shared@4.0.9):
@@ -4288,7 +4497,7 @@ packages:
     dependencies:
       '@tarojs/helper': artifactory.intra.xiaojukeji.com/@tarojs/helper@4.0.9
       '@tarojs/shared': artifactory.intra.xiaojukeji.com/@tarojs/shared@4.0.9
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     transitivePeerDependencies:
       - '@swc/helpers'
       - supports-color
@@ -4336,7 +4545,7 @@ packages:
       '@types/postcss-url': artifactory.intra.xiaojukeji.com/@types/postcss-url@10.0.4
       '@types/react': artifactory.intra.xiaojukeji.com/@types/react@18.0.0
       postcss: artifactory.intra.xiaojukeji.com/postcss@8.4.38
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: false
 
   artifactory.intra.xiaojukeji.com/@tarojs/webpack5-prebundle@4.0.9(webpack@5.91.0):
@@ -4353,7 +4562,7 @@ packages:
       enhanced-resolve: artifactory.intra.xiaojukeji.com/enhanced-resolve@5.18.1
       es-module-lexer: artifactory.intra.xiaojukeji.com/es-module-lexer@0.10.5
       lodash: artifactory.intra.xiaojukeji.com/lodash@4.17.21
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
       webpack-virtual-modules: artifactory.intra.xiaojukeji.com/webpack-virtual-modules@0.6.2
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -4428,7 +4637,7 @@ packages:
       stylus-loader: artifactory.intra.xiaojukeji.com/stylus-loader@8.1.1(stylus@0.64.0)(webpack@5.91.0)
       terser-webpack-plugin: artifactory.intra.xiaojukeji.com/terser-webpack-plugin@5.3.11(@swc/core@1.3.96)(esbuild@0.21.5)(webpack@5.91.0)
       vm2: artifactory.intra.xiaojukeji.com/vm2@3.9.19
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
       webpack-chain: artifactory.intra.xiaojukeji.com/webpack-chain@6.5.1
       webpack-dev-server: artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(webpack@5.91.0)
       webpack-format-messages: artifactory.intra.xiaojukeji.com/webpack-format-messages@3.0.1
@@ -5853,7 +6062,7 @@ packages:
       make-dir: artifactory.intra.xiaojukeji.com/make-dir@2.1.0
       pify: artifactory.intra.xiaojukeji.com/pify@4.0.1
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@2.7.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/babel-plugin-const-enum@1.2.0(@babel/core@7.26.8):
@@ -6759,7 +6968,7 @@ packages:
       normalize-path: artifactory.intra.xiaojukeji.com/normalize-path@3.0.0
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
       serialize-javascript: artifactory.intra.xiaojukeji.com/serialize-javascript@6.0.2
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/core-js-compat@3.40.0:
@@ -6892,7 +7101,7 @@ packages:
       postcss-modules-values: artifactory.intra.xiaojukeji.com/postcss-modules-values@4.0.0(postcss@8.4.38)
       postcss-value-parser: artifactory.intra.xiaojukeji.com/postcss-value-parser@4.2.0
       semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/css-minimizer-webpack-plugin@6.0.0(esbuild@0.21.5)(lightningcss@1.29.1)(webpack@5.91.0):
@@ -6931,7 +7140,7 @@ packages:
       postcss: artifactory.intra.xiaojukeji.com/postcss@8.4.38
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
       serialize-javascript: artifactory.intra.xiaojukeji.com/serialize-javascript@6.0.2
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/css-select@4.3.0:
@@ -7925,11 +8134,11 @@ packages:
       esbuild: artifactory.intra.xiaojukeji.com/esbuild@0.25.0
       get-tsconfig: artifactory.intra.xiaojukeji.com/get-tsconfig@4.10.0
       loader-utils: artifactory.intra.xiaojukeji.com/loader-utils@2.0.4
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
       webpack-sources: artifactory.intra.xiaojukeji.com/webpack-sources@1.4.3
     dev: true
 
-  artifactory.intra.xiaojukeji.com/esbuild-plugin-es5@2.1.1(esbuild@0.23.1):
+  artifactory.intra.xiaojukeji.com/esbuild-plugin-es5@2.1.1(esbuild@0.25.1):
     resolution: {integrity: sha512-GRcHLUwjmrjxz9bN24ooTedrBrAVx7+F8M1aD7FFB+7RTHkt7FY8tHAQ9znyzsV16+95ojbTyJLY+HPO0OI7zA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild-plugin-es5/-/esbuild-plugin-es5-2.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild-plugin-es5%2F-%2Fesbuild-plugin-es5-2.1.1.tgz}
     id: artifactory.intra.xiaojukeji.com/esbuild-plugin-es5/2.1.1
     name: esbuild-plugin-es5
@@ -7941,7 +8150,7 @@ packages:
       '@swc/core': artifactory.intra.xiaojukeji.com/@swc/core@1.10.16(@swc/helpers@0.5.13)
       '@swc/helpers': artifactory.intra.xiaojukeji.com/@swc/helpers@0.5.13
       deepmerge: artifactory.intra.xiaojukeji.com/deepmerge@4.3.1
-      esbuild: artifactory.intra.xiaojukeji.com/esbuild@0.23.1
+      esbuild: artifactory.intra.xiaojukeji.com/esbuild@0.25.1
     dev: true
 
   artifactory.intra.xiaojukeji.com/esbuild@0.21.5:
@@ -8044,6 +8253,40 @@ packages:
       '@esbuild/win32-ia32': artifactory.intra.xiaojukeji.com/@esbuild/win32-ia32@0.25.0
       '@esbuild/win32-x64': artifactory.intra.xiaojukeji.com/@esbuild/win32-x64@0.25.0
     dev: true
+
+  artifactory.intra.xiaojukeji.com/esbuild@0.25.1:
+    resolution: {integrity: sha512-BGO5LtrGC7vxnqucAe/rmvKdJllfGaYWdyABvyMoXQlfYMb2bbRuReWR5tEGE//4LcNJj9XrkovTqNYRFZHAMQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/esbuild/-/esbuild-0.25.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fesbuild%2F-%2Fesbuild-0.25.1.tgz}
+    name: esbuild
+    version: 0.25.1
+    engines: {node: '>=18'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      '@esbuild/aix-ppc64': artifactory.intra.xiaojukeji.com/@esbuild/aix-ppc64@0.25.1
+      '@esbuild/android-arm': artifactory.intra.xiaojukeji.com/@esbuild/android-arm@0.25.1
+      '@esbuild/android-arm64': artifactory.intra.xiaojukeji.com/@esbuild/android-arm64@0.25.1
+      '@esbuild/android-x64': artifactory.intra.xiaojukeji.com/@esbuild/android-x64@0.25.1
+      '@esbuild/darwin-arm64': artifactory.intra.xiaojukeji.com/@esbuild/darwin-arm64@0.25.1
+      '@esbuild/darwin-x64': artifactory.intra.xiaojukeji.com/@esbuild/darwin-x64@0.25.1
+      '@esbuild/freebsd-arm64': artifactory.intra.xiaojukeji.com/@esbuild/freebsd-arm64@0.25.1
+      '@esbuild/freebsd-x64': artifactory.intra.xiaojukeji.com/@esbuild/freebsd-x64@0.25.1
+      '@esbuild/linux-arm': artifactory.intra.xiaojukeji.com/@esbuild/linux-arm@0.25.1
+      '@esbuild/linux-arm64': artifactory.intra.xiaojukeji.com/@esbuild/linux-arm64@0.25.1
+      '@esbuild/linux-ia32': artifactory.intra.xiaojukeji.com/@esbuild/linux-ia32@0.25.1
+      '@esbuild/linux-loong64': artifactory.intra.xiaojukeji.com/@esbuild/linux-loong64@0.25.1
+      '@esbuild/linux-mips64el': artifactory.intra.xiaojukeji.com/@esbuild/linux-mips64el@0.25.1
+      '@esbuild/linux-ppc64': artifactory.intra.xiaojukeji.com/@esbuild/linux-ppc64@0.25.1
+      '@esbuild/linux-riscv64': artifactory.intra.xiaojukeji.com/@esbuild/linux-riscv64@0.25.1
+      '@esbuild/linux-s390x': artifactory.intra.xiaojukeji.com/@esbuild/linux-s390x@0.25.1
+      '@esbuild/linux-x64': artifactory.intra.xiaojukeji.com/@esbuild/linux-x64@0.25.1
+      '@esbuild/netbsd-arm64': artifactory.intra.xiaojukeji.com/@esbuild/netbsd-arm64@0.25.1
+      '@esbuild/netbsd-x64': artifactory.intra.xiaojukeji.com/@esbuild/netbsd-x64@0.25.1
+      '@esbuild/openbsd-arm64': artifactory.intra.xiaojukeji.com/@esbuild/openbsd-arm64@0.25.1
+      '@esbuild/openbsd-x64': artifactory.intra.xiaojukeji.com/@esbuild/openbsd-x64@0.25.1
+      '@esbuild/sunos-x64': artifactory.intra.xiaojukeji.com/@esbuild/sunos-x64@0.25.1
+      '@esbuild/win32-arm64': artifactory.intra.xiaojukeji.com/@esbuild/win32-arm64@0.25.1
+      '@esbuild/win32-ia32': artifactory.intra.xiaojukeji.com/@esbuild/win32-ia32@0.25.1
+      '@esbuild/win32-x64': artifactory.intra.xiaojukeji.com/@esbuild/win32-x64@0.25.1
 
   artifactory.intra.xiaojukeji.com/escalade@3.2.0:
     resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/escalade/-/escalade-3.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fescalade%2F-%2Fescalade-3.2.0.tgz}
@@ -9569,7 +9812,7 @@ packages:
       lodash: artifactory.intra.xiaojukeji.com/lodash@4.17.21
       pretty-error: artifactory.intra.xiaojukeji.com/pretty-error@4.0.0
       tapable: artifactory.intra.xiaojukeji.com/tapable@2.2.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/htmlparser2@6.1.0:
@@ -10766,7 +11009,7 @@ packages:
         optional: true
     dependencies:
       less: artifactory.intra.xiaojukeji.com/less@4.2.0
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/less@3.13.1:
@@ -11337,7 +11580,7 @@ packages:
     dependencies:
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
       tapable: artifactory.intra.xiaojukeji.com/tapable@2.2.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/minimalistic-assert@1.0.1:
@@ -12426,7 +12669,7 @@ packages:
       jiti: artifactory.intra.xiaojukeji.com/jiti@1.21.7
       postcss: artifactory.intra.xiaojukeji.com/postcss@8.4.38
       semver: artifactory.intra.xiaojukeji.com/semver@7.7.1
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -13622,7 +13865,7 @@ packages:
         optional: true
     dependencies:
       neo-async: artifactory.intra.xiaojukeji.com/neo-async@2.6.2
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/sass@1.84.0:
@@ -14405,7 +14648,7 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/stylehacks@6.1.1(postcss@8.4.38):
@@ -14493,7 +14736,7 @@ packages:
       fast-glob: artifactory.intra.xiaojukeji.com/fast-glob@3.3.3
       normalize-path: artifactory.intra.xiaojukeji.com/normalize-path@3.0.0
       stylus: artifactory.intra.xiaojukeji.com/stylus@0.64.0
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/stylus@0.64.0:
@@ -14656,7 +14899,36 @@ packages:
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
       serialize-javascript: artifactory.intra.xiaojukeji.com/serialize-javascript@6.0.2
       terser: artifactory.intra.xiaojukeji.com/terser@5.39.0
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
+    dev: true
+
+  artifactory.intra.xiaojukeji.com/terser-webpack-plugin@5.3.11(@swc/core@1.3.96)(esbuild@0.25.1)(webpack@5.91.0):
+    resolution: {integrity: sha512-RVCsMfuD0+cTt3EwX8hSl2Ks56EbFHWmhluwcqoPKtBnfjiT6olaq7PRIRfhyU8nnC2MrnDrBLfrD/RGE+cVXQ==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/terser-webpack-plugin/-/terser-webpack-plugin-5.3.11.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fterser-webpack-plugin%2F-%2Fterser-webpack-plugin-5.3.11.tgz}
+    id: artifactory.intra.xiaojukeji.com/terser-webpack-plugin/5.3.11
+    name: terser-webpack-plugin
+    version: 5.3.11
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': artifactory.intra.xiaojukeji.com/@jridgewell/trace-mapping@0.3.25
+      '@swc/core': artifactory.intra.xiaojukeji.com/@swc/core@1.3.96
+      esbuild: artifactory.intra.xiaojukeji.com/esbuild@0.25.1
+      jest-worker: artifactory.intra.xiaojukeji.com/jest-worker@27.5.1
+      schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
+      serialize-javascript: artifactory.intra.xiaojukeji.com/serialize-javascript@6.0.2
+      terser: artifactory.intra.xiaojukeji.com/terser@5.39.0
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
 
   artifactory.intra.xiaojukeji.com/terser@5.39.0:
     resolution: {integrity: sha512-LBAhFyLho16harJoWMg/nZsQYgTrg5jXOn2nCYjRUcZZEdE3qa2zb8QEDRUGVZBW4rlazf2fxkg8tztybTaqWw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/terser/-/terser-5.39.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fterser%2F-%2Fterser-5.39.0.tgz}
@@ -15387,7 +15659,7 @@ packages:
       mime-types: artifactory.intra.xiaojukeji.com/mime-types@2.1.35
       range-parser: artifactory.intra.xiaojukeji.com/range-parser@1.2.1
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@4.3.0
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/webpack-dev-server@4.15.2(webpack@5.91.0):
@@ -15434,7 +15706,7 @@ packages:
       serve-index: artifactory.intra.xiaojukeji.com/serve-index@1.9.1
       sockjs: artifactory.intra.xiaojukeji.com/sockjs@0.3.24
       spdy: artifactory.intra.xiaojukeji.com/spdy@4.0.2
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
       webpack-dev-middleware: artifactory.intra.xiaojukeji.com/webpack-dev-middleware@5.3.4(webpack@5.91.0)
       ws: artifactory.intra.xiaojukeji.com/ws@8.18.0
     transitivePeerDependencies:
@@ -15484,7 +15756,7 @@ packages:
     version: 0.6.2
     dev: true
 
-  artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96):
+  artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1):
     resolution: {integrity: sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw==, registry: http://npm.intra.xiaojukeji.com/, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/webpack/-/webpack-5.91.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fwebpack%2F-%2Fwebpack-5.91.0.tgz}
     id: artifactory.intra.xiaojukeji.com/webpack/5.91.0
     name: webpack
@@ -15518,7 +15790,7 @@ packages:
       neo-async: artifactory.intra.xiaojukeji.com/neo-async@2.6.2
       schema-utils: artifactory.intra.xiaojukeji.com/schema-utils@3.3.0
       tapable: artifactory.intra.xiaojukeji.com/tapable@2.2.1
-      terser-webpack-plugin: artifactory.intra.xiaojukeji.com/terser-webpack-plugin@5.3.11(@swc/core@1.3.96)(esbuild@0.21.5)(webpack@5.91.0)
+      terser-webpack-plugin: artifactory.intra.xiaojukeji.com/terser-webpack-plugin@5.3.11(@swc/core@1.3.96)(esbuild@0.25.1)(webpack@5.91.0)
       watchpack: artifactory.intra.xiaojukeji.com/watchpack@2.4.2
       webpack-sources: artifactory.intra.xiaojukeji.com/webpack-sources@3.2.3
     transitivePeerDependencies:
@@ -15539,7 +15811,7 @@ packages:
       consola: artifactory.intra.xiaojukeji.com/consola@2.15.3
       pretty-time: artifactory.intra.xiaojukeji.com/pretty-time@1.1.0
       std-env: artifactory.intra.xiaojukeji.com/std-env@3.8.0
-      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)
+      webpack: artifactory.intra.xiaojukeji.com/webpack@5.91.0(@swc/core@1.3.96)(esbuild@0.25.1)
     dev: true
 
   artifactory.intra.xiaojukeji.com/websocket-driver@0.7.4:

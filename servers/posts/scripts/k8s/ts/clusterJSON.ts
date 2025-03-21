@@ -2,7 +2,7 @@ export default {
   "apiVersion": "v1",
   "kind": "Service",
   "metadata": {
-    "name": process.env.MICRO_APP_POSTS_HOST!,
+    "name": process.env.MICRO_APP_POSTS_INNER_HOST!,
   },
   "spec": {
     "type": "ClusterIP",
@@ -11,7 +11,7 @@ export default {
     },
     "ports": [
       {
-        "name": "query",
+        "name": "posts",
         "protocol": "TCP",
         "port": +process.env.MICRO_APP_POSTS_PORT!.slice(1),
         "targetPort": +process.env.MICRO_APP_POSTS_PORT!.slice(1),

@@ -11,7 +11,7 @@ export default {
     },
     "ports": [
       {
-        "name": "query",
+        "name": "moderation",
         "protocol": "TCP",
         "port": +process.env.MICRO_APP_MODERATION_PORT!.slice(1),
         "targetPort": +process.env.MICRO_APP_MODERATION_PORT!.slice(1),

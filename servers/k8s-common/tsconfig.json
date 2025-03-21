@@ -1,0 +1,16 @@
+{
+  "extends": "@syz/microservices-typescript-config/node.json",
+  "include": [
+    "./src/**/*",
+    "./types/**/*",
+    "../common/types/**/*",
+    "../common/src/**/*",
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/types",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+    }
+  }
+}

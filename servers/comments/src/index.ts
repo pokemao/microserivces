@@ -23,7 +23,7 @@ app.use(bodyPaser.json())
 app.use(cors())
 
 const commentsHandler = new commentsStorage();
-const eventBusUrl = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events';
+const eventBusUrl = esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_INNER_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events';
 
 app.get("/posts/:id/comments", (req, res) => {
   const { id } = req.params;

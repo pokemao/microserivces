@@ -11,7 +11,7 @@ export default {
     },
     "ports": [
       {
-        "name": "query",
+        "name": "event-bus",
         "protocol": "TCP",
         "port": +process.env.MICRO_APP_EVENT_BUS_PORT!.slice(1),
         "targetPort": +process.env.MICRO_APP_EVENT_BUS_PORT!.slice(1),

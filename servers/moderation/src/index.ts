@@ -44,7 +44,7 @@ app.post("/events", async (req, res) => {
     await new Promise((resolve) => {
       setTimeout(resolve, 5000);
     });
-    axios.post(esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events', {
+    axios.post(esbuildPluginEnv.MICRO_APP_EVENT_BUS_PROTOCOL! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_INNER_HOST! + esbuildPluginEnv.MICRO_APP_EVENT_BUS_PORT! + '/events', {
       id: randomBytes(4).toString("hex"),
       type: 'CommentModerated',
       data: {

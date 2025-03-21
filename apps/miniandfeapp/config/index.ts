@@ -28,9 +28,13 @@ export default defineConfig<"webpack5">(async (merge) => {
       MICRO_APP_POSTS_PROTOCOL: JSON.stringify(process.env.MICRO_APP_POSTS_PROTOCOL),
       MICRO_APP_COMMENTS_PROTOCOL: JSON.stringify(process.env.MICRO_APP_COMMENTS_PROTOCOL),
       MICRO_APP_QUERY_PROTOCOL: JSON.stringify(process.env.MICRO_APP_QUERY_PROTOCOL),
-      MICRO_APP_POSTS_PORT: JSON.stringify(process.env.MICRO_APP_POSTS_PORT),
-      MICRO_APP_COMMENTS_PORT: JSON.stringify(process.env.MICRO_APP_COMMENTS_PORT),
-      MICRO_APP_QUERY_PORT: JSON.stringify(process.env.MICRO_APP_QUERY_PORT),
+      // 如果使用了ingress的话，端口号就是80了，这个是ingress的端口号
+      // 因为前端代码是跑在用户的浏览器里面的，外界用户需要通过访问ingress-nginx来访问微服务
+      // 而微服务内部是使用cluster-ip互相访问的
+      // 所以浏览器要直接交互的是ingress-nginx这个节点对外提供的端口号，也就是ingress的端口号
+      MICRO_APP_POSTS_PORT: process.env.NODE_ENV === 'production' ? JSON.stringify(process.env.MICRO_APP_INGRESS_PORT) : JSON.stringify(process.env.MICRO_APP_POSTS_PORT),
+      MICRO_APP_COMMENTS_PORT: process.env.NODE_ENV === 'production' ? JSON.stringify(process.env.MICRO_APP_INGRESS_PORT) : JSON.stringify(process.env.MICRO_APP_COMMENTS_PORT),
+      MICRO_APP_QUERY_PORT: process.env.NODE_ENV === 'production' ? JSON.stringify(process.env.MICRO_APP_INGRESS_PORT) : JSON.stringify(process.env.MICRO_APP_QUERY_PORT),
     },
     designWidth(input) {
       let index = -1;
@@ -68,7 +72,7 @@ export default defineConfig<"webpack5">(async (merge) => {
       },
     },
     cache: {
-      enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+      enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
     mini: {
       postcss: {

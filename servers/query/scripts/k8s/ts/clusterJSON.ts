@@ -2,7 +2,7 @@ export default {
   "apiVersion": "v1",
   "kind": "Service",
   "metadata": {
-    "name": process.env.MICRO_APP_QUERY_HOST!,
+    "name": process.env.MICRO_APP_QUERY_INNER_HOST!,
   },
   "spec": {
     "type": "ClusterIP",

@@ -10,11 +10,12 @@
     "framework": "React"
   },
   "scripts": {
+    "start": "node ./static-server/index.cjs",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
-    "build:h5": "taro build --type h5",
+    "build:h5": "taro build --type h5 --env-prefix MICRO_APP_",
     "build:rn": "taro build --type rn",
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
@@ -23,12 +24,18 @@
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch --env-prefix MICRO_APP_",
     "dev:tt": "npm run build:tt -- --watch",
-    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:h5": "npm run build:h5 -- --watch --env-prefix MICRO_APP_",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "serve": "pnpm dev:alipay"
+    "serve": "pnpm serve:h5",
+    "build": "pnpm build:h5 && tsx ./static-server/compiler/esbuild.config.ts",
+    "docker-build": "cross-env DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 tsx ./scripts/docker/ts/genImage.ts",
+    "docker-push": "tsx ./scripts/docker/ts/pushImage.ts",
+    "k8s-genyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
+    "k8s-justgenyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
+    "k8s-applyOrRolloutRestart": "tsx ./scripts/k8s/ts/applyOrRolloutRestart.ts"
   },
   "browserslist": {
     "development": [
@@ -71,6 +78,7 @@
     "@babel/plugin-proposal-class-properties": "7.14.5",
     "@babel/preset-react": "^7.24.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "@syz/microservices-typescript-config": "workspace:^",
     "@tarojs/cli": "4.0.9",
     "@tarojs/taro-loader": "4.0.9",
     "@tarojs/webpack5-runner": "4.0.9",

@@ -16,7 +16,7 @@
     "docker-push": "docker login docker.io && dotenv -c production -- turbo run docker-push",
     "k8s-genyaml": "docker login docker.io && dotenv -c production -- turbo run k8s-genyaml",
     "k8s-justgenyaml": "dotenv -c production -- turbo run k8s-justgenyaml",
-    "k8s-applyOrRolloutRestart": "docker login docker.io && dotenv -c production -- turbo run k8s-applyOrRolloutRestart",
+    "k8s-applyOrRolloutRestart": "echo '保证安装ingress-nginx' && docker login docker.io && dotenv -c production -- turbo run k8s-applyOrRolloutRestart",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "license": "MIT",
@@ -28,6 +28,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.5.0",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.25.1",
     "js-yaml": "^4.1.0",
     "kubernetes-client": "^9.0.0",
     "nodemon": "^3.1.9",

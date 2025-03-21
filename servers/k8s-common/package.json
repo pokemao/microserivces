@@ -1,0 +1,30 @@
+{
+  "name": "@syz/microservices-servers-k8s-common",
+  "private": true,
+  "version": "0.0.0",
+  "keywords": [
+    "microservices"
+  ],
+  "author": {
+    "name": "shaoyuzhe",
+    "email": "1522646988@163.com"
+  },
+  "contributors": [],
+  "scripts": {
+    "k8s-genyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
+    "k8s-justgenyaml": "tsx ./scripts/k8s/ts/JSON2YAML.ts",
+    "k8s-applyOrRolloutRestart": "tsx ./scripts/k8s/ts/applyOrRolloutRestart.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "devDependencies": {
+    "@syz/microservices-typescript-config": "workspace:^"
+  }
+}
