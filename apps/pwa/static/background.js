@@ -5,7 +5,11 @@ self.addEventListener('install', function(event) {
 
   // 如果之前注册了 Service Worker，那么调用self.skipWaiting()就会先卸载之前的 Service Worker
   // 跳过等待，立即激活 Service Worker
+  event.waitUntil(Promise.resolve().then(_ => console.log('install before skipWaiting')));
+
   event.waitUntil(self.skipWaiting());
+
+  event.waitUntil(Promise.resolve().then(_ => console.log('install after skipWaiting')));
 
   // 确保 Service Worker 不会在 waitUntil() 里面的代码执行完毕之前安装完成
   event.waitUntil(
@@ -18,11 +22,13 @@ self.addEventListener('install', function(event) {
          *    new Request('/manifest.html')
          *  ]);
          */
-          cache.addAll([
-            '/',
-            '/index.html',
-            '/manifest.html'
-          ]);
+        return cache
+      }).then(function(cache) {
+        cache.addAll([
+          '/',
+          '/index.html',
+          '/manifest.html'
+        ]);
       })
   );
 
@@ -57,7 +63,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   console.log("background.js: Service Worker fetch", event, event.request.url);
   // 拦截请求
-  event.respondWith(cacheFirst(event.request));
+  event.respondWith(networkFirst(event.request));
 });
 
 // 缓存优先
@@ -71,9 +77,40 @@ const cacheFirst = async (request) => {
   // 如果缓存中没有，就从网络中请求
   const responseFromServer = await fetch(request);
   const cache = await caches.open(cacheName);
-  const res = await cache.keys()
   // 将请求到的资源添加到缓存中
   cache.put(request, responseFromServer.clone());
   return responseFromServer;
 }
 
+// 网络优先
+const networkFirst = async (request) => {
+  try {
+    // 从网络中请求
+    const responseFromServer = await fetch(request);
+    const cache = await caches.open(cacheName);
+    // 将请求到的资源添加到缓存中
+    cache.put(request, responseFromServer.clone());
+    return responseFromServer;
+  }
+  catch (error) {
+    // 如果网络请求失败，就从缓存中读取
+    const responseFromCache = await caches.match(request);
+    return responseFromCache;
+  }
+}
+
+self.addEventListener('push', function(event) {
+  // Retrieve the textual payload from event.data (a PushMessageData object).
+  // Other formats are supported (ArrayBuffer, Blob, JSON), check out the documentation
+  // on https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData.
+  const payload = event.data ? event.data.text() : 'no payload';
+
+  // Keep the service worker alive until the notification is created.
+  event.waitUntil(
+    // Show a notification with title 'ServiceWorker Cookbook' and use the payload
+    // as the body.
+    self.registration.showNotification('ServiceWorker Cookbook', {
+      body: payload,
+    })
+  );
+});

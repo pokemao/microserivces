@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon ./src/index.js"
+    "serve:pwa": "nodemon ./src/index.js",
+    "genImg": "node ./scripts/genImg.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "sharp": "^0.33.5",
+    "web-push": "^3.6.7"
   }
 }
