@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入manifest文件 -->
+    <!-- 如果文件的打开路由是 https://test.com/notify/, 那么manifest.json的请求路径就是 https://test.com/notify/notify/manifest.json -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="shortcut icon" href="./assets/48.png" type="image/x-icon">
+    <title>honeysuckle🌺</title>
+    <style>
+      body {
+        font-family: monospace;
+        font-size: 1rem;
+        white-space: pre-wrap;
+      }
+      #install {
+        width: 100px;
+        height: 30px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      #front_notification {
+        width: 200px;
+        height: 30px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      #front_service_notification {
+        width: 200px;
+        height: 30px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+    </style>
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  </head>
+  <body>
+    <h1>测试 Service Worker</h1>
+    <div id="install">下载PWA</div>
+    <br />
+    <div id="front_notification">new Notification 发送前端通知</div>
+    <div id="loop_front_notification">new Notification loop 发送前端通知</div>
+    <br />
+    <div id="front_service_notification">sw.pushNotification 发送前端service通知</div>
+    <div id="loop_front_service_notification">sw.pushNotification loop 发送前端service通知</div>
+
+    <p>This demo shows how to send push notifications with a payload.</p>
+
+    <form>
+    Notification payload: <input id='notification-payload' type='text' placeholder='Insert here a payload' value='测试service Worker'></input>
+    Notification delay: <input id='notification-delay' type='number' value='2'></input> seconds
+    Notification Time-To-Live: <input id='notification-ttl' type='number' value='2'></input> seconds
+    </form>
+
+    <button id="doIt">Request sending a notification!</button>
+
+    <script type="module" src="./js/vconsoleinit.js"></script>
+    <script type="module" src="./js/serviceWorkerRegister.js"></script>
+    <script type="module" src="./js/appInstall.js"></script>
+    <script type="module" src="./js/notification.js"></script>
+    <script type="module" src="./js/pushNotification.js"></script>
+    <script type="module" src="./js/fcm.js"></script>
+
+  </body>
+</html>
