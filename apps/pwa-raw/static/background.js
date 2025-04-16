@@ -24,11 +24,17 @@ self.addEventListener('install', function(event) {
          */
         return cache
       }).then(function(cache) {
-        cache.addAll([
-          '/',
-          '/index.html',
-          '/manifest.html'
+        return cache.addAll([
+          './',
+          './index.html',
+          './manifest.json'
         ]);
+      }).then(res => {
+        console.log('background.js: Service Worker install success', res);
+        return res
+      }).catch(function(err) {
+        console.log('background.js: Service Worker install error', err);
+        return undefined
       })
   );
 

@@ -3,7 +3,7 @@
   "name": "honeysuckle",
   "short_name": "HNSKL",
   "start_url": "./",
-  "id": "/",
+  "id": "honeysuckle-v1",
   "scope": "/",
   "background_color": "white",
   "theme_color": "white",

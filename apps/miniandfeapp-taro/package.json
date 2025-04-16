@@ -29,7 +29,7 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "serve": "pnpm serve:h5",
+    "serve": "pnpm dev:h5",
     "build": "pnpm build:h5 && tsx ./static-server/compiler/esbuild.config.ts",
     "docker-build": "cross-env DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 tsx ./scripts/docker/ts/genImage.ts",
     "docker-push": "tsx ./scripts/docker/ts/pushImage.ts",

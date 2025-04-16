@@ -2,7 +2,7 @@
 if ("serviceWorker" in window.navigator) {
   const registerServiceWorker = async () => {
     if ("serviceWorker" in navigator) {
-      logger.log("registerServiceWorker");
+      console.log("registerServiceWorker");
       try {
         /**
          * navigator.serviceWorker是一个ServiceWorkerContainer对象
@@ -15,7 +15,7 @@ if ("serviceWorker" in window.navigator) {
            * 1. 如果第一个参数写的是绝对路径：/nihao/background.js，那么就会请求https://test.com/nihao/background.js这个js文件
            * 2. 如果第一个参数写的是相对路径：./js/background.js，那么就会请求https://test.com/notifi/js/background.js这个js文件
            */
-          "./js/background.js",
+          "./background.js",
           {
             /**
              * 这个值与访问html页面的url是紧密关联的

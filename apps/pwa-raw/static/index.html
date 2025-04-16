@@ -14,26 +14,12 @@
         font-size: 1rem;
         white-space: pre-wrap;
       }
-      #install {
-        width: 100px;
-        height: 30px;
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
-        line-height: 30px;
-        cursor: pointer;
-      }
-      #front_notification {
-        width: 200px;
-        height: 30px;
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
-        line-height: 30px;
-        cursor: pointer;
-      }
-      #front_service_notification {
-        width: 200px;
+      #install,
+      #front_notification,
+      #loop_front_notification,
+      #front_service_notification,
+      #loop_front_service_notification {
+        width: 100%;
         height: 30px;
         background-color: #007bff;
         color: #fff;
@@ -64,6 +50,7 @@
 
     <button id="doIt">Request sending a notification!</button>
 
+    <!-- 需要用户在设备的设置中开启浏览器的通知权限 -->
     <script type="module" src="./js/vconsoleinit.js"></script>
     <script type="module" src="./js/serviceWorkerRegister.js"></script>
     <script type="module" src="./js/appInstall.js"></script>

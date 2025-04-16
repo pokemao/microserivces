@@ -7,6 +7,12 @@
 </head>
 <body>
   <h1>Son</h1>
+  <p>
+    这个页面会作为一个<strong>iframe</strong>嵌入到father页面中。
+  </p>
+  <p>
+    用于测试父子页面域名不同的时候, 父页面打开的时候，iframe能否给后端发送cookie。
+  </p>
   <button>click</button>
   <script>
     document.cookie = 'name=woaini;samesite=none;secure;Partitioned';

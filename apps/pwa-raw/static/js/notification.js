@@ -1,5 +1,5 @@
 // 发送通知
-import { createOptions } from "./notificationOptions.js";
+import { createOptions } from "./notificationOption.js";
 const counter = {
   i: 0,
 };
@@ -46,13 +46,18 @@ frontNotification.addEventListener("click", () => {
 const loopCounter = {
   i: 0,
 }
+let startLoop = false;
 const loopNotificationPush = (counter) => {
+  if(!startLoop){
+    return;
+  }
   frontNotificationPush(counter);
   setTimeout(loopNotificationPush, 5000, counter);
 };
-
 const loopFrontNotification = document.querySelector("#loop_front_notification");
 loopFrontNotification.addEventListener("click", () => {
+  if(startLoop) return startLoop = false;
+  startLoop = true;
   if (Notification.permission === "default") {
     console.log("index.html 没有权限");
     Notification.requestPermission().then((permission) => {

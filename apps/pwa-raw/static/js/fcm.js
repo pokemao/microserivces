@@ -1,76 +1,63 @@
 // 通过fcm发送消息
-import urlBase64ToUint8Array from './base642U8Array.js';
+import {urlBase64ToUint8Array} from './base642U8Array.js';
 
-Notification.requestPermission()
 if (Notification.permission === "default") {
-  console.log("index.html 没有权限");
   Notification.requestPermission().then((permission) => {
     if (permission === "granted") {
-      console.log("index.html 有权限");
-
+      console.log("有通知权限");
     } else {
       alert("请允许通知");
     }
   });
 } else if (Notification.permission === "granted") {
-  console.log("index.html 有权限");
-
+  console.log("有通知权限");
 } else {
+  console.log("没有通知权限");
   alert("请允许通知");
 }
 
-
-
-
 navigator.serviceWorker.ready
-.then(function(registration) {
-  // Use the PushManager to get the user's subscription to the push service.
-  return registration.pushManager.getSubscription()
-  .then(async function(subscription) {
-    // If a subscription was found, return it.
-    if (subscription) {
-      console.log('shao has subscription', subscription);
-      // subscription.unsubscribe().then(function(successful) {
-      //   console.log('shao unsubscribe successful', successful);
-      // })
-      return subscription;
-    }
-
-    // Get the server's public key
-    const response = await fetch('./vapidPublicKey');
-    console.log('shao response', response);
-
-    const vapidPublicKey = await response.text();
-    console.log('shao vapidPublicKey', vapidPublicKey);
-    // Chrome doesn't accept the base64-encoded (string) vapidPublicKey yet
-    // urlBase64ToUint8Array() is defined in /tools.js
-    const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey);
-    console.log('shao convertedVapidKey', convertedVapidKey);
-
-    // Otherwise, subscribe the user (userVisibleOnly allows to specify that we don't plan to
-    // send notifications that don't have a visible effect for the user).
-
-    console.log('shao registration.pushManager.subscribe', registration.pushManager.subscribe);
-    let res;
-
-    try {
-      res = await registration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: convertedVapidKey
-      });
-    }catch(e) {
-      console.log('shao subscribe e code: ', e.code, ' message: ', e.message, ' name: ', e.name);
-    }
-
-    console.log('shao res', res);
-    return res
-  });
-}).then(function(subscription) {
+.then(async function(registration) {
+  // 判断当前网站是否已经注册了subscription
+  const subscription = await registration.pushManager.getSubscription();
+  if (subscription) {
+    // 已经注册了subscription，直接返回
+    console.log('已经注册的subscription', subscription);
+    // subscription.unsubscribe().then(function(successful) {
+    //   console.log('shao unsubscribe successful', successful);
+    // })
+    return subscription;
+  }
+  // 没有注册subscription，注册一个
+  console.log('没有注册的subscription，注册一个');
+  const response = await fetch('./vapidPublicKey');
+  console.log('接口./vapidPublicKey返回的response', response);
+  const vapidPublicKey = await response.text();
+  console.log('接口./vapidPublicKey返回的vapidPublicKey', vapidPublicKey);
+  // Chrome doesn't accept the base64-encoded (string) vapidPublicKey yet
+  // urlBase64ToUint8Array() is defined in /tools.js
+  const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey);
+  console.log('接口./vapidPublicKey返回的convertedVapidKey', convertedVapidKey);
+  // Otherwise, subscribe the user (userVisibleOnly allows to specify that we don't plan to
+  // send notifications that don't have a visible effect for the user).
+  console.log('注册一个subscription');
+  try {
+    return await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: convertedVapidKey
+    })
+  }catch(e) {
+    console.log('registration.pushManager.subscribe error code: ', e.code,'message: ', e.message,'name: ', e.name);
+    alert('注册一个subscription失败, 当前浏览器不支持fcm push notification');
+  }
+  return undefined
+}).then(async function(subscription) {
   if(!subscription) {
     return;
   }
-  console.log('shao subscription', subscription);
+  console.log('注册得到的subscription', subscription);
 
+  // 让server保存subscription的接口
   // Send the subscription details to the server using the Fetch API.
   // fetch('./register', {
   //   method: 'post',

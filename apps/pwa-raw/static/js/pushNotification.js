@@ -1,5 +1,5 @@
 // service worker 发送前端消息
-import { createOptions } from "./notificationOptions.js";
+import { createOptions } from "./notificationOption.js";
 
 // 获取service worker
 let registration = null;
@@ -33,7 +33,7 @@ frontServiceNotification.addEventListener("click", () => {
     });
   } else if (Notification.permission === "granted") {
     console.log("index.html 有权限");
-    serivceNotificationPush(coun);
+    serivceNotificationPush(counter);
   } else {
     alert("请允许通知");
   }
@@ -43,12 +43,19 @@ const loopCounter = {
   i: 0,
 }
 
+let startLoop = false;
+
 const loopNotificationPush = (counter) => {
+  if(!startLoop){
+    return;
+  }
   serivceNotificationPush(counter);
   setTimeout(loopNotificationPush, 5000, counter);
 }
 const loopFrontServiceNotification = document.querySelector("#loop_front_service_notification");
 loopFrontServiceNotification.addEventListener("click", () => {
+  if(startLoop) return startLoop = false;
+  startLoop = true;
   if (Notification.permission === "default") {
     console.log("index.html 没有权限");
     Notification.requestPermission().then((permission) => {
@@ -64,6 +71,7 @@ loopFrontServiceNotification.addEventListener("click", () => {
   } else {
     alert("请允许通知");
   }
+
 })
 
 export {}

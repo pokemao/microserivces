@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const https = require('https');
 const fs = require('fs');
+require('dotenv').config();
 
 const key = fs.readFileSync('./crt/private.key');
 const cert = fs.readFileSync('./crt/mydomain.crt');
@@ -12,8 +13,8 @@ const options = {
 };
 
 // Run static server
-https.createServer(options, app).listen(8444, () => {
-  console.log('Example app listening on port 8444!')
+https.createServer(options, app).listen(process.env.MICRO_APP_COOKIE_RAW_FATHER_PORT.slice(1), () => {
+  console.log(`Example app listening on port ${process.env.MICRO_APP_COOKIE_RAW_FATHER_PORT}!`)
 });
 
 app.use(express.static('./src/father/public'))
