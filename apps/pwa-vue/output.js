@@ -1,5 +1,4 @@
-/* eslint-disable */
-const a = {
+{
   mode: 'development',
   context: '/Users/didi/Desktop/microserivces/apps/pwa-vue',
   output: {
@@ -7,12 +6,12 @@ const a = {
     path: '/Users/didi/Desktop/microserivces/apps/pwa-vue/dist',
     filename: 'js/[name].js',
     publicPath: '/',
-    chunkFilename: 'js/[name].js',
+    chunkFilename: 'js/[name].js'
   },
   resolve: {
     alias: {
       '@': '/Users/didi/Desktop/microserivces/apps/pwa-vue/src',
-      vue$: 'vue/dist/vue.runtime.esm-bundler.js',
+      vue$: 'vue/dist/vue.runtime.esm-bundler.js'
     },
     extensions: [
       '.tsx',
@@ -22,13 +21,13 @@ const a = {
       '.jsx',
       '.vue',
       '.json',
-      '.wasm',
+      '.wasm'
     ],
     modules: [
       'node_modules',
       '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules',
-      '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+@vue+cli-service@5.0.1_@swc+core@1.3.96_esbuild@0.25.1_less-loader@8.0.0_vue@3.2.13/node_modules/@vue/cli-service/node_modules',
-    ],
+      '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+@vue+cli-service@5.0.1_@swc+core@1.3.96_esbuild@0.25.1_less-loader@8.0.0_vue@3.2.13/node_modules/@vue/cli-service/node_modules'
+    ]
   },
   resolveLoader: {
     modules: [
@@ -36,8 +35,8 @@ const a = {
       '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+@vue+cli-plugin-babel@5.0.0_@swc+core@1.3.96_@vue+cli-servic_zm7aixapy2ypx4ego4jcf6vlu4/node_modules/@vue/cli-plugin-babel/node_modules',
       'node_modules',
       '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules',
-      '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+@vue+cli-service@5.0.1_@swc+core@1.3.96_esbuild@0.25.1_less-loader@8.0.0_vue@3.2.13/node_modules/@vue/cli-service/node_modules',
-    ],
+      '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+@vue+cli-service@5.0.1_@swc+core@1.3.96_esbuild@0.25.1_less-loader@8.0.0_vue@3.2.13/node_modules/@vue/cli-service/node_modules'
+    ]
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
@@ -46,8 +45,8 @@ const a = {
       {
         test: /\.m?jsx?$/,
         resolve: {
-          fullySpecified: false,
-        },
+          fullySpecified: false
+        }
       },
       /* config.module.rule('vue') */
       {
@@ -58,21 +57,21 @@ const a = {
             loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-loader@17.4.2_vue@3.2.13_webpack@5.91.0/node_modules/vue-loader/dist/index.js',
             options: {
               cacheDirectory: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/vue-loader',
-              cacheIdentifier: '7fb0a6b9',
+              cacheIdentifier: '293df29a',
               babelParserPlugins: [
                 'jsx',
                 'classProperties',
-                'decorators-legacy',
-              ],
-            },
-          },
-        ],
+                'decorators-legacy'
+              ]
+            }
+          }
+        ]
       },
       /* config.module.rule('vue-style') */
       {
         test: /\.vue$/,
         resourceQuery: /type=style/,
-        sideEffects: true,
+        sideEffects: true
       },
       /* config.module.rule('pug') */
       {
@@ -84,56 +83,56 @@ const a = {
             use: [
               /* config.module.rule('pug').oneOf('pug-vue').use('pug-plain-loader') */
               {
-                loader: 'pug-plain-loader',
-              },
-            ],
+                loader: 'pug-plain-loader'
+              }
+            ]
           },
           /* config.module.rule('pug').oneOf('pug-template') */
           {
             use: [
               /* config.module.rule('pug').oneOf('pug-template').use('raw') */
               {
-                loader: 'raw-loader',
+                loader: 'raw-loader'
               },
               /* config.module.rule('pug').oneOf('pug-template').use('pug-plain-loader') */
               {
-                loader: 'pug-plain-loader',
-              },
-            ],
-          },
-        ],
+                loader: 'pug-plain-loader'
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('svg') */
       {
         test: /\.(svg)(\?.*)?$/,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name].[hash:8][ext]',
-        },
+          filename: 'img/[name].[hash:8][ext]'
+        }
       },
       /* config.module.rule('images') */
       {
         test: /\.(png|jpe?g|gif|webp|avif)(\?.*)?$/,
         type: 'asset',
         generator: {
-          filename: 'img/[name].[hash:8][ext]',
-        },
+          filename: 'img/[name].[hash:8][ext]'
+        }
       },
       /* config.module.rule('media') */
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         type: 'asset',
         generator: {
-          filename: 'media/[name].[hash:8][ext]',
-        },
+          filename: 'media/[name].[hash:8][ext]'
+        }
       },
       /* config.module.rule('fonts') */
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'asset',
         generator: {
-          filename: 'fonts/[name].[hash:8][ext]',
-        },
+          filename: 'fonts/[name].[hash:8][ext]'
+        }
       },
       /* config.module.rule('css') */
       {
@@ -148,8 +147,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('css').oneOf('vue-modules').use('css-loader') */
               {
@@ -159,9 +158,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('css').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -170,12 +169,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('css').oneOf('vue') */
           {
@@ -186,16 +185,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('css').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('css').oneOf('vue').use('postcss-loader') */
               {
@@ -204,12 +203,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('css').oneOf('normal-modules') */
           {
@@ -220,16 +219,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('css').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('css').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -238,12 +237,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('css').oneOf('normal') */
           {
@@ -253,16 +252,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('css').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('css').oneOf('normal').use('postcss-loader') */
               {
@@ -271,14 +270,14 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
-          },
-        ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('postcss') */
       {
@@ -293,8 +292,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('css-loader') */
               {
@@ -304,9 +303,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -315,12 +314,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('postcss').oneOf('vue') */
           {
@@ -331,16 +330,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('postcss').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('postcss').oneOf('vue').use('postcss-loader') */
               {
@@ -349,12 +348,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('postcss').oneOf('normal-modules') */
           {
@@ -365,16 +364,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -383,12 +382,12 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('postcss').oneOf('normal') */
           {
@@ -398,16 +397,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('postcss').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('postcss').oneOf('normal').use('postcss-loader') */
               {
@@ -416,14 +415,14 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
-              },
-            ],
-          },
-        ],
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('scss') */
       {
@@ -438,8 +437,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('css-loader') */
               {
@@ -449,9 +448,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -460,19 +459,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('sass-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+sass-loader@14.2.1_webpack@5.91.0/node_modules/sass-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('scss').oneOf('vue') */
           {
@@ -483,16 +482,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('scss').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('scss').oneOf('vue').use('postcss-loader') */
               {
@@ -501,19 +500,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('scss').oneOf('vue').use('sass-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+sass-loader@14.2.1_webpack@5.91.0/node_modules/sass-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('scss').oneOf('normal-modules') */
           {
@@ -524,16 +523,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -542,19 +541,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('sass-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+sass-loader@14.2.1_webpack@5.91.0/node_modules/sass-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('scss').oneOf('normal') */
           {
@@ -564,16 +563,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('scss').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('scss').oneOf('normal').use('postcss-loader') */
               {
@@ -582,21 +581,21 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('scss').oneOf('normal').use('sass-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+sass-loader@14.2.1_webpack@5.91.0/node_modules/sass-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
-          },
-        ],
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('sass') */
       {
@@ -611,8 +610,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('css-loader') */
               {
@@ -622,9 +621,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -633,10 +632,10 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('sass-loader') */
               {
@@ -644,11 +643,11 @@ const a = {
                 options: {
                   sourceMap: false,
                   sassOptions: {
-                    indentedSyntax: true,
-                  },
-                },
-              },
-            ],
+                    indentedSyntax: true
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('sass').oneOf('vue') */
           {
@@ -659,16 +658,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('sass').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('sass').oneOf('vue').use('postcss-loader') */
               {
@@ -677,10 +676,10 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('sass').oneOf('vue').use('sass-loader') */
               {
@@ -688,11 +687,11 @@ const a = {
                 options: {
                   sourceMap: false,
                   sassOptions: {
-                    indentedSyntax: true,
-                  },
-                },
-              },
-            ],
+                    indentedSyntax: true
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('sass').oneOf('normal-modules') */
           {
@@ -703,16 +702,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -721,10 +720,10 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('sass-loader') */
               {
@@ -732,11 +731,11 @@ const a = {
                 options: {
                   sourceMap: false,
                   sassOptions: {
-                    indentedSyntax: true,
-                  },
-                },
-              },
-            ],
+                    indentedSyntax: true
+                  }
+                }
+              }
+            ]
           },
           /* config.module.rule('sass').oneOf('normal') */
           {
@@ -746,16 +745,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('sass').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('sass').oneOf('normal').use('postcss-loader') */
               {
@@ -764,10 +763,10 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('sass').oneOf('normal').use('sass-loader') */
               {
@@ -775,13 +774,13 @@ const a = {
                 options: {
                   sourceMap: false,
                   sassOptions: {
-                    indentedSyntax: true,
-                  },
-                },
-              },
-            ],
-          },
-        ],
+                    indentedSyntax: true
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('less') */
       {
@@ -796,8 +795,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('less').oneOf('vue-modules').use('css-loader') */
               {
@@ -807,9 +806,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('less').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -818,19 +817,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('less').oneOf('vue-modules').use('less-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+less-loader@8.0.0_less@4.2.0_webpack@5.91.0/node_modules/less-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('less').oneOf('vue') */
           {
@@ -841,16 +840,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('less').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('less').oneOf('vue').use('postcss-loader') */
               {
@@ -859,19 +858,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('less').oneOf('vue').use('less-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+less-loader@8.0.0_less@4.2.0_webpack@5.91.0/node_modules/less-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('less').oneOf('normal-modules') */
           {
@@ -882,16 +881,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('less').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('less').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -900,19 +899,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('less').oneOf('normal-modules').use('less-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+less-loader@8.0.0_less@4.2.0_webpack@5.91.0/node_modules/less-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('less').oneOf('normal') */
           {
@@ -922,16 +921,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('less').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('less').oneOf('normal').use('postcss-loader') */
               {
@@ -940,21 +939,21 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('less').oneOf('normal').use('less-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+less-loader@8.0.0_less@4.2.0_webpack@5.91.0/node_modules/less-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
-          },
-        ],
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('stylus') */
       {
@@ -969,8 +968,8 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('css-loader') */
               {
@@ -980,9 +979,9 @@ const a = {
                   importLoaders: 2,
                   modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
-                    auto: () => true,
-                  },
-                },
+                    auto: () => true
+                  }
+                }
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('postcss-loader') */
               {
@@ -991,19 +990,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('stylus-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+stylus-loader@8.1.1_stylus@0.64.0_webpack@5.91.0/node_modules/stylus-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('stylus').oneOf('vue') */
           {
@@ -1014,16 +1013,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('stylus').oneOf('vue').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('stylus').oneOf('vue').use('postcss-loader') */
               {
@@ -1032,19 +1031,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('stylus').oneOf('vue').use('stylus-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+stylus-loader@8.1.1_stylus@0.64.0_webpack@5.91.0/node_modules/stylus-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('stylus').oneOf('normal-modules') */
           {
@@ -1055,16 +1054,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('postcss-loader') */
               {
@@ -1073,19 +1072,19 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('stylus-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+stylus-loader@8.1.1_stylus@0.64.0_webpack@5.91.0/node_modules/stylus-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
+                  sourceMap: false
+                }
+              }
+            ]
           },
           /* config.module.rule('stylus').oneOf('normal') */
           {
@@ -1095,16 +1094,16 @@ const a = {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-style-loader@4.1.3/node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
-                  shadowMode: false,
-                },
+                  shadowMode: false
+                }
               },
               /* config.module.rule('stylus').oneOf('normal').use('css-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+css-loader@6.11.0_webpack@5.91.0/node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
-                  importLoaders: 2,
-                },
+                  importLoaders: 2
+                }
               },
               /* config.module.rule('stylus').oneOf('normal').use('postcss-loader') */
               {
@@ -1113,27 +1112,27 @@ const a = {
                   sourceMap: false,
                   postcssOptions: {
                     plugins: [
-                      function () { /* omitted long function */ },
-                    ],
-                  },
-                },
+                      function () { /* omitted long function */ }
+                    ]
+                  }
+                }
               },
               /* config.module.rule('stylus').oneOf('normal').use('stylus-loader') */
               {
                 loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+stylus-loader@8.1.1_stylus@0.64.0_webpack@5.91.0/node_modules/stylus-loader/dist/cjs.js',
                 options: {
-                  sourceMap: false,
-                },
-              },
-            ],
-          },
-        ],
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
       },
       /* config.module.rule('js') */
       {
         test: /\.m?jsx?$/,
         exclude: [
-          function () { /* omitted long function */ },
+          function () { /* omitted long function */ }
         ],
         use: [
           /* config.module.rule('js').use('babel-loader') */
@@ -1142,10 +1141,10 @@ const a = {
             options: {
               cacheCompression: false,
               cacheDirectory: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/babel-loader',
-              cacheIdentifier: '128ca274',
-            },
-          },
-        ],
+              cacheIdentifier: '00f7c536'
+            }
+          }
+        ]
       },
       /* config.module.rule('ts') */
       {
@@ -1153,7 +1152,7 @@ const a = {
         use: [
           /* config.module.rule('ts').use('babel-loader') */
           {
-            loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+babel-loader@8.4.1_@babel+core@7.26.8_webpack@5.91.0/node_modules/babel-loader/lib/index.js',
+            loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+babel-loader@8.4.1_@babel+core@7.26.8_webpack@5.91.0/node_modules/babel-loader/lib/index.js'
           },
           /* config.module.rule('ts').use('ts-loader') */
           {
@@ -1161,12 +1160,12 @@ const a = {
             options: {
               transpileOnly: true,
               appendTsSuffixTo: [
-                '\\.vue$',
+                '\\.vue$'
               ],
-              happyPackMode: false,
-            },
-          },
-        ],
+              happyPackMode: false
+            }
+          }
+        ]
       },
       /* config.module.rule('tsx') */
       {
@@ -1174,7 +1173,7 @@ const a = {
         use: [
           /* config.module.rule('tsx').use('babel-loader') */
           {
-            loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+babel-loader@8.4.1_@babel+core@7.26.8_webpack@5.91.0/node_modules/babel-loader/lib/index.js',
+            loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+babel-loader@8.4.1_@babel+core@7.26.8_webpack@5.91.0/node_modules/babel-loader/lib/index.js'
           },
           /* config.module.rule('tsx').use('ts-loader') */
           {
@@ -1183,13 +1182,13 @@ const a = {
               transpileOnly: true,
               happyPackMode: false,
               appendTsxSuffixTo: [
-                '\\.vue$',
-              ],
-            },
-          },
-        ],
-      },
-    ],
+                '\\.vue$'
+              ]
+            }
+          }
+        ]
+      }
+    ]
   },
   optimization: {
     realContentHash: false,
@@ -1199,16 +1198,16 @@ const a = {
           name: 'chunk-vendors',
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          chunks: 'initial',
+          chunks: 'initial'
         },
         common: {
           name: 'chunk-common',
           minChunks: 2,
           priority: -20,
           chunks: 'initial',
-          reuseExistingChunk: true,
-        },
-      },
+          reuseExistingChunk: true
+        }
+      }
     },
     minimizer: [
       /* config.optimization.minimizer('terser') */
@@ -1238,17 +1237,17 @@ const a = {
               unused: true,
               conditionals: true,
               dead_code: true,
-              evaluate: true,
+              evaluate: true
             },
             mangle: {
-              safari10: true,
-            },
+              safari10: true
+            }
           },
           parallel: true,
-          extractComments: false,
-        },
-      ),
-    ],
+          extractComments: false
+        }
+      )
+    ]
   },
   plugins: [
     /* config.plugin('vue-loader') */
@@ -1257,17 +1256,17 @@ const a = {
     new DefinePlugin(
       {
         __VUE_OPTIONS_API__: 'true',
-        __VUE_PROD_DEVTOOLS__: 'false',
-      },
+        __VUE_PROD_DEVTOOLS__: 'false'
+      }
     ),
     /* config.plugin('define') */
     new DefinePlugin(
       {
         'process.env': {
           NODE_ENV: '"development"',
-          BASE_URL: '"/"',
-        },
-      },
+          BASE_URL: '"/"'
+        }
+      }
     ),
     /* config.plugin('case-sensitive-paths') */
     new CaseSensitivePathsPlugin(),
@@ -1275,27 +1274,27 @@ const a = {
     new FriendlyErrorsWebpackPlugin(
       {
         additionalTransformers: [
-          function () { /* omitted long function */ },
+          function () { /* omitted long function */ }
         ],
         additionalFormatters: [
-          function () { /* omitted long function */ },
-        ],
-      },
+          function () { /* omitted long function */ }
+        ]
+      }
     ),
     /* config.plugin('html') */
     new HtmlWebpackPlugin(
       {
         title: '@syz/microservices-pwa-vue',
         scriptLoading: 'defer',
-        templateParameters() { /* omitted long function */ },
-        template: '/Users/didi/Desktop/microserivces/apps/pwa-vue/public/index.html',
-      },
+        templateParameters: function () { /* omitted long function */ },
+        template: '/Users/didi/Desktop/microserivces/apps/pwa-vue/public/index.html'
+      }
     ),
     /* config.plugin('pwa') */
     new HtmlPwaPlugin(
       {
-        name: '@syz/microservices-pwa-vue',
-      },
+        name: '@syz/microservices-pwa-vue'
+      }
     ),
     /* config.plugin('copy') */
     new CopyPlugin(
@@ -1309,15 +1308,15 @@ const a = {
             globOptions: {
               ignore: [
                 '**/.DS_Store',
-                '/Users/didi/Desktop/microserivces/apps/pwa-vue/public/index.html',
-              ],
+                '/Users/didi/Desktop/microserivces/apps/pwa-vue/public/index.html'
+              ]
             },
             info: {
-              minimized: true,
-            },
-          },
-        ],
-      },
+              minimized: true
+            }
+          }
+        ]
+      }
     ),
     /* config.plugin('eslint') */
     new ESLintWebpackPlugin(
@@ -1327,17 +1326,17 @@ const a = {
           '.jsx',
           '.vue',
           '.ts',
-          '.tsx',
+          '.tsx'
         ],
         cwd: '/Users/didi/Desktop/microserivces/apps/pwa-vue',
         cache: true,
-        cacheLocation: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/eslint/b55cf83a.json',
+        cacheLocation: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/eslint/1b94350f.json',
         context: '/Users/didi/Desktop/microserivces/apps/pwa-vue',
         failOnWarning: false,
         failOnError: true,
         eslintPath: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+eslint@7.32.0/node_modules/eslint',
-        formatter: 'stylish',
-      },
+        formatter: 'stylish'
+      }
     ),
     /* config.plugin('fork-ts-checker') */
     new ForkTsCheckerWebpackPlugin(
@@ -1346,20 +1345,20 @@ const a = {
           extensions: {
             vue: {
               enabled: true,
-              compiler: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue@3.2.13/node_modules/vue/compiler-sfc/index.js',
-            },
+              compiler: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue@3.2.13/node_modules/vue/compiler-sfc/index.js'
+            }
           },
           diagnosticOptions: {
             semantic: true,
-            syntactic: false,
-          },
-        },
-      },
-    ),
+            syntactic: false
+          }
+        }
+      }
+    )
   ],
   entry: {
     app: [
-      './src/main.ts',
-    ],
-  },
-};
+      './src/main.ts'
+    ]
+  }
+}
