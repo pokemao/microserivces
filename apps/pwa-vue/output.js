@@ -57,7 +57,7 @@
             loader: '/Users/didi/Desktop/microserivces/node_modules/.pnpm/artifactory.intra.xiaojukeji.com+vue-loader@17.4.2_vue@3.2.13_webpack@5.91.0/node_modules/vue-loader/dist/index.js',
             options: {
               cacheDirectory: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/vue-loader',
-              cacheIdentifier: '31ca9102',
+              cacheIdentifier: '427f9afc',
               babelParserPlugins: [
                 'jsx',
                 'classProperties',
@@ -1141,7 +1141,7 @@
             options: {
               cacheCompression: false,
               cacheDirectory: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/babel-loader',
-              cacheIdentifier: '5903b1d4'
+              cacheIdentifier: '473e511e'
             }
           }
         ]
@@ -1149,9 +1149,6 @@
       /* config.module.rule('ts') */
       {
         test: /\.ts$/,
-        exclude: [
-          '/Users/didi/Desktop/microserivces/apps/pwa-vue/static-server'
-        ],
         use: [
           /* config.module.rule('ts').use('babel-loader') */
           {
@@ -1186,38 +1183,6 @@
               happyPackMode: false,
               appendTsxSuffixTo: [
                 '\\.vue$'
-              ]
-            }
-          }
-        ]
-      },
-      /* config.module.rule('esbuild') */
-      {
-        test: /\.ts$/,
-        include: [
-          '/Users/didi/Desktop/microserivces/apps/pwa-vue/static-server'
-        ],
-        use: [
-          /* config.module.rule('esbuild').use('debug-loader') */
-          {
-            loader: '/Users/didi/Desktop/microserivces/apps/pwa-vue/loader/debug-loader.js',
-            options: {
-              outputPath: '/Users/didi/Desktop/microserivces/apps/pwa-vue/loader-debug'
-            }
-          },
-          /* config.module.rule('esbuild').use('esbuild-loader') */
-          {
-            loader: 'esbuild-loader',
-            options: {
-              define: {
-                'process.env.MICRO_APP_CLIENT_PORT': '":4441"'
-              },
-              target: [
-                'node12'
-              ],
-              platform: 'web',
-              drop: [
-                'debugger'
               ]
             }
           }
@@ -1365,7 +1330,7 @@
         ],
         cwd: '/Users/didi/Desktop/microserivces/apps/pwa-vue',
         cache: true,
-        cacheLocation: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/eslint/39a0331c.json',
+        cacheLocation: '/Users/didi/Desktop/microserivces/apps/pwa-vue/node_modules/.cache/eslint/59a5fe4a.json',
         context: '/Users/didi/Desktop/microserivces/apps/pwa-vue',
         failOnWarning: false,
         failOnError: true,
@@ -1394,9 +1359,6 @@
   entry: {
     app: [
       './src/main.ts'
-    ],
-    'static-server': [
-      '/Users/didi/Desktop/microserivces/apps/pwa-vue/static-server/index.ts'
     ]
   }
 }

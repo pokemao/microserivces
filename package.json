@@ -9,15 +9,22 @@
   },
   "contributors": [],
   "scripts": {
-    "build": "dotenv -c production -- turbo run build",
+    "preserve": "dotenv -c development -- node genTurboJsonScript.js",
     "serve": "dotenv -c development -- turbo run serve --concurrency=12",
-    "lint": "turbo lint",
+    "prebuild": "dotenv -c production -- node genTurboJsonScript.js",
+    "build": "dotenv -c production -- turbo run build",
+    "predocker-build": "dotenv -c production -- node genTurboJsonScript.js",
     "docker-build": "dotenv -c production -- turbo run docker-build",
+    "predocker-push": "dotenv -c production -- node genTurboJsonScript.js",
     "docker-push": "docker login docker.io && dotenv -c production -- turbo run docker-push",
+    "prek8s-genyaml": "dotenv -c production -- node genTurboJsonScript.js",
     "k8s-genyaml": "docker login docker.io && dotenv -c production -- turbo run k8s-genyaml",
+    "prek8s-justgenyaml": "dotenv -c production -- node genTurboJsonScript.js",
     "k8s-justgenyaml": "dotenv -c production -- turbo run k8s-justgenyaml",
+    "prek8s-applyOrRolloutRestart": "dotenv -c production -- node genTurboJsonScript.js",
     "k8s-applyOrRolloutRestart": "echo '保证安装ingress-nginx' && docker login docker.io && dotenv -c production -- turbo run k8s-applyOrRolloutRestart",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo lint"
   },
   "license": "MIT",
   "devDependencies": {

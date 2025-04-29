@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "debug": "node --inspect-brk=65534 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
+    "debug": "node --inspect-brk=65533 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && tsx ./static-server/compiler/esbuild.config.ts",
     "lint": "vue-cli-service lint"

@@ -11,12 +11,11 @@ const port = MICRO_APP_PWA_VUE_PORT.slice(1);
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  pwa: {
-    workboxPluginMode: 'InjectManifest',
-    workboxOptions: {
-
-    },
-  },
+  // pwa: {
+  //   workboxPluginMode: 'InjectManifest',
+  //   workboxOptions: {
+  //   },
+  // },
   devServer: {
     // 设置开发服务器的端口号
     port,
@@ -83,5 +82,4 @@ module.exports = defineConfig({
     //   .exclude.add(resolve(__dirname, 'static-server'));
     // }
   },
-  pwa: {},
 });
