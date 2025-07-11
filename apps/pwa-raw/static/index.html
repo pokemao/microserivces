@@ -27,6 +27,15 @@
         line-height: 30px;
         cursor: pointer;
       }
+      #version {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: 100px;
+        font-size: 24px;
+        color: red;
+      }
     </style>
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
   </head>
@@ -50,6 +59,8 @@
 
     <button id="doIt">Request sending a notification!</button>
 
+    <div id="version">10</div>
+
     <!-- 需要用户在设备的设置中开启浏览器的通知权限 -->
     <script type="module" src="./js/vconsoleinit.js"></script>
     <script type="module" src="./js/serviceWorkerRegister.js"></script>
@@ -57,6 +68,6 @@
     <script type="module" src="./js/notification.js"></script>
     <script type="module" src="./js/pushNotification.js"></script>
     <script type="module" src="./js/fcm.js"></script>
-
+    <script type="module" src="./js/cookieAndlocalStorage.js"></script>
   </body>
 </html>

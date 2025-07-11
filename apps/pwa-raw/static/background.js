@@ -1,4 +1,15 @@
 const cacheName = 'v1';
+let communicationPort;
+
+// self.addEventListener('message', (event) => {
+//   console.log('shao message');
+
+//   if(event.data.type === 'PORT_TRANSFER') {
+//     communicationPort = event.ports[0];
+//     console.log(communicationPort);
+
+//   }
+// })
 
 self.addEventListener('install', function(event) {
   console.log('background.js: Service Worker install', event);
@@ -43,6 +54,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener("activate", (event) => {
   console.log("background.js: Service Worker activated", event);
+
   // 激活 Service Worker 后立即获取控制权, 这样就可以立即接管页面
   // 如果不调用self.clients.claim()，sevice worker会在下一次页面刷新时才会生效
   event.waitUntil(self.clients.claim());
@@ -105,11 +117,28 @@ const networkFirst = async (request) => {
   }
 }
 
+
 self.addEventListener('push', function(event) {
   // Retrieve the textual payload from event.data (a PushMessageData object).
   // Other formats are supported (ArrayBuffer, Blob, JSON), check out the documentation
   // on https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData.
   const payload = event.data ? event.data.text() : 'no payload';
+
+  console.log('background.js: Service Worker push', event, payload);
+
+  // communicationPort.postMessage({
+  //   type: 'push',
+  //   message: 'nihao'
+  // })
+
+  self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'SYNC_COMPLETE',  // 自定义消息类型
+        payload: 'nihao'         // 携带数据
+      });
+    });
+  })
 
   // Keep the service worker alive until the notification is created.
   event.waitUntil(
@@ -120,3 +149,5 @@ self.addEventListener('push', function(event) {
     })
   );
 });
+
+

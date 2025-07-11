@@ -28,7 +28,20 @@ if ("serviceWorker" in window.navigator) {
              */
             scope: "./",
           }
-        );
+        ).then(registeration => {
+          // const channel = new MessageChannel()
+          // channel.port1.onmessage = (event) => {
+          //   console.log('dom received sw message', event.data)
+          // }
+          // setInterval(()=> {
+          //   registeration.active.postMessage({
+          //     type: 'PORT_TRANSFER',
+          //   }, [channel.port2])
+          // },1000)
+          navigator.serviceWorker.addEventListener('message', event => {
+            alert('nihao')
+          })
+        });
         /**
          * ServiceWorkerRegistration对象的属性：installing ｜ waiting ｜ active，三个属性同一时间只有一个是非null的值
          */

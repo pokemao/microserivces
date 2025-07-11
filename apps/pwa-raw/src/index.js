@@ -65,16 +65,16 @@ app.post("/sendNotification", function (req, res) {
     TTL: req.body.ttl,
   };
 
-  setTimeout(function () {
-    webPush
-      .sendNotification(subscription, payload, options)
-      .then(function () {
-        res.sendStatus(201);
-      })
-      .catch(function (error) {
-        console.log(error);
-        res.sendStatus(500);
-      });
+  setTimeout(async function () {
+    const a = webPush.sendNotification(subscription, payload, options)
+    console.log(await a);
+    a.then(function () {
+      res.sendStatus(201);
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.sendStatus(500);
+    })
   }, req.body.delay * 1000);
 });
 
