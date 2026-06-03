@@ -5,7 +5,8 @@
   "scripts": {
     "debug": "node --inspect-brk=65533 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && tsx ./static-server/compiler/esbuild.config.ts",
+    "build": "vue-cli-service build && tsx ./static-server/compiler/esbuild.config.ts && pnpm serve2",
+    "serve2": "node ./dist/static-server/index.cjs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

@@ -6,16 +6,48 @@ const nodeExternals = require('webpack-node-externals');
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('dotenv').config();
 
-const MICRO_APP_PWA_VUE_PORT = process.env.MICRO_APP_PWA_VUE_PORT ? process.env.MICRO_APP_PWA_VUE_PORT : ':4441';
+const MICRO_APP_PWA_VUE_PORT = process.env.MICRO_APP_PWA_VUE_PORT
+  ? process.env.MICRO_APP_PWA_VUE_PORT
+  : ':4441';
 const port = MICRO_APP_PWA_VUE_PORT.slice(1);
 
 module.exports = defineConfig({
+  // publicPath: '/nihao/',
   transpileDependencies: true,
-  // pwa: {
-  //   workboxPluginMode: 'InjectManifest',
-  //   workboxOptions: {
-  //   },
-  // },
+  pwa: {
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true,
+      // 排除/index.html的预缓存路由
+      exclude: [
+        /index\.html$/, // 正则表达式：精确匹配/index.html
+        // /manifest\.json$/,
+      ],
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => {
+            if (url.pathname === '/') {
+              return true;
+            }
+            return false;
+          },
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'index-html-cache',
+            networkTimeoutSeconds: 5, // 网络超时时间
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60 * 5, // 缓存5分钟
+            },
+            // 添加精确匹配选项
+            matchOptions: {
+              ignoreSearch: true, // 忽略查询参数
+            },
+          },
+        },
+      ],
+    },
+  },
   devServer: {
     // 设置开发服务器的端口号
     port,

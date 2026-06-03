@@ -24,6 +24,8 @@ if (!process.env.VAPID_PUBLIC_KEY || !process.env.VAPID_PRIVATE_KEY) {
   process.exit(1);
 }
 
+const port = process.env.MICRO_APP_PWA_RAW_PORT?.slice(1) || 4440
+
 const app = express();
 app.use(bodyParser.json());
 /**https 服务
@@ -41,8 +43,8 @@ app.use(bodyParser.json());
 // https.createServer(options, app).listen('8080', () => {
 //     console.log(`Server is running on port 8080`);
 // });
-app.listen(process.env.MICRO_APP_PWA_RAW_PORT.slice(1), () => {
-  console.log(`Server is running on port ${process.env.MICRO_APP_PWA_RAW_PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 webPush.setVapidDetails(
@@ -53,6 +55,11 @@ webPush.setVapidDetails(
 app.get("/vapidPublicKey", function (req, res) {
   res.send(process.env.VAPID_PUBLIC_KEY);
 });
+app.get("/hello", function (req, res) {
+  console.log('shao req', req);
+
+  res.send("hello");
+})
 app.post("/register", function (req, res) {
   // A real world application would store the subscription info.
   res.sendStatus(201);

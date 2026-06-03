@@ -80,6 +80,14 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   console.log("background.js: Service Worker fetch", event, event.request.url);
+    self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'FETCH',  // 自定义消息类型
+        payload: 'nihao'         // 携带数据
+      });
+    });
+  })
   // 拦截请求
   event.respondWith(networkFirst(event.request));
 });
@@ -117,8 +125,18 @@ const networkFirst = async (request) => {
   }
 }
 
+self.addEventListener('push', (evnet) => {
+    self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'SYNC_COMPLETE',  // 自定义消息类型
+        payload: 'nihao'         // 携带数据
+      });
+    });
+  })
+})
 
-self.addEventListener('push', function(event) {
+self.addEventListener('push', async function(event) {
   // Retrieve the textual payload from event.data (a PushMessageData object).
   // Other formats are supported (ArrayBuffer, Blob, JSON), check out the documentation
   // on https://developer.mozilla.org/en-US/docs/Web/API/PushMessageData.
@@ -131,13 +149,8 @@ self.addEventListener('push', function(event) {
   //   message: 'nihao'
   // })
 
-  self.clients.matchAll().then(clients => {
-    clients.forEach(client => {
-      client.postMessage({
-        type: 'SYNC_COMPLETE',  // 自定义消息类型
-        payload: 'nihao'         // 携带数据
-      });
-    });
+  fetch('/hello').then(res => {
+    console.log('shao', res);
   })
 
   // Keep the service worker alive until the notification is created.
@@ -150,4 +163,6 @@ self.addEventListener('push', function(event) {
   );
 });
 
-
+self.addEventListener('notificationclick', function(event) {
+  console.log('background.js: Service Worker notificationclick', event);
+});

@@ -39,7 +39,8 @@ if ("serviceWorker" in window.navigator) {
           //   }, [channel.port2])
           // },1000)
           navigator.serviceWorker.addEventListener('message', event => {
-            alert('nihao')
+            console.log('shao', event);
+
           })
         });
         /**
